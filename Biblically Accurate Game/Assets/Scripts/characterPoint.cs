@@ -23,8 +23,8 @@ public class characterPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal"); //gets the horizontal input from the input key, this includes the arrow keys and the a and d keys
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxis("Horizontal"); //gets the horizontal input from the input key, this includes the arrow keys and the a and d keys
+        movement.y = Input.GetAxis("Vertical");
     }
     void FixedUpdate()
     {

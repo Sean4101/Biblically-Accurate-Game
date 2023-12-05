@@ -41,10 +41,6 @@ public class Gun : MonoBehaviour
         Vector2 firePointPos = new Vector2(firePoint.position.x, firePoint.position.y);
         firePoint.position = firePointPos;
 
-        
-       
-
-
     }
     
     public void Shoot()

@@ -19,11 +19,8 @@ public class MrPewPew : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //movement.x = Input.GetAxisRaw("Horizontal"); //gets the horizontal input from the input key, this includes the arrow keys and the a and d keys
-        //movement.y = Input.GetAxisRaw("Vertical");
-
+    void Update() { 
+    
 
 
 
@@ -34,11 +31,6 @@ public class MrPewPew : MonoBehaviour
         //makes gun always follow the bird,while Y axis is slightly lower
         Vector2 pointPos = new Vector2(characterPoint.position.x, characterPoint.position.y - 0.7f);
         gameObject.transform.position = pointPos;
-
-        //makes gun points to the mouse, while pivot point is set to left
-        // Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        // Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
-        //transform.right = direction;
 
 
 

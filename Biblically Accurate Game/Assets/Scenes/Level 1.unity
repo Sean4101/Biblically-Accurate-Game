@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 628863695}
   - component: {fileID: 628863696}
   m_Layer: 0
-  m_Name: he_attacks
+  m_Name: angel1Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -628,7 +628,7 @@ Transform:
   m_GameObject: {fileID: 628863693}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.24, y: 2.3048356, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.116702, y: 1.8519742, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -647,18 +647,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poopoo: {fileID: 3909281631431229581, guid: 7b6a41725c251f042a0725a47e7f7113, type: 3}
-  player: {fileID: 0}
-  firepoint: {fileID: 628863694}
+  player: {fileID: 517359280}
+  bossPoint: {fileID: 1569942880}
+  angel1: {fileID: 1569942880}
   boss_fireforce: 5
+  rayStuff: {fileID: 0}
   speed: 10
   rotationModifier: 10
   aura: {fileID: 1803600998}
+  ray: {fileID: 9139668940763575875, guid: 790e71077017b40419a980effe2175b5, type: 3}
+  rayrb: {fileID: 2099203214710141077, guid: 790e71077017b40419a980effe2175b5, type: 3}
+  aurarb: {fileID: 1803601001}
+  atk: 0
   duration: 0
   cooldown: 0
-  aura_duration: 5
-  debug_counter: 0
-  aura_cooldown: 0
-  aura_cooling: 0
+  rayMaxspeed: 50
+  rayMinspeed: 40
+  auraDuration: 5
+  auraCooldown: 0
+  auraCooling: 0
+  debugCounter: 0
 --- !u!50 &628863696
 Rigidbody2D:
   serializedVersion: 4
@@ -1918,6 +1926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1803600999}
   - component: {fileID: 1803601000}
+  - component: {fileID: 1803601001}
   m_Layer: 0
   m_Name: aura
   m_TagString: Untagged
@@ -1992,6 +2001,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1803601001
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803600998}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1850619194
 GameObject:
   m_ObjectHideFlags: 0
