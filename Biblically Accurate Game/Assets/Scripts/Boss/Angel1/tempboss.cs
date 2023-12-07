@@ -20,6 +20,7 @@ public class tempboss : MonoBehaviour
     void Start()
     {
         StartTimer();
+
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class tempboss : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("we are collided");
-        boss_health -= 10;
+        //boss_health -= 10;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -79,4 +80,16 @@ public class tempboss : MonoBehaviour
         StopCoroutine(CountupTimer());
         isTimerRunning = false;
     }
+
+    void TakeDamage(int damage)
+    {
+        Debug.Log("boss took damage");
+        boss_health -= damage;
+        if (boss_health <= 0)
+        {
+            //Die();
+        }
+    }
+
 }
+

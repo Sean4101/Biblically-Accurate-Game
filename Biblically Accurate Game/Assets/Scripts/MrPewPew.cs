@@ -32,8 +32,5 @@ public class MrPewPew : MonoBehaviour
         Vector2 pointPos = new Vector2(characterPoint.position.x, characterPoint.position.y - 0.7f);
         gameObject.transform.position = pointPos;
 
-
-
-
     }
 }

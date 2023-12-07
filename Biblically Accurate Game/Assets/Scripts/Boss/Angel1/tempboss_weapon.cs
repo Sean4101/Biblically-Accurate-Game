@@ -150,7 +150,9 @@ public class tempboss_weapon : MonoBehaviour
         {
             duration = 0;
         }
+
         Debug.Log("aura is here!");
+
         if (duration < auraDuration)
         {
             auraOn = true;
