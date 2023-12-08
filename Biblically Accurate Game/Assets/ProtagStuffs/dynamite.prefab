@@ -210,3 +210,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToExplode: 1
+  explosionScript: {fileID: 5314384757479465005, guid: 9ee27e347e8d704488c1ce005d52f7c0, type: 3}
+  explosionPrefab: {fileID: 5682373005490414963, guid: 9ee27e347e8d704488c1ce005d52f7c0, type: 3}

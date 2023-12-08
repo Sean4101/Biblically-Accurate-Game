@@ -14,7 +14,6 @@ public class PlayerCombat : MonoBehaviour
     [Header("Prefabs")]
     public GameObject bulletPrefab;
     public GameObject dynamitePrefab;
-    public GameObject explodeRadius;
 
     [Header("Variables")]
     public float fireForce = 10f;
@@ -64,14 +63,12 @@ public class PlayerCombat : MonoBehaviour
 
     void Bomb()
     {   
-        GameObject explosion = Instantiate(explodeRadius, firePoint.position, firePoint.rotation);
+        
         GameObject boomb = Instantiate(dynamitePrefab, firePoint.position, firePoint.rotation);
         //makes exlosion follow dynamite
         //explosion.transform.parent = boomb.transform;
-
         Rigidbody2D boombRb = boomb.GetComponent<Rigidbody2D>();
-        Rigidbody2D explosionRb = explosion.GetComponent<Rigidbody2D>();
         boombRb.AddForce(firePoint.right * throwForce, ForceMode2D.Impulse);
-        explosionRb.AddForce(firePoint.right * throwForce, ForceMode2D.Impulse);
+        
     }
 }

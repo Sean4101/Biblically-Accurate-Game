@@ -8,9 +8,10 @@ public class DynamitScript : MonoBehaviour
     [Header("References")]
     public float timeToExplode = 1f;
     public ExplosionScript explosionScript;
+    public GameObject explosionPrefab;
     void Awake()
     {
-         explosionScript = GetComponent<ExplosionScript>();
+         
     }
     void Start()
     {
@@ -24,20 +25,28 @@ public class DynamitScript : MonoBehaviour
     }
 
     void DynamiteExplode()
-    {
-         Destroy(gameObject);
+    {   
+        explosionScript = GetComponent<ExplosionScript>();
+
+        GameObject explosionRadius = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+        
 
         if (explosionScript != null)
         {
             explosionScript.Explode();
         }
+        else
+        {
+            Debug.Log("Explosion script is null");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {   
-       
+    {
 
-        if(explosionScript != null)
+        explosionScript = GetComponent<ExplosionScript>();
+        if (explosionScript != null)
         {
             if ( collision.tag != "HostileProjectile")
                 {

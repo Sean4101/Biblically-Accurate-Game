@@ -8,8 +8,7 @@ public class ExplosionScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //makes the explosion invisible
-        GetComponent<SpriteRenderer>().enabled = false;
+        Invoke("DestroyExplosion", stayTime);
     }
 
     // Update is called once per frame
@@ -20,11 +19,7 @@ public class ExplosionScript : MonoBehaviour
 
     public void Explode()
     {
-        //makes the explosion visible
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        GetComponent<SpriteRenderer>().enabled = true;
-        Invoke("DestroyExplosion", stayTime);
-        
+        Invoke("DestroyExplosion", stayTime);   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

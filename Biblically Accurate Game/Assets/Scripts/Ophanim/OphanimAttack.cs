@@ -229,6 +229,7 @@ public class OphanimAttack : MonoBehaviour
         spearOn = false;
         foreach (Transform spear in spears)
         {
+            if (spear != null)
             Destroy(spear.gameObject);
         }
         spears.Clear();
