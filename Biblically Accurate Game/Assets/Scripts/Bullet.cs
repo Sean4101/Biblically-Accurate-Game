@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
     {   
         if(collision.tag == "Enemy")
         {
-            collision.SendMessage("TakeDamage", 0);
+            //collision.SendMessage("TakeDamage", 0);
         }
 
         DestroyBullet();

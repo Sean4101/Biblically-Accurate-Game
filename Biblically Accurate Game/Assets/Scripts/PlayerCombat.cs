@@ -1,3 +1,4 @@
+using Assets.Scripts.Tree.Projectiles.Modules;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,19 +9,32 @@ public class PlayerCombat : MonoBehaviour
     public Transform weapon;
     public SpriteRenderer weaponSpriteRenderer;
     public Transform firePoint;
+    private ArcMovement arcMovement;
 
     [Header("Prefabs")]
     public GameObject bulletPrefab;
+    public GameObject dynamitePrefab;
+    public GameObject explodeRadius;
 
     [Header("Variables")]
     public float fireForce = 10f;
+    public float throwForce = 5f;
+    
 
+    private void Start()
+    {
+        arcMovement = GetComponent<ArcMovement>();
+    }
     private void Update()
     {
         RotateGun();
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Bomb();
         }
     }
 
@@ -42,8 +56,22 @@ public class PlayerCombat : MonoBehaviour
     }
 
     void Shoot()
-    {
+    {   
         GameObject pewpew = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        pewpew.GetComponent<Rigidbody2D>().AddForce(firePoint.right * fireForce, ForceMode2D.Impulse);
+        Rigidbody2D pewpewRb = pewpew.GetComponent<Rigidbody2D>();
+        pewpewRb.AddForce(firePoint.right * fireForce, ForceMode2D.Impulse);
+    }
+
+    void Bomb()
+    {   
+        GameObject explosion = Instantiate(explodeRadius, firePoint.position, firePoint.rotation);
+        GameObject boomb = Instantiate(dynamitePrefab, firePoint.position, firePoint.rotation);
+        //makes exlosion follow dynamite
+        //explosion.transform.parent = boomb.transform;
+
+        Rigidbody2D boombRb = boomb.GetComponent<Rigidbody2D>();
+        Rigidbody2D explosionRb = explosion.GetComponent<Rigidbody2D>();
+        boombRb.AddForce(firePoint.right * throwForce, ForceMode2D.Impulse);
+        explosionRb.AddForce(firePoint.right * throwForce, ForceMode2D.Impulse);
     }
 }

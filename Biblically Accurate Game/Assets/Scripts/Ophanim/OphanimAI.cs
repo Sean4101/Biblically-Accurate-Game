@@ -14,7 +14,7 @@ public enum OphanimState
 
 public class OphanimAI : MonoBehaviour
 {
-    OphanimAttack ophanimAttack;
+    public OphanimAttack ophanimAttack;
 
     public OphanimState state = OphanimState.Idle;
 

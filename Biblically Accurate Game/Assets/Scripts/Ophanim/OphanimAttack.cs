@@ -188,12 +188,15 @@ public class OphanimAttack : MonoBehaviour
 
         for (int i = 0; i < spearAmount; i++)
         {
-            Rigidbody2D spearsRb = spears[i].GetComponent<Rigidbody2D>();
-            if (spears[i].position.y > bossPoint.position.y + spearEmergeTopY)
+            if (spears[i] != null)
             {
-                spearsRb.velocity = new Vector2(0f, 0f);
-                spearsRb.angularVelocity = 0f;
-                spearStop = true;
+                Rigidbody2D spearsRb = spears[i].GetComponent<Rigidbody2D>();
+                if (spears[i] != null && spears[i].position.y > bossPoint.position.y + spearEmergeTopY)
+                {
+                    spearsRb.velocity = new Vector2(0f, 0f);
+                    spearsRb.angularVelocity = 0f;
+                    spearStop = true;
+                }
             }
 
         }
@@ -202,18 +205,20 @@ public class OphanimAttack : MonoBehaviour
         {
             foreach (Transform spear in spears)
             {
-                //makes spear aims at player
-                spear.transform.up = player.transform.position - spear.transform.position;
-
-                //makes spear move towards player after 2.5 seconds
-                
-                if (Time.time- aimingTime> spearAimTime)
+                if (spear != null)
                 {
-                    Rigidbody2D spearRb = spear.GetComponent<Rigidbody2D>();
-                    spearRb.GetComponent<Rigidbody2D>().velocity = spear.transform.up * spearSpeed;
-                    
-                }
+                    //makes spear aims at player
+                    spear.transform.up = player.transform.position - spear.transform.position;
 
+                    //makes spear move towards player after 2.5 seconds
+
+                    if (Time.time - aimingTime > spearAimTime)
+                    {
+                        Rigidbody2D spearRb = spear.GetComponent<Rigidbody2D>();
+                        spearRb.GetComponent<Rigidbody2D>().velocity = spear.transform.up * spearSpeed;
+
+                    }
+                }
             }
         }
        
