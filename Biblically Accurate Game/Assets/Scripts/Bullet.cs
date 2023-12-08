@@ -32,11 +32,11 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("we are still colliding");
+        //Debug.Log("we are still colliding");
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("we are no longer colliding");
+        //Debug.Log("we are no longer colliding");
     }
 
 }

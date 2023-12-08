@@ -110,7 +110,7 @@ public class tempboss_weapon : MonoBehaviour
                 
                 TimerTick();
                 // You can do something each second (e.g., update a display)
-                Debug.Log("Time elapsed: " + timer + " seconds");
+                //Debug.Log("Time elapsed: " + timer + " seconds");
             }
             // Note: The loop will continue indefinitely until you stop the coroutine or the game ends
         }
@@ -132,7 +132,7 @@ public class tempboss_weapon : MonoBehaviour
     void TimerTick()
     {   
         auraCooling++;
-        Debug.Log("timer ticked");
+        //Debug.Log("timer ticked");
 
         if (atk == 1 || auraOn)
         {
@@ -151,16 +151,16 @@ public class tempboss_weapon : MonoBehaviour
             duration = 0;
         }
 
-        Debug.Log("aura is here!");
+        //Debug.Log("aura is here!");
 
         if (duration < auraDuration)
         {
             auraOn = true;
             attacking = true;
             aura.GetComponent<Renderer>().enabled = true;
-            Debug.Log("aura go!");
+            //Debug.Log("aura go!");
             //print ray amount
-            Debug.Log("ray amount: " + rayAmount);
+            //Debug.Log("ray amount: " + rayAmount);
             if (!rayCreated)
             {
                 for (int i = 0; i < rayAmount; i++)
@@ -193,7 +193,7 @@ public class tempboss_weapon : MonoBehaviour
         }
         else
         {
-            Debug.Log("aura gone!");
+            //Debug.Log("aura gone!");
             aura.GetComponent<Renderer>().enabled = false;
             auraCooldown = rngatk.Next(5, 20);
             attacking = false;

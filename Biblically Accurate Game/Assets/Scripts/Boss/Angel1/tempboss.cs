@@ -36,17 +36,17 @@ public class tempboss : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("we are collided");
+        //Debug.Log("we are collided");
         //boss_health -= 10;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("we are still colliding");
+        //Debug.Log("we are still colliding");
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("we are no longer colliding");
+        //Debug.Log("we are no longer colliding");
     }
 
 
@@ -68,7 +68,7 @@ public class tempboss : MonoBehaviour
             timer++;
 
             // You can do something each second (e.g., update a display)
-            Debug.Log("Time elapsed: " + timer + " seconds");
+            //Debug.Log("Time elapsed: " + timer + " seconds");
         }
 
         // Note: The loop will continue indefinitely until you stop the coroutine or the game ends
@@ -83,7 +83,7 @@ public class tempboss : MonoBehaviour
 
     void TakeDamage(int damage)
     {
-        Debug.Log("boss took damage");
+        //Debug.Log("boss took damage");
         boss_health -= damage;
         if (boss_health <= 0)
         {
