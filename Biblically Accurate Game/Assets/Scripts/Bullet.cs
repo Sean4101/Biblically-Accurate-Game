@@ -25,9 +25,10 @@ public class Bullet : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             //collision.SendMessage("TakeDamage", 0);
+            DestroyBullet();
         }
 
-        DestroyBullet();
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)

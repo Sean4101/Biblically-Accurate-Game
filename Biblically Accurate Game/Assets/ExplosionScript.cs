@@ -34,7 +34,6 @@ public class ExplosionScript : MonoBehaviour
         {
             //destroy the projectiles
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
             Destroy(collision.gameObject);
         }
     }

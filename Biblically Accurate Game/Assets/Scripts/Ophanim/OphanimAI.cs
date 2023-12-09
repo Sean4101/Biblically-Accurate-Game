@@ -118,7 +118,10 @@ public class OphanimAI : MonoBehaviour
     void StartIdle()
     {   
         coolingDown = Time.time;
+
+        //set cool down time set random (to be changed)
         atkCooldown = UnityEngine.Random.Range(5f, 10f);
+
         //atkType = UnityEngine.Random.Range(0, 3);
         atkType = 1;
     }

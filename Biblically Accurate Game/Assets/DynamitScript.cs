@@ -7,7 +7,6 @@ public class DynamitScript : MonoBehaviour
     // Start is called before the first frame update
     [Header("References")]
     public float timeToExplode = 1f;
-    public ExplosionScript explosionScript;
     public GameObject explosionPrefab;
     void Awake()
     {
@@ -26,41 +25,27 @@ public class DynamitScript : MonoBehaviour
 
     void DynamiteExplode()
     {   
-        explosionScript = GetComponent<ExplosionScript>();
-
         GameObject explosionRadius = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        
-
-        if (explosionScript != null)
-        {
-            explosionScript.Explode();
-        }
-        else
-        {
-            Debug.Log("Explosion script is null");
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        explosionScript = GetComponent<ExplosionScript>();
-        if (explosionScript != null)
-        {
-            if ( collision.tag != "HostileProjectile")
-                {
-                    DynamiteExplode();
-                    explosionScript.Explode();
-                }
+        if ( collision.tag != "HostileProjectile" && collision.tag != "FriendlyProjectile")
+            {
+                DynamiteExplode();
+                    
+            }
 
-                if (collision.tag == "Enemy")
-                {
-                    collision.SendMessage("TakeDamage", 0);
-                    GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                }
-        }
-        
+        if (collision.tag == "Enemy")
+            {   
+                //collision.SendMessage("TakeDamage", 0); dynmaite itself should not deal damage
+                Debug.Log("Enemy hit by dynamite");
+                DynamiteExplode();
+
+                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            }
 
     }
 }
