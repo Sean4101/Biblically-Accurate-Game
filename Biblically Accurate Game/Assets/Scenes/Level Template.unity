@@ -775,9 +775,64 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1318735072}
   lines:
-  - Hello
-  - How are u?
-  textSpeed: 0.1
+  - Fits of rage! Selfish ambition, dissensions, factions, and envy;  Drunkenness,
+    orgies, and the like!  I warn you, as I did before, that those who live like
+    this;  Will not inherit the kingdom of God! - Galatians 5:19-23
+  - 'All of us have become like one who is unclean,  And all our righteous acts are
+    like filthy rags!  We all shrivel up like a leaf, and like the wind, our sins
+    sweep us away! - Isaiah 64:6 '
+  - For the wages of sin is death!  But the free gift of God is eternal life in Jesus
+    Christ, our lord! - Romans 6:23
+  - Therefore I tell you, every sin and blasphemy will be forgiven people, but the
+    blasphemy against the Spirit, will not be forgiven. - Matthew 12:31
+  - ...
+  - ...
+  - ...
+  - Redemption? Is this what they called?
+  - I can't remeber anymore...
+  - The dept I've laid,
+  - The decades spent, riding in the skies...
+  - Guiding the angel's herd...
+  - From Limbo to Treachery,
+  - from Purgatory to the gates to the land flowing with milk and honey
+  - A thousnads souls for a soul,
+  - A thousands sinners for a sinner...
+  - I have satified the contract already.
+  - Yet I've never seen the Star of Bethlehem rise before me.
+  - What could've been wrong?
+  - Haven't I cleasen myself enough?
+  - Haven't any of  my tribute to the holiness seen?
+  - This shouldn't have been happen!
+  - The clock have striked 12, the midnight is here...
+  - And yet no one comes
+  - Have I been led by the false prophet?
+  - The Antichrist?
+  - Or am I the one seen as he who spreads the false prophecy?
+  - No
+  - It couldn't be
+  - That's blasphemy
+  - NO NO NO NO NO
+  - For all what I've done,
+  - I have seen more than enough,
+  - hear more than enough,
+  - say more than enough.
+  - Maybe there's some mistake...
+  - A misunderstanding
+  - Yes
+  - It must be
+  - I do not deserve this.
+  - Maybe a talk could solve everything
+  - everything.....
+  - amen
+  - amen
+  - amen
+  - amen
+  - amen
+  - AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN
+    AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN
+    AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN AMEN
+    AMEN
+  textSpeed: 0.05
 --- !u!114 &901446606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,7 +1148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90.3, y: -21.1}
+  m_AnchoredPosition: {x: -88, y: 100}
   m_SizeDelta: {x: 191.4016, y: 109.2337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318735072
@@ -1179,7 +1234,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -290.43738, w: 79.29683}
+  m_margin: {x: -113.30426, y: 0, z: -290.43738, w: 79.29683}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
