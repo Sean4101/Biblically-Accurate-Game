@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//this one is for prologue
 public class DialogManager : MonoBehaviour
 {   
     public TextMeshProUGUI textComponent;
-    public DialogLines dialogLines;
-    public float textSpeed;
+    public DialogLines prologueLines;
+    public float prologueTextSpeed;
+    public bool prologueEnd = false;
 
     private int index;
 
@@ -16,7 +18,8 @@ public class DialogManager : MonoBehaviour
     void Start()
     {
         textComponent.text = string.Empty;
-        //StartDialogue();
+        StartDialogue();
+       
     }
 
     // Update is called once per frame
@@ -24,14 +27,14 @@ public class DialogManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.V))
         {
-            if(textComponent.text == dialogLines.lines[index])
+            if(textComponent.text == prologueLines.lines[index])
             {
                 NextLine();
             }
             else
-            {
+            {   
                 StopAllCoroutines();
-                textComponent.text = dialogLines.lines[index];
+                textComponent.text = prologueLines.lines[index];
             }
         }
     }
@@ -44,24 +47,29 @@ public class DialogManager : MonoBehaviour
 
     public void NextLine()
     {
-        if (index < dialogLines.lines.Count - 1)
+        if (index < prologueLines.lines.Count - 1)
         {
             index++;
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
         else
-        {
+        {  
+            //end of dialogue
             textComponent.text = string.Empty;
-            gameObject.SetActive(false);
+
+            //makes background fade out, but dk how to do that
+            //gameObject.transform.parent.GetComponent<Animator>().SetTrigger("FadeOut");
+            prologueEnd = true;
+            gameObject.SetActive(false); 
         }
     }
     IEnumerator TypeLine()
     {
-        foreach(char c in dialogLines.lines[index].ToCharArray())
+        foreach(char c in prologueLines.lines[index].ToCharArray())
         {
             textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            yield return new WaitForSeconds(prologueTextSpeed);
         }
     }
 }
