@@ -6,7 +6,7 @@ using TMPro;
 public class DialogManager : MonoBehaviour
 {   
     public TextMeshProUGUI textComponent;
-    public string[] lines;
+    public DialogLines dialogLines;
     public float textSpeed;
 
     private int index;
@@ -24,14 +24,14 @@ public class DialogManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.V))
         {
-            if(textComponent.text == lines[index])
+            if(textComponent.text == dialogLines.lines[index])
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                textComponent.text = lines[index];
+                textComponent.text = dialogLines.lines[index];
             }
         }
     }
@@ -44,7 +44,7 @@ public class DialogManager : MonoBehaviour
 
     public void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (index < dialogLines.lines.Count - 1)
         {
             index++;
             textComponent.text = string.Empty;
@@ -58,7 +58,7 @@ public class DialogManager : MonoBehaviour
     }
     IEnumerator TypeLine()
     {
-        foreach(char c in lines[index].ToCharArray())
+        foreach(char c in dialogLines.lines[index].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
