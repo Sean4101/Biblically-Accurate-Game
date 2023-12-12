@@ -47,12 +47,16 @@ public class PauseMenuManager : MonoBehaviour
 
     public void RestartGame()
     {
+        // Unpause the game
+        Time.timeScale = 1;
         // Reload the current scene
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
     public void BackToMenu()
     {
+        // Unpause the game
+        Time.timeScale = 1;
         // Load the main menu scene
         UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
     }

@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
 
+    [Header("Movement Stats")]
     public float movenentSpeed = 5f;
 
+    Vector2 movementDirection;
     bool isRolling = false;
 
     private void Awake()
@@ -17,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        CheckInput();
+        GetInput();
     }
 
     private void FixedUpdate()
@@ -26,8 +28,13 @@ public class PlayerMovement : MonoBehaviour
             Move();
     }
 
-    void CheckInput()
+    void GetInput()
     {
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+        movementDirection = new Vector2(x, y);
+        movementDirection.Normalize();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Roll();
@@ -36,13 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-
-        Vector2 movement = new Vector2(x, y);
-        movement.Normalize();
-
-        rb.velocity = movement * movenentSpeed;
+        rb.velocity = movementDirection * movenentSpeed;
     }
 
     void Roll()

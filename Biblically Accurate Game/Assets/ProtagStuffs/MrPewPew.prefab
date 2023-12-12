@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1760410027262387380}
   - component: {fileID: 9200232115746682306}
   - component: {fileID: 3450755746360175197}
-  - component: {fileID: 4387389341762552709}
   m_Layer: 0
   m_Name: MrPewPew
   m_TagString: Untagged
@@ -31,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3429943483128203177}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -147,7 +146,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -193,7 +192,6 @@ MonoBehaviour:
   firePoint: {fileID: 8478331944099842772}
   bulletPrefab: {fileID: 834564641309557873, guid: ca96fdd87ae84404eb86ec3a455f6b20, type: 3}
   dynamitePrefab: {fileID: 4333551939594301160, guid: 6f62665ace2d6e745bd7180b1f26c65f, type: 3}
-  explodeRadius: {fileID: 5682373005490414963, guid: 9ee27e347e8d704488c1ce005d52f7c0, type: 3}
   fireForce: 10
   throwForce: 5
 --- !u!114 &3450755746360175197
@@ -208,53 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d92173641103694a9ea7737994cc6ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4387389341762552709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3429943483128203177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bd35494446c6f544a49299f87e0d6fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0.5078089
-      outSlope: 0.5078089
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.64153093
-      value: 1.3257751
-      inSlope: -0.2004934
-      outSlope: -0.2004934
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: -0.9087957
-      outSlope: -0.9087957
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  duration: 1
-  heightY: 3
 --- !u!1001 &3280923204930846110
 PrefabInstance:
   m_ObjectHideFlags: 0

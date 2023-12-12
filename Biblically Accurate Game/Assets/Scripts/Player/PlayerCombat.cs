@@ -1,4 +1,3 @@
-using Assets.Scripts.Tree.Projectiles.Modules;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,21 +8,19 @@ public class PlayerCombat : MonoBehaviour
     public Transform weapon;
     public SpriteRenderer weaponSpriteRenderer;
     public Transform firePoint;
-    private ArcMovement arcMovement;
 
     [Header("Prefabs")]
     public GameObject bulletPrefab;
     public GameObject dynamitePrefab;
 
-    [Header("Variables")]
-    public float fireForce = 10f;
-    public float throwForce = 5f;
-    
+    [Header("Shooting Attack")]
+    public int bulletDamage = 1;
+    public float bulletSpeed = 10f;
 
-    private void Start()
-    {
-        arcMovement = GetComponent<ArcMovement>();
-    }
+    [Header("Dynamite Attack")]
+    public float dynamiteForce = 5f;
+    public float dynamiteTorque = 5f;
+
     private void Update()
     {
         RotateGun();
@@ -56,19 +53,16 @@ public class PlayerCombat : MonoBehaviour
 
     void Shoot()
     {   
-        GameObject pewpew = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D pewpewRb = pewpew.GetComponent<Rigidbody2D>();
-        pewpewRb.AddForce(firePoint.right * fireForce, ForceMode2D.Impulse);
+        GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Bullet bullet = bulletObj.GetComponent<Bullet>();
+        bullet.Fire(bulletDamage, bulletSpeed);
     }
 
     void Bomb()
-    {   
-        
-        GameObject boomb = Instantiate(dynamitePrefab, firePoint.position, firePoint.rotation);
-        //makes exlosion follow dynamite
-        //explosion.transform.parent = boomb.transform;
-        Rigidbody2D boombRb = boomb.GetComponent<Rigidbody2D>();
-        boombRb.AddForce(firePoint.right * throwForce, ForceMode2D.Impulse);
-        
+    {
+        GameObject dynamite = Instantiate(dynamitePrefab, firePoint.position, firePoint.rotation);
+
+        Rigidbody2D dynamiteRb = dynamite.GetComponent<Rigidbody2D>();
+        dynamiteRb.AddForce(firePoint.right * dynamiteForce, ForceMode2D.Impulse);
     }
 }
