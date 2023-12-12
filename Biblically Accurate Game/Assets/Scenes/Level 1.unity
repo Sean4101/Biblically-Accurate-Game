@@ -729,18 +729,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &517359280 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3429943483128203177, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+--- !u!114 &517359288 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3867772696433828005, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
   m_PrefabInstance: {fileID: 1707096647174891304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &517359288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517359280}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd01431ca7cd2c14f8f13fd1b04faf77, type: 3}
@@ -751,7 +745,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3450755746360175197, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
   m_PrefabInstance: {fileID: 1707096647174891304}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517359280}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d92173641103694a9ea7737994cc6ab, type: 3}
@@ -4383,17 +4377,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
-      propertyPath: bulletDamage
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3429943483128203177, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 517359288}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
