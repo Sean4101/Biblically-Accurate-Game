@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 9000899530083841748}
   - component: {fileID: 3805494253295605368}
   - component: {fileID: 6544688752777591846}
+  - component: {fileID: 3867772696433828005}
   - component: {fileID: 1760410027262387380}
   - component: {fileID: 9200232115746682306}
   - component: {fileID: 3450755746360175197}
   m_Layer: 0
   m_Name: MrPewPew
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,6 +163,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3867772696433828005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3429943483128203177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd01431ca7cd2c14f8f13fd1b04faf77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1760410027262387380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,8 +205,10 @@ MonoBehaviour:
   firePoint: {fileID: 8478331944099842772}
   bulletPrefab: {fileID: 834564641309557873, guid: ca96fdd87ae84404eb86ec3a455f6b20, type: 3}
   dynamitePrefab: {fileID: 4333551939594301160, guid: 6f62665ace2d6e745bd7180b1f26c65f, type: 3}
-  fireForce: 10
-  throwForce: 5
+  bulletDamage: 10
+  bulletSpeed: 10
+  dynamiteForce: 5
+  dynamiteTorque: 5
 --- !u!114 &3450755746360175197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d92173641103694a9ea7737994cc6ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHealth: 5
 --- !u!1001 &3280923204930846110
 PrefabInstance:
   m_ObjectHideFlags: 0
