@@ -244,6 +244,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 1374701989}
+--- !u!1 &209315913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 209315914}
+  m_Layer: 0
+  m_Name: Spiral Orb Orientation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &209315914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209315913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1569942880}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235890119
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,6 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossStatus: {fileID: 1569942884}
+  bossAI: {fileID: 1569942883}
   playerStatus: {fileID: 517359289}
   battleComplete: 0
   battleVictorious: 0
@@ -1559,6 +1591,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &817878281 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5638222001291670529, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+  m_PrefabInstance: {fileID: 1707096647174891304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &930112817
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,6 +3331,7 @@ Transform:
   m_Children:
   - {fileID: 1803600999}
   - {fileID: 1442273749}
+  - {fileID: 209315914}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &1569942881
@@ -3381,6 +3419,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99de010c38cd059478da88e47657b8c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 817878281}
+  orbPrefab: {fileID: 4912760518093295617, guid: 0f432e0a4cb6c3f419426bf81fef8b6b, type: 3}
+  streamOrbSpeed: 3
+  orbSpiralOrientation: {fileID: 209315914}
+  orbSpiralOrientationRotationSpeed: 50
+  spiralOrbSpeed: 3
 --- !u!1 &1803600998
 GameObject:
   m_ObjectHideFlags: 0
