@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bb09dfe7f24f284895d83cad2af938e, type: 3}
-  m_Name: prologue
+  m_Name: Prologue
   m_EditorClassIdentifier: 
   lines:
   - Fits of rage! Selfish ambition, dissensions, factions, and envy;  Drunkenness,
