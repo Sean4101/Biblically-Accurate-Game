@@ -8,21 +8,23 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     //combine introNameManager and introAvatarManager into this
-
+    [Header("References: ")]
     public TextMeshProUGUI introDialogueMainText;
     public TextMeshProUGUI characterName;
-    public DialogLines introDialogueLines;
     public Image avatarImage;
-
+    
+    [Header("Settings: ")]
     public float introTextSpeed;
     public bool introEnd = false;
 
+    private DialogLines introDialogueLines;
     private int introIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         ClearDialogue();
+        avatarImage.enabled = false;
         //StartDialogue();
     }
 
@@ -30,31 +32,32 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {   
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.V))
         {   
             //check whther the text finished typing, if so, go to next line, else stop typing and show full text
-            if (introDialogueMainText.text == introDialogueLines.lines[introIndex].line && characterName.text == introDialogueLines.lines[introIndex].name )
+            if ( IsTypingFinished(introIndex) )
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                introDialogueMainText.text = introDialogueLines.lines[introIndex].line;
-                characterName.text = introDialogueLines.lines[introIndex].name;
+                PresentWholeText(introIndex);
             }
         }
     }
 
-    public void StartDialogue()
+    public void StartDialogue(DialogLines lines)
     {
+        introDialogueLines = lines;
         introIndex = 0;
+        avatarImage.enabled = true;
         StartCoroutine(TypeLine());
     }
 
     public void NextLine()
     {
-        if (introIndex < introDialogueLines.lines.Count - 1)
+        if (introIndex < introDialogueLines.levelOneIntroLines.Count - 1)
         {
             introIndex++;
             ClearDialogue();
@@ -70,15 +73,15 @@ public class DialogueManager : MonoBehaviour
     }
     IEnumerator TypeLine()
     {
-        avatarImage.sprite = introDialogueLines.lines[introIndex].avatar;
+        avatarImage.sprite = introDialogueLines.levelOneIntroLines[introIndex].avatar;
 
-        foreach (char c in introDialogueLines.lines[introIndex].name.ToCharArray())
+        foreach (char c in introDialogueLines.levelOneIntroLines[introIndex].name.ToCharArray())
         {
             characterName.text += c;
             yield return new WaitForSeconds(introTextSpeed);
         }
 
-        foreach (char c in introDialogueLines.lines[introIndex].line.ToCharArray())
+        foreach (char c in introDialogueLines.levelOneIntroLines[introIndex].line.ToCharArray())
         {
             introDialogueMainText.text += c;
             yield return new WaitForSeconds(introTextSpeed);
@@ -91,6 +94,25 @@ public class DialogueManager : MonoBehaviour
         introDialogueMainText.text = string.Empty;
         characterName.text = string.Empty;
         avatarImage.sprite = null;
+        //make sure the avatar is not visible
+    }
+
+    bool IsTypingFinished(int lineIndexInList)
+    {
+        if (introDialogueMainText.text == introDialogueLines.levelOneIntroLines[lineIndexInList].line && characterName.text == introDialogueLines.levelOneIntroLines[lineIndexInList].name)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    void PresentWholeText(int lineIndexndexInList)
+    {
+        introDialogueMainText.text = introDialogueLines.levelOneIntroLines[lineIndexndexInList].line;
+        characterName.text = introDialogueLines.levelOneIntroLines[lineIndexndexInList].name;
     }
 
 }
