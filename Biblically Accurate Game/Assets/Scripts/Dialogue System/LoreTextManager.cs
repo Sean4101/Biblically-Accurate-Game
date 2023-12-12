@@ -4,10 +4,10 @@ using UnityEngine;
 using TMPro;
 
 //this one is for prologue
-public class DialogManager : MonoBehaviour
+public class LoreTextManager : MonoBehaviour
 {   
     public TextMeshProUGUI textComponent;
-    public DialogLines prologueLines;
+    public LoreTextLines prologueLines;
     public float prologueTextSpeed;
     public bool prologueEnd = false;
 

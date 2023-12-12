@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class MockUpLevelManager : MonoBehaviour
 {   
-    public DialogManager dialogManager;
-    public IntroManager introManager;
+    public LoreTextManager loreTextManager;
+    public DialogueManager dialogueTextManager;
+
     private bool dialoguesStarted = false;
     // Start is called before the first frame update
     private void Awake()
     {
-        dialogManager = FindObjectOfType<DialogManager>();
-        introManager = FindObjectOfType<IntroManager>();
+        loreTextManager = FindObjectOfType<LoreTextManager>();
+        dialogueTextManager = FindObjectOfType<DialogueManager>();
+       
 
         /*
         if(dialogManager.prologueEnd)
@@ -45,8 +47,9 @@ public class MockUpLevelManager : MonoBehaviour
         {
             Debug.Log("Intro started");
             if (!dialoguesStarted)
-            {   //Debug.Log("Intro started");
-                introManager.StartIntroDialogue();
+            {   
+                dialogueTextManager.StartDialogue();
+                //loreTextManager.StartDialogue();
                 dialoguesStarted = true;
             }
         }
