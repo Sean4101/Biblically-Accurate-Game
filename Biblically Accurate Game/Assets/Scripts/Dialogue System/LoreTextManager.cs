@@ -5,71 +5,118 @@ using TMPro;
 
 //this one is for prologue
 public class LoreTextManager : MonoBehaviour
-{   
+{
+    [Header("References: ")]
     public TextMeshProUGUI textComponent;
-    public LoreTextLines prologueLines;
+    //public LoreTextLines prologueLines;
+
+    [Header("Settings: ")]
     public float prologueTextSpeed;
     public bool prologueEnd = false;
 
+    [Header("Background: ")]
+    [SerializeField] private CanvasGroup canvasGroup;
+
     private int index;
+    private bool _imageFadeOut = false;
+    private LoreTextLines loreTextLines;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        textComponent.text = string.Empty;
-        StartDialogue();
+        ClearDialogue();
+        //StartLoreDialogue();
        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            if(textComponent.text == prologueLines.lines[index])
+            if (isTypingFinished(index))
             {
                 NextLine();
             }
             else
-            {   
+            {
                 StopAllCoroutines();
-                textComponent.text = prologueLines.lines[index];
+                ShowWholeText(index);
             }
         }
+
+        if (_imageFadeOut)
+        {
+            FadeOutBackground();
+        }
+
     }
 
-    public void StartDialogue()
-    {
+    public void StartLoreDialogue(LoreTextLines lines)
+    {   
+        loreTextLines = lines;
         index = 0;
         StartCoroutine(TypeLine());
     }
 
     public void NextLine()
     {
-        if (index < prologueLines.lines.Count - 1)
+        if (index < loreTextLines.prologueLines.Count - 1)
         {
             index++;
-            textComponent.text = string.Empty;
+            ClearDialogue();
             StartCoroutine(TypeLine());
         }
         else
-        {  
+        {
             //end of dialogue
-            textComponent.text = string.Empty;
-
-            //makes background fade out, but dk how to do that
-            //gameObject.transform.parent.GetComponent<Animator>().SetTrigger("FadeOut");
+            ClearDialogue();
             prologueEnd = true;
-            gameObject.SetActive(false); 
+            _imageFadeOut = true;
+            
         }
     }
     IEnumerator TypeLine()
     {
-        foreach(char c in prologueLines.lines[index].ToCharArray())
+        foreach(char c in loreTextLines.prologueLines[index].ToCharArray())
         {
             textComponent.text += c;
             yield return new WaitForSeconds(prologueTextSpeed);
         }
     }
+
+    bool isTypingFinished ( int lineIndexndexInList )
+    {
+        if (textComponent.text == loreTextLines.prologueLines[lineIndexndexInList])
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    void ClearDialogue()
+    {
+        textComponent.text = string.Empty;
+    }
+
+    void ShowWholeText(int lineIndexndexInList)
+    {
+        textComponent.text = loreTextLines.prologueLines[lineIndexndexInList];
+    }
+
+    public void FadeOutBackground()
+    {
+        canvasGroup.alpha -= Time.deltaTime;
+        if (canvasGroup.alpha <= 0)
+        {
+            _imageFadeOut = false;
+            gameObject.SetActive(false);
+        }
+    }
+    
+
 }

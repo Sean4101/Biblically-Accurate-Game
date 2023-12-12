@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea7de24d598b7d94a893395287837a30, type: 3}
-  m_Name: New Dialog
+  m_Name: levelOneIntroText
   m_EditorClassIdentifier: 
-  lines:
-  - name: Protag
-    line: sdfsedfsdsfsdfoisdufjo73948h75y98349 fijweijy5bhi8y4586y
+  levelOneIntroLines:
+  - name: Sergey Taboritsky
+    line: Akexie is that you?
     avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
-  - name: angel
-    line: ' t34g3988ujuuy8b98 u9845uytjg984b5nbu 9uky9045bun9405u9 uy98jbkj45un98nub9845nm
-      5ybn45b4'
+  - name: Angel
+    line: Who the fuck even is Alexie?
     avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
