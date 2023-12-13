@@ -8,6 +8,10 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Movement Stats")]
     public float movenentSpeed = 5f;
+    public float movementAcceleration = 60f;
+    public float movementDeceleration = 60f;
+    public float rollSpeed = 20f;
+    public float rollDuration = 0.2f;
 
     Vector2 movementDirection;
     bool isRolling = false;
@@ -30,8 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     void GetInput()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
         movementDirection = new Vector2(x, y);
         movementDirection.Normalize();
 
@@ -43,11 +47,35 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = movementDirection * movenentSpeed;
+        if (movementDirection.magnitude > 0)
+        {
+            if (rb.velocity.magnitude < movenentSpeed)
+                rb.AddForce(movementAcceleration * movementDirection);
+            else
+                rb.velocity = movementDirection * movenentSpeed;
+        }
+        else if (rb.velocity.magnitude > 0.1f)
+        {
+            rb.AddForce(-rb.velocity.normalized * movementDeceleration);
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     void Roll()
     {
-        // To be implemented
+        StartCoroutine(RollCoroutine());
+    }
+
+    IEnumerator RollCoroutine()
+    {
+        isRolling = true;
+        Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 rollDirection = cursorPosition - (Vector2)transform.position;
+        rb.velocity = rollDirection.normalized * rollSpeed;
+        yield return new WaitForSeconds(rollDuration);
+        isRolling = false;
     }
 }

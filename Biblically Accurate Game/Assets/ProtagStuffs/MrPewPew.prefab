@@ -187,7 +187,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f41410f1783c2744aa5d326314c1115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movenentSpeed: 5
+  movenentSpeed: 4
+  movementAcceleration: 40
+  movementDeceleration: 20
+  rollSpeed: 10
+  rollDuration: 0.3
 --- !u!114 &9200232115746682306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d92173641103694a9ea7737994cc6ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 5
+  MaxHealth: 10
 --- !u!1001 &3280923204930846110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -230,6 +234,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5638222001291670529}
     m_Modifications:
+    - target: {fileID: 450252502767056944, guid: f2c07de68215e5a42b9df1bf5165bf37, type: 3}
+      propertyPath: m_Name
+      value: Fire Point
+      objectReference: {fileID: 0}
     - target: {fileID: 3950733995921861243, guid: f2c07de68215e5a42b9df1bf5165bf37, type: 3}
       propertyPath: m_Name
       value: Weapon

@@ -3421,10 +3421,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 817878281}
   orbPrefab: {fileID: 4912760518093295617, guid: 0f432e0a4cb6c3f419426bf81fef8b6b, type: 3}
-  streamOrbSpeed: 3
+  streamOrbSpeed: 2.5
   orbSpiralOrientation: {fileID: 209315914}
-  orbSpiralOrientationRotationSpeed: 50
-  spiralOrbSpeed: 3
+  orbSpiralOrientationRotationSpeed: 20
+  spiralOrbSpeed: 1.5
 --- !u!1 &1803600998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4373,10 +4373,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3150179985186358702, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
-      propertyPath: m_Name
-      value: Fire Point
-      objectReference: {fileID: 0}
     - target: {fileID: 3429943483128203177, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: m_Name
       value: MrPewPew
