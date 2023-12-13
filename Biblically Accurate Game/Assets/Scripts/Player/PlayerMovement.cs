@@ -5,13 +5,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
+    PlayerStatus playerStatus;
 
     [Header("Movement Stats")]
     public float movenentSpeed = 5f;
     public float movementAcceleration = 60f;
     public float movementDeceleration = 60f;
+
+    [Header("Roll Stats")]
     public float rollSpeed = 20f;
     public float rollDuration = 0.2f;
+    public float rollAdditionalInvincibilityDuration = 0.1f;
 
     Vector2 movementDirection;
     bool isRolling = false;
@@ -19,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerStatus = GetComponent<PlayerStatus>();
     }
 
     private void Update()
@@ -72,10 +77,13 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator RollCoroutine()
     {
         isRolling = true;
+        playerStatus.SetInvincible(true);
         Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 rollDirection = cursorPosition - (Vector2)transform.position;
         rb.velocity = rollDirection.normalized * rollSpeed;
         yield return new WaitForSeconds(rollDuration);
         isRolling = false;
+        yield return new WaitForSeconds(rollAdditionalInvincibilityDuration);
+        playerStatus.SetInvincible(false);
     }
 }

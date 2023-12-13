@@ -9,16 +9,17 @@ public class OphanimCombat : MonoBehaviour
 
     [Header("Orb Attack")]
     public GameObject orbPrefab;
+    public GameObject foreshadowOrbPrefab;
 
     [Header("Orb Stream Attack")]
     public float streamOrbSpeed = 3f;
-    private float orbStreamAttackInterval = 0.2f;
+    public float orbStreamAttackInterval = 0.2f;
 
     [Header("Orb Spiral Attack")]
     public Transform orbSpiralOrientation;
     public float orbSpiralOrientationRotationSpeed = 3f;
     public float spiralOrbSpeed = 3f;
-    private float orbSpiralAttackInterval = 0.2f;
+    public float orbSpiralAttackInterval = 0.2f;
 
     private void Update()
     {
@@ -33,7 +34,7 @@ public class OphanimCombat : MonoBehaviour
     private IEnumerator OrbStreamAttackCoroutine(float duration)
     {
         // Foreshadowing for 1 second
-        GameObject foreshadowingOrb = Instantiate(orbPrefab, transform.position, Quaternion.identity);
+        GameObject foreshadowingOrb = Instantiate(foreshadowOrbPrefab, transform.position, Quaternion.identity);
         SpriteRenderer orbRenderer = foreshadowingOrb.GetComponent<SpriteRenderer>();
         orbRenderer.color = new Color(1f, 1f, 1f, 0f);
 
@@ -76,7 +77,7 @@ public class OphanimCombat : MonoBehaviour
         List<GameObject> foreshadowingOrbs = new List<GameObject>();
         for (int i = 0; i < totalAngles; i++)
         {
-            GameObject foreshadowingOrb = Instantiate(orbPrefab, transform.position, Quaternion.identity);
+            GameObject foreshadowingOrb = Instantiate(foreshadowOrbPrefab, transform.position, Quaternion.identity);
             SpriteRenderer orbRenderer = foreshadowingOrb.GetComponent<SpriteRenderer>();
             orbRenderer.color = new Color(1f, 1f, 1f, 0f);
             foreshadowingOrbs.Add(foreshadowingOrb);

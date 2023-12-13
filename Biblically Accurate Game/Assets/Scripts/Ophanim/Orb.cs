@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Orb : MonoBehaviour
 {
+    public int damage = 1;
+
     private void Start()
     {
         Invoke("DestroyOrb", 5f);
@@ -12,5 +14,14 @@ public class Orb : MonoBehaviour
     private void DestroyOrb()
     {
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerStatus>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
     }
 }
