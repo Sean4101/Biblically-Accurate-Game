@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public bool canControl = true;
+
     [Header("References")]
     public Transform weapon;
     public SpriteRenderer weaponSpriteRenderer;
@@ -23,6 +25,8 @@ public class PlayerCombat : MonoBehaviour
 
     private void Update()
     {
+        if (!canControl)
+            return;
         RotateGun();
         if (Input.GetMouseButtonDown(0))
         {

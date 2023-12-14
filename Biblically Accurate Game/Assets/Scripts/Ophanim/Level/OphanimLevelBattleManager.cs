@@ -19,11 +19,11 @@ public class OphanimLevelBattleManager : MonoBehaviour
 
     private void Update()
     {
-        if (bossStatus.CurrentHealth <= 0)
+        if (bossStatus.CurrentHealth <= 0 && !battleComplete)
         {
             BattleVictory();
         }
-        else if (playerStatus.CurrentHealth <= 0)
+        else if (playerStatus.CurrentHealth <= 0 && !battleComplete)
         {
             BattleDefeat();
         }
@@ -31,7 +31,6 @@ public class OphanimLevelBattleManager : MonoBehaviour
 
     public void BattleVictory()
     {
-        Debug.Log("Battle complete");
         bossAI.DisableAI();
         battleComplete = true;
         battleVictorious = true;
@@ -39,7 +38,6 @@ public class OphanimLevelBattleManager : MonoBehaviour
 
     public void BattleDefeat()
     {
-        Debug.Log("Battle complete");
         bossAI.DisableAI();
         battleComplete = true;
         battleVictorious = false;

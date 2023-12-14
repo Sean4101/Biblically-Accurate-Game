@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    Animator animator;
+    SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
     PlayerStatus playerStatus;
+
+    public bool canControl = true;
 
     [Header("Movement Stats")]
     public float movenentSpeed = 5f;
@@ -22,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         playerStatus = GetComponent<PlayerStatus>();
     }
@@ -39,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
 
     void GetInput()
     {
+        if (!canControl)
+        {
+            movementDirection = Vector2.zero;
+            return;
+        }
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
         movementDirection = new Vector2(x, y);
@@ -58,14 +69,26 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(movementAcceleration * movementDirection);
             else
                 rb.velocity = movementDirection * movenentSpeed;
+            animator.SetBool("Walk", true);
         }
         else if (rb.velocity.magnitude > 0.1f)
         {
             rb.AddForce(-rb.velocity.normalized * movementDeceleration);
+            animator.SetBool("Walk", true);
         }
         else
         {
             rb.velocity = Vector2.zero;
+            animator.SetBool("Walk", false);
+        }
+
+        if (movementDirection.x > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (movementDirection.x < 0)
+        {
+            spriteRenderer.flipX = true;
         }
     }
 

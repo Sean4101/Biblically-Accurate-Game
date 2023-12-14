@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5638222001291670529}
+  - component: {fileID: 8902716466186317866}
   - component: {fileID: 9000899530083841748}
   - component: {fileID: 3805494253295605368}
   - component: {fileID: 6544688752777591846}
@@ -40,6 +41,27 @@ Transform:
   - {fileID: 7254385094490207741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8902716466186317866
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3429943483128203177}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3743c37cf5444d4f8b12f5ba336804d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &9000899530083841748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -81,12 +103,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 954169230, guid: dafe2e78d28ca774982ad7ca80b7609b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -151,18 +173,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.13}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.48, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &3867772696433828005
 MonoBehaviour:
@@ -188,6 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f41410f1783c2744aa5d326314c1115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canControl: 1
   movenentSpeed: 4
   movementAcceleration: 40
   movementDeceleration: 20
@@ -206,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc2c611392b0114bb18475ae81b9494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canControl: 1
   weapon: {fileID: 1636503662945763200}
   weaponSpriteRenderer: {fileID: 5311687388513865833}
   firePoint: {fileID: 8478331944099842772}
@@ -332,6 +356,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3950733995921861243, guid: f2c07de68215e5a42b9df1bf5165bf37, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268894768882041374, guid: f2c07de68215e5a42b9df1bf5165bf37, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268894768882041374, guid: f2c07de68215e5a42b9df1bf5165bf37, type: 3}
+      propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4268894768882041374, guid: f2c07de68215e5a42b9df1bf5165bf37, type: 3}
