@@ -74,12 +74,11 @@ public class PlayerMovement : MonoBehaviour
         else if (rb.velocity.magnitude > 0.1f)
         {
             rb.AddForce(-rb.velocity.normalized * movementDeceleration);
-            animator.SetBool("Walk", true);
+            animator.SetBool("Walk", false);
         }
         else
         {
             rb.velocity = Vector2.zero;
-            animator.SetBool("Walk", false);
         }
 
         if (movementDirection.x > 0)
