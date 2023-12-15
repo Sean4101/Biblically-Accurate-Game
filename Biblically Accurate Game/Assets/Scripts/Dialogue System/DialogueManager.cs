@@ -12,7 +12,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI introDialogueMainText;
     public TextMeshProUGUI characterName;
     public Image avatarImage;
-    
+    public Image dialogueBox;
+
     [Header("Settings: ")]
     public float introTextSpeed;
     public bool introEnd = false;
@@ -20,10 +21,16 @@ public class DialogueManager : MonoBehaviour
     private DialogLines introDialogueLines;
     private int introIndex;
 
+    private void Awake()
+    {
+        dialogueBox = GetComponent<Image>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         ClearDialogue();
+        dialogueBox.enabled = false;
         avatarImage.enabled = false;
         //StartDialogue();
     }
@@ -49,6 +56,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogLines lines)
     {
+        introEnd = false;
+        dialogueBox.enabled = true;
         introDialogueLines = lines;
         introIndex = 0;
         avatarImage.enabled = true;

@@ -8,24 +8,22 @@ public class OphanimLevelIntroManager : MonoBehaviour
     public bool introComplete = false;
 
     [Header("References")]
-    public GameObject introPlaceholderPanel;
+    public LoreTextManager loreTextManager;
+    public DialogueManager dialogueTextManager;
+    public LoreTextLines prologueLines;
+    public DialogLines introDialogueLines;
 
     public void StartIntro()
     {
-        InitializeIntro();
         StartCoroutine(PlayIntro());
-    }
-
-    private void InitializeIntro()
-    {
-        introPlaceholderPanel.SetActive(true);
     }
 
     private IEnumerator PlayIntro()
     {
-        yield return new WaitForSeconds(3f);
-        introPlaceholderPanel.SetActive(false);
-        Debug.Log("Intro complete");
+        loreTextManager.StartLoreDialogue(prologueLines);
+        yield return new WaitUntil(() => loreTextManager.prologueEnd);
+        dialogueTextManager.StartDialogue(introDialogueLines);
+        yield return new WaitUntil(() => dialogueTextManager.introEnd);
         introComplete = true;
     }
 }

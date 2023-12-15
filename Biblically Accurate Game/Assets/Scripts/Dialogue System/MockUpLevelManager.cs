@@ -8,8 +8,6 @@ public class MockUpLevelManager : MonoBehaviour
     [Header("References: ")]
     public LoreTextManager loreTextManager;
     public DialogueManager dialogueTextManager;
-    public Image dialogueBox;
-    public Image loreBox;
     
     [Header("Dialogue Lists: ")]
     public DialogLines introDialogueLines;
@@ -27,8 +25,6 @@ public class MockUpLevelManager : MonoBehaviour
     void Start()
     {
         //disable dialogue box and lore box
-        dialogueBox.enabled = false;
-        loreBox.enabled = false;
     }
 
     // Update is called once per frame
@@ -39,7 +35,6 @@ public class MockUpLevelManager : MonoBehaviour
             Debug.Log("Intro started");
             if (!dialogueStarted)
             {   
-                dialogueBox.enabled = true;
                 dialogueTextManager.StartDialogue(introDialogueLines);
                 dialogueStarted = true;
             }
@@ -50,7 +45,6 @@ public class MockUpLevelManager : MonoBehaviour
             Debug.Log("Prologue started");
             if (!loreStarted)
             {   
-                loreBox.enabled = true;
                 loreTextManager.StartLoreDialogue(prologueLines);
                 loreStarted = true;
             }

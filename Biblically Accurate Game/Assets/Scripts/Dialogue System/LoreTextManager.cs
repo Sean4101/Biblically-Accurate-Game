@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 //this one is for prologue
 public class LoreTextManager : MonoBehaviour
 {
     [Header("References: ")]
     public TextMeshProUGUI textComponent;
+    public Image loreBox;
     //public LoreTextLines prologueLines;
 
     [Header("Settings: ")]
@@ -21,13 +23,16 @@ public class LoreTextManager : MonoBehaviour
     private bool _imageFadeOut = false;
     private LoreTextLines loreTextLines;
 
+    private void Awake()
+    {
+        loreBox = GetComponent<Image>();
+        loreBox.enabled = false;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         ClearDialogue();
-        //StartLoreDialogue();
-       
     }
 
     // Update is called once per frame
@@ -54,7 +59,9 @@ public class LoreTextManager : MonoBehaviour
     }
 
     public void StartLoreDialogue(LoreTextLines lines)
-    {   
+    {
+        prologueEnd = false;
+        loreBox.enabled = true;
         loreTextLines = lines;
         index = 0;
         StartCoroutine(TypeLine());
