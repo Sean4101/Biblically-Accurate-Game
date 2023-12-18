@@ -21,6 +21,10 @@ public class OphanimCombat : MonoBehaviour
     public float spiralOrbSpeed = 3f;
     public float orbSpiralAttackInterval = 0.2f;
 
+    [Header("Minion Spawning")]
+    public GameObject minion;
+    public int minionSpawnAmount = 4;
+    public float minionSpacing = 1f;
     private void Update()
     {
         orbSpiralOrientation.Rotate(0f, 0f, orbSpiralOrientationRotationSpeed * Time.deltaTime);
@@ -128,5 +132,25 @@ public class OphanimCombat : MonoBehaviour
     {
         Debug.Log("Guitar Throw Attack");
         yield return null;
+    }
+
+    public void MinionSpawn()
+    {
+        for (int i = 0; i < minionSpawnAmount; i++)
+        {
+            if (i % 2 == 0) 
+            {   
+                // Spawn minion on right side
+                Vector3 spawnPosition = transform.position + new Vector3(i * minionSpacing + 1, 0f, 0f);
+                Instantiate(minion, spawnPosition, Quaternion.identity);
+            }
+            else if (i % 2 == 1) 
+            {   
+                // Spawn minion on left side
+                Vector3 spawnPosition = transform.position + new Vector3(-i * minionSpacing - 1, 0f, 0f);
+                Instantiate(minion, spawnPosition, Quaternion.identity);
+            }
+        }
+
     }
 }

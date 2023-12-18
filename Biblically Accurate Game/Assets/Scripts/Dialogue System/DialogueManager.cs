@@ -6,7 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
-{
+{   
+    LoreTextManager loreTextManager;
     //combine introNameManager and introAvatarManager into this
     [Header("References: ")]
     public TextMeshProUGUI introDialogueMainText;
@@ -24,6 +25,7 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         dialogueBox = GetComponent<Image>();
+        loreTextManager = FindObjectOfType<LoreTextManager>();
     }
 
     // Start is called before the first frame update
@@ -39,18 +41,22 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {   
 
-        if (Input.GetKeyDown(KeyCode.V))
-        {   
-            //check whther the text finished typing, if so, go to next line, else stop typing and show full text
-            if ( IsTypingFinished(introIndex) )
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (!loreTextManager.prologueOnGoing)
             {
-                NextLine();
+                //check whther the text finished typing, if so, go to next line, else stop typing and show full text
+                if ( IsTypingFinished(introIndex) )
+                {
+                    NextLine();
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    PresentWholeText(introIndex);
+                }
             }
-            else
-            {
-                StopAllCoroutines();
-                PresentWholeText(introIndex);
-            }
+           
         }
     }
 

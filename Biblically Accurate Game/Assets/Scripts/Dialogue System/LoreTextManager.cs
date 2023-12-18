@@ -15,6 +15,7 @@ public class LoreTextManager : MonoBehaviour
     [Header("Settings: ")]
     public float prologueTextSpeed;
     public bool prologueEnd = false;
+    public bool prologueOnGoing = false;
 
     [Header("Background: ")]
     [SerializeField] private CanvasGroup canvasGroup;
@@ -26,6 +27,7 @@ public class LoreTextManager : MonoBehaviour
     private void Awake()
     {
         loreBox = GetComponent<Image>();
+      
         loreBox.enabled = false;
     }
 
@@ -38,7 +40,7 @@ public class LoreTextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isTypingFinished(index))
             {
@@ -59,12 +61,13 @@ public class LoreTextManager : MonoBehaviour
     }
 
     public void StartLoreDialogue(LoreTextLines lines)
-    {
-        prologueEnd = false;
-        loreBox.enabled = true;
+    {   
         loreTextLines = lines;
         index = 0;
         StartCoroutine(TypeLine());
+        prologueOnGoing = true;
+        prologueEnd = false;
+        loreBox.enabled = true;
     }
 
     public void NextLine()
@@ -93,9 +96,9 @@ public class LoreTextManager : MonoBehaviour
         }
     }
 
-    bool isTypingFinished ( int lineIndexndexInList )
+    bool isTypingFinished ( int lineIndexnInList )
     {
-        if (textComponent.text == loreTextLines.prologueLines[lineIndexndexInList])
+        if (textComponent.text == loreTextLines.prologueLines[lineIndexnInList])
         {
             return true;
         }
@@ -123,6 +126,7 @@ public class LoreTextManager : MonoBehaviour
             _imageFadeOut = false;
             gameObject.SetActive(false);
         }
+        prologueOnGoing = false;
     }
     
 

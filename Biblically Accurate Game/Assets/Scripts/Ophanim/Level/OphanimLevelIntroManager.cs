@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class OphanimLevelIntroManager : MonoBehaviour
 {
     public bool introComplete = false;
-
+    private bool dialogueStarted = false;
+    private bool loreStarted = false;
     [Header("References")]
     public LoreTextManager loreTextManager;
     public DialogueManager dialogueTextManager;
@@ -17,7 +18,7 @@ public class OphanimLevelIntroManager : MonoBehaviour
     {
         StartCoroutine(PlayIntro());
     }
-
+   
     private IEnumerator PlayIntro()
     {
         loreTextManager.StartLoreDialogue(prologueLines);
@@ -26,4 +27,7 @@ public class OphanimLevelIntroManager : MonoBehaviour
         yield return new WaitUntil(() => dialogueTextManager.introEnd);
         introComplete = true;
     }
+  
+   
+    
 }
