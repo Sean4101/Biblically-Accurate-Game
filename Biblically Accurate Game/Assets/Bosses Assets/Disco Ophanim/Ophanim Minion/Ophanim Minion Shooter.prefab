@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61db4516bd55d6b4a8362175c46de5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxShooterMinionHealth: 10
 --- !u!114 &7347396986132579698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,10 +179,7 @@ MonoBehaviour:
   player: {fileID: 3429943483128203177, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
   bulletPrefab: {fileID: 4451194549701463396, guid: 7fa9cce7b59e7424fa6d268c3a0ffeb3, type: 3}
   contactDamage: 1
-  angleAmount: 6
-  shootInterval: 1.5
-  timeBetweenCast: 10
-  shootAtPlayerInterval: 2
+  shootAtPlayerInterval: 1
 --- !u!1 &3122294705899050419
 GameObject:
   m_ObjectHideFlags: 0

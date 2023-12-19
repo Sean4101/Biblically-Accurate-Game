@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1496457522864888090}
   - component: {fileID: -4407233013185456008}
   m_Layer: 0
-  m_Name: Dynamite
+  m_Name: dynamite
   m_TagString: FriendlyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,5 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6cfdb10f49b5b48a405bb6f1c52487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToExplode: 1
+  timeToExplode: 2
   explosionPrefab: {fileID: 5682373005490414963, guid: 9ee27e347e8d704488c1ce005d52f7c0, type: 3}

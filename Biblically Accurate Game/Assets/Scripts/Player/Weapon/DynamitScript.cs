@@ -35,7 +35,6 @@ public class DynamitScript : MonoBehaviour
         if ( collision.tag != "HostileProjectile" && collision.tag != "FriendlyProjectile")
             {
                 DynamiteExplode();
-                    
             }
 
         if (collision.tag == "Enemy")

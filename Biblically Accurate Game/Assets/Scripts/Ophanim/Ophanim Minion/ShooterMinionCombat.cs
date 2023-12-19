@@ -14,7 +14,7 @@ public class ShooterMinionCombat : MonoBehaviour
     [SerializeField] private int contactDamage = 1;
 
     [Header("Bullet Shoot At Player Format")]
-    public float shootAtPlayerInterval = 2.0f;
+    public float shootAtPlayerInterval = 1.0f;
     private float lastShootTime;
 
 

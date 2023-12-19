@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExplosionScript : MonoBehaviour
 {
     public float stayTime = 1f;
+    public float explosionDamage = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class ExplosionScript : MonoBehaviour
         if (collision.tag == "Enemy")
         {   
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            collision.SendMessage("TakeDamage", explosionDamage);
             //collision.SendMessage("TakeDamage", 0);
         }
         else if (collision.tag == "HostileProjectile")
@@ -42,4 +44,6 @@ public class ExplosionScript : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+   
 }
