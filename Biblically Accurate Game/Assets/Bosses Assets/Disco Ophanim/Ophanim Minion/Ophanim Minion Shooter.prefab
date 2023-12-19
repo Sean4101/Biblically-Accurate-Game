@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 7431399804488615529}
   - component: {fileID: 6012679002576844986}
   - component: {fileID: 6895334449924772551}
-  - component: {fileID: 3358568551930770149}
   - component: {fileID: 7347396986132579698}
   m_Layer: 0
-  m_Name: Ophanim Minion
+  m_Name: Ophanim Minion Shooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,20 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61db4516bd55d6b4a8362175c46de5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3358568551930770149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523457242551531566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d9f42ec6b545d941b08a2948609ff41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  player: {fileID: 3429943483128203177, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
 --- !u!114 &7347396986132579698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,8 +175,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56b1141b53cca9b418cb1427f2ddfb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 3429943483128203177, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+  bulletPrefab: {fileID: 4451194549701463396, guid: 7fa9cce7b59e7424fa6d268c3a0ffeb3, type: 3}
   contactDamage: 1
-  bulletDamage: 1
+  angleAmount: 6
+  shootInterval: 1.5
+  timeBetweenCast: 10
+  shootAtPlayerInterval: 2
 --- !u!1 &3122294705899050419
 GameObject:
   m_ObjectHideFlags: 0

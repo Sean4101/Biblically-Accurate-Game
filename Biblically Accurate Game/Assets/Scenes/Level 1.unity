@@ -4669,7 +4669,8 @@ MonoBehaviour:
   orbSpiralOrientationRotationSpeed: 20
   spiralOrbSpeed: 1.5
   orbSpiralAttackInterval: 0.4
-  minion: {fileID: 523457242551531566, guid: c566e7b315abece4993cd8991ef2cffa, type: 3}
+  minionShooter: {fileID: 523457242551531566, guid: c566e7b315abece4993cd8991ef2cffa, type: 3}
+  minionChaser: {fileID: 8347360410500054801, guid: d51283fd9a1dbfe4c826b7251531b93b, type: 3}
   minionSpawnAmount: 4
   minionSpacing: 0.5
 --- !u!1 &1803600998
@@ -5394,6 +5395,7 @@ MonoBehaviour:
   loreBox: {fileID: 0}
   prologueTextSpeed: 0.01
   prologueEnd: 0
+  prologueOnGoing: 0
   canvasGroup: {fileID: 1924195127}
 --- !u!114 &1924195129
 MonoBehaviour:
