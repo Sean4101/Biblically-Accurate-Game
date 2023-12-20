@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour
 {
     public PlayerStatus playerStatus;
-
-    public TMP_Text healthTextPlaceHolder;
+    public Gradient gradient;
+    public Slider PlayerHeathBarSlider;
+    public Image fill;
 
     private void Update()
     {
@@ -16,6 +18,7 @@ public class PlayerHealthBar : MonoBehaviour
 
     public void UpdateHealthBar()
     {
-        healthTextPlaceHolder.text = playerStatus.CurrentHealth.ToString();
+        PlayerHeathBarSlider.value = (float)playerStatus.CurrentHealth / (float)playerStatus.MaxHealth;
+        fill.color = gradient.Evaluate(PlayerHeathBarSlider.value);
     }
 }

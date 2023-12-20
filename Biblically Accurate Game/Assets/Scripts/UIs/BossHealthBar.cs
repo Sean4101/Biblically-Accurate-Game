@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class BossHealthBar : MonoBehaviour
 {
     public BossStatus bossStatus;
-
-    public TMP_Text healthTextPlaceHolder;
+    public UnityEngine.UI.Slider BossHealthBarSlider;
 
     private void Update()
     {
@@ -16,6 +18,6 @@ public class BossHealthBar : MonoBehaviour
 
     public void UpdateHealthBar()
     {
-        healthTextPlaceHolder.text = bossStatus.CurrentHealth.ToString();
+        BossHealthBarSlider.value = (float)bossStatus.CurrentHealth / (float)bossStatus.maxHealth;
     }
 }
