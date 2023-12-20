@@ -4648,6 +4648,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a0a7ed306ca0b4bbe1573aa675eafe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 5638222001291670529, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+  chasePlayerSpeed: 2
+  wanderSpeed: 1
+  range: 4
+  maxDistance: 5
 --- !u!114 &1569942886
 MonoBehaviour:
   m_ObjectHideFlags: 0

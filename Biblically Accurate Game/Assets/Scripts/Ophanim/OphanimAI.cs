@@ -34,6 +34,10 @@ public class OphanimAI : MonoBehaviour
         yield return new WaitForSeconds(1f);
         while (true)
         {   
+            movement.Wander(5f);
+            yield return new WaitForSeconds(5f);
+            movement.ChasePlayer(5f);
+            yield return new WaitForSeconds(5f);
             combat.MinionSpawnChaser();
             yield return new WaitForSeconds(5f);
             combat.MinionSpawnShooter();
