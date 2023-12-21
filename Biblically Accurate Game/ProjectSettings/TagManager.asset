@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - HostileProjectile
   - FriendlyProjectile
+  - DiscoRay
   layers:
   - Default
   - TransparentFX

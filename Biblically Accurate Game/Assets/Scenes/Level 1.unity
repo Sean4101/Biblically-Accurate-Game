@@ -5030,6 +5030,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 817878281}
+  ophanimContactDamage: 1
   orbPrefab: {fileID: 4912760518093295617, guid: 0f432e0a4cb6c3f419426bf81fef8b6b, type: 3}
   foreshadowOrbPrefab: {fileID: 4912760518093295617, guid: eef3d79cac837ca4185e842e48a254dd, type: 3}
   streamOrbSpeed: 2.5

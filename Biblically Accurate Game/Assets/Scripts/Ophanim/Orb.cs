@@ -21,7 +21,7 @@ public class Orb : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerStatus>().TakeDamage(damage);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

@@ -102,7 +102,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 51
   m_Sprite: {fileID: 954169230, guid: dafe2e78d28ca774982ad7ca80b7609b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -253,6 +253,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 10
   Invincible: 0
+  RecentlyDamagedInvincible: 0
+  InvincibilityDuration: 1
   invincibleAura: {fileID: 8530084745799596392}
 --- !u!1 &8530084745799596392
 GameObject:

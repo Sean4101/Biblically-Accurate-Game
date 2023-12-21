@@ -95,14 +95,13 @@ public class PlayerMovement : MonoBehaviour
     {
         StartCoroutine(RollCoroutine());
     }
-
+    
     IEnumerator RollCoroutine()
     {
+        //makes player roll in it's moving direction
         isRolling = true;
         playerStatus.SetInvincible(true);
-        Vector2 cursorPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 rollDirection = cursorPosition - (Vector2)transform.position;
-        rb.velocity = rollDirection.normalized * rollSpeed;
+        rb.velocity = movementDirection.normalized * rollSpeed;
         yield return new WaitForSeconds(rollDuration);
         isRolling = false;
         yield return new WaitForSeconds(rollAdditionalInvincibilityDuration);

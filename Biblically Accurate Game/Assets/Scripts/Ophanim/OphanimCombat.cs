@@ -7,6 +7,9 @@ public class OphanimCombat : MonoBehaviour
 {
     public Transform player;
 
+    [Header ("Contact Damage")]
+    public int ophanimContactDamage = 1;
+
     [Header("Orb Attack")]
     public GameObject orbPrefab;
     public GameObject foreshadowOrbPrefab;
@@ -31,6 +34,7 @@ public class OphanimCombat : MonoBehaviour
         orbSpiralOrientation.Rotate(0f, 0f, orbSpiralOrientationRotationSpeed * Time.deltaTime);
     }
 
+    
     public void OrbStreamAttack(float duration)
     {
         StartCoroutine(OrbStreamAttackCoroutine(duration));
@@ -160,4 +164,12 @@ public class OphanimCombat : MonoBehaviour
         Instantiate(minionChaser, transform.position, Quaternion.identity);
     }
     
+    //contact damage
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            collision.SendMessage("TakeDamage", ophanimContactDamage);
+        }
+    }
 }

@@ -23,18 +23,39 @@ public class PlayerCombat : MonoBehaviour
     public float dynamiteForce = 5f;
     public float dynamiteTorque = 5f;
 
+    [Header("Gun Stats")]
+    public int maxAmmo = 6;
+    public float reloadTime = 2f;
+
+    [Header("Dynamite Stats")]
+    public int maxDynamite = 3;
+    public int currentDynamite = 0;
+
+    void Start()
+    {
+        currentDynamite = 1;
+        maxAmmo = 6;
+    }
+
     private void Update()
     {
         if (!canControl)
             return;
         RotateGun();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && maxAmmo != 0)
         {
             Shoot();
+            maxAmmo--;
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && currentDynamite != 0)
         {
             Bomb();
+            currentDynamite--;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && maxAmmo != 6)
+        {
+            Reload();
         }
     }
 
@@ -55,6 +76,16 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    void Reload()
+    {
+        StartCoroutine(ReloadCoroutine(reloadTime));
+    }
+    private IEnumerator ReloadCoroutine( float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        maxAmmo = 6;
+    }
+
     void Shoot()
     {   
         GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -68,5 +99,15 @@ public class PlayerCombat : MonoBehaviour
 
         Rigidbody2D dynamiteRb = dynamite.GetComponent<Rigidbody2D>();
         dynamiteRb.AddForce(firePoint.right * dynamiteForce, ForceMode2D.Impulse);
+    }
+
+    public void AddDynamite()
+    {
+        currentDynamite++;
+        if (currentDynamite > maxDynamite)
+        {
+            currentDynamite = maxDynamite;
+        }
+            
     }
 }

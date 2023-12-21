@@ -64,4 +64,13 @@ public class PlayerStatus : MonoBehaviour
     {
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("HostileProjectile") && !Invincible)
+        {
+            //destroy the object contact with player
+            Destroy(collision.gameObject);
+        }
+    }
 }
