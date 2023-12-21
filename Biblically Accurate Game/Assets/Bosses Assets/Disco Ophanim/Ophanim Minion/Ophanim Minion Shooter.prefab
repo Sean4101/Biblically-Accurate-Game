@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61db4516bd55d6b4a8362175c46de5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dynamiteDrop: {fileID: 8853952347627319372, guid: b5c20441fef1a6142aa05f4f034ac327, type: 3}
   maxShooterMinionHealth: 10
 --- !u!114 &7347396986132579698
 MonoBehaviour:

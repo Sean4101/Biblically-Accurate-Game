@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ChaserMinionStatus : MonoBehaviour
 {
+    [Header ("References")]
+    public GameObject dynamiteDrop;
+
+    [Header("Stats")]
     public int maxChaserMinionHealth = 20;
     public int ChaserMinionCurrentHealth { get; private set; }
     void Start()
@@ -22,7 +26,12 @@ public class ChaserMinionStatus : MonoBehaviour
     }
 
     void Die()
-    {
+    {   
+        int dropDynamite = Random.Range(0, 5);
+        if(dropDynamite == 2)
+        {
+            Instantiate(dynamiteDrop, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

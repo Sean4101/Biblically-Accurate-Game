@@ -187,4 +187,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84a9eda6d0bbcc4c81a64d248147e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dynamiteDrop: {fileID: 8853952347627319372, guid: b5c20441fef1a6142aa05f4f034ac327, type: 3}
   maxChaserMinionHealth: 25
