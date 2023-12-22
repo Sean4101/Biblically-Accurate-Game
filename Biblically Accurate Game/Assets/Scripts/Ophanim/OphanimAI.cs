@@ -10,6 +10,17 @@ public class OphanimAI : MonoBehaviour
     BossStatus status;
     DiscoArena discoArena;
 
+    [Header ("Duration")]
+    public float wanderDuration = 5f;
+    public float chaseDuration = 5f;
+    public float orbStreamDuration = 5f;
+    public float orbSpiralDuration = 5f;
+    public float combo1Duration = 10f;
+
+    [Header("Stats")]
+    public int orbSpiralDirectionAmount = 8;
+    
+
     private void Awake()
     {
         combat = GetComponent<OphanimCombat>();
@@ -34,17 +45,19 @@ public class OphanimAI : MonoBehaviour
         yield return new WaitForSeconds(1f);
         while (true)
         {   
-            movement.Wander(5f);
+            BulletHellCombo1(combo1Duration);
             yield return new WaitForSeconds(5f);
-            movement.ChasePlayer(5f);
+            movement.Wander(wanderDuration);
+            yield return new WaitForSeconds(5f);
+            movement.ChasePlayer(chaseDuration);
             yield return new WaitForSeconds(5f);
             combat.MinionSpawnChaser();
             yield return new WaitForSeconds(5f);
             combat.MinionSpawnShooter();
             yield return new WaitForSeconds(5f);
-            combat.OrbStreamAttack(5f);
+            combat.OrbStreamAttack(orbStreamDuration);
             yield return new WaitForSeconds(10f);
-            combat.OrbSpiralAttack(5f, 8);
+            combat.OrbSpiralAttack(orbSpiralDuration, orbSpiralDirectionAmount);
             yield return new WaitForSeconds(10f);
             
         }
@@ -58,5 +71,11 @@ public class OphanimAI : MonoBehaviour
             discoArena.RandomActivation(30);
             yield return new WaitForSeconds(5f);
         }
+    }
+
+    public void BulletHellCombo1( float duration )
+    {
+        combat.OrbStreamAttack(duration);
+        combat.OrbSpiralAttack(duration, orbSpiralDirectionAmount);
     }
 }

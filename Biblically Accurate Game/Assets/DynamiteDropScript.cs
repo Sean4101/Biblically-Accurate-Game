@@ -8,6 +8,8 @@ public class DynamiteDropScript : MonoBehaviour
     [Header("References")]
     PlayerCombat playerCombat;
 
+    [Header("Stats")]
+    public float dropDistance = 0.5f;
     void Start()
     {
         playerCombat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombat>();

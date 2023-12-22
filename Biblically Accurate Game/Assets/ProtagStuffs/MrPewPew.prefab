@@ -239,6 +239,13 @@ MonoBehaviour:
   bulletSpeed: 10
   dynamiteForce: 5
   dynamiteTorque: 5
+  maxAmmo: 6
+  currentAmmo: 6
+  reloadTime: 0.5
+  isReloading: 0
+  pushbackForce: 5
+  maxDynamite: 3
+  currentDynamite: 0
 --- !u!114 &3450755746360175197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +261,8 @@ MonoBehaviour:
   MaxHealth: 10
   Invincible: 0
   RecentlyDamagedInvincible: 0
-  InvincibilityDuration: 1
+  InvincibilityDuration: 3
+  knockbackForce: 600
   invincibleAura: {fileID: 8530084745799596392}
 --- !u!1 &8530084745799596392
 GameObject:

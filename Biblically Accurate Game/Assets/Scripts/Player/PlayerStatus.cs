@@ -18,6 +18,7 @@ public class PlayerStatus : MonoBehaviour
 
     [Header("References")]
     public GameObject invincibleAura;
+    CameraEffects cameraEffects;
 
     public int CurrentHealth { get; private set; }
 
@@ -25,13 +26,17 @@ public class PlayerStatus : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         CurrentHealth = MaxHealth;
+        cameraEffects = Camera.main.GetComponent<CameraEffects>();
     }
 
     public void TakeDamage(int damage)
-    {
+    {   
+        
         if (Invincible || RecentlyDamagedInvincible)
             return;
         CurrentHealth -= damage;
+        cameraEffects.shake(0.2f);
+
         if (CurrentHealth <= 0)
         {
             Die();
@@ -54,7 +59,6 @@ public class PlayerStatus : MonoBehaviour
         recentlyDamagedTimer = Time.time;
         while (Time.time - recentlyDamagedTimer < InvincibilityDuration)
         {   
-            
             spriteRenderer.color = new Color(.7f, 0f, 0f, 1f);
             yield return new WaitForSeconds(recentlyDamagedFlashDuration);
             spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
@@ -70,17 +74,18 @@ public class PlayerStatus : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!Invincible && (collision.CompareTag("Enemy") || collision.CompareTag("HostileProjectile") ))
+        if ( !Invincible  && collision.CompareTag("Enemy"))
         {   
             //knockback
             Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
             GetComponent<Rigidbody2D>().AddForce(knockbackDirection * knockbackForce);
 
-            if (collision.CompareTag("HostileProjectile"))
-            {
-                //destroy the object contact with player
+        }
+        
+        if (collision.CompareTag("HostileProjectile") && (!Invincible))
+        {
+           
                 Destroy(collision.gameObject);
-            }
 
         }
     }

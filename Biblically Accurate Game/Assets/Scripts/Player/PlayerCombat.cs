@@ -29,6 +29,7 @@ public class PlayerCombat : MonoBehaviour
     public float reloadTime = 0.5f;
     public bool isReloading = false;
     private bool interruptReload = false;
+    public float pushbackForce = 5f;
 
     [Header("Dynamite Stats")]
     public int maxDynamite = 3;
@@ -56,7 +57,7 @@ public class PlayerCombat : MonoBehaviour
             Bomb();
             currentDynamite--;
         }
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo != 6 && !isReloading)
+        if ( Input.GetKeyDown(KeyCode.R) && currentAmmo != 6 && !isReloading )
         {
             interruptReload = false;
             isReloading = true;
