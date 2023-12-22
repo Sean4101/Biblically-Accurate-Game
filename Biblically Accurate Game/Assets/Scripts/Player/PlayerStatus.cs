@@ -6,10 +6,12 @@ public class PlayerStatus : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
 
+    [Header("Stats")]
     public int MaxHealth = 10;
     public bool Invincible = false;
     public bool RecentlyDamagedInvincible = false;
     public float InvincibilityDuration = 1f;
+    public float knockbackForce = 250f;
 
     float recentlyDamagedTimer = 0f;
     float recentlyDamagedFlashDuration = 0.1f;
@@ -51,7 +53,8 @@ public class PlayerStatus : MonoBehaviour
         RecentlyDamagedInvincible = true;
         recentlyDamagedTimer = Time.time;
         while (Time.time - recentlyDamagedTimer < InvincibilityDuration)
-        {
+        {   
+            
             spriteRenderer.color = new Color(.7f, 0f, 0f, 1f);
             yield return new WaitForSeconds(recentlyDamagedFlashDuration);
             spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
@@ -67,10 +70,18 @@ public class PlayerStatus : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("HostileProjectile") && !Invincible)
-        {
-            //destroy the object contact with player
-            Destroy(collision.gameObject);
+        if (!Invincible && (collision.CompareTag("Enemy") || collision.CompareTag("HostileProjectile") ))
+        {   
+            //knockback
+            Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+            GetComponent<Rigidbody2D>().AddForce(knockbackDirection * knockbackForce);
+
+            if (collision.CompareTag("HostileProjectile"))
+            {
+                //destroy the object contact with player
+                Destroy(collision.gameObject);
+            }
+
         }
     }
 }

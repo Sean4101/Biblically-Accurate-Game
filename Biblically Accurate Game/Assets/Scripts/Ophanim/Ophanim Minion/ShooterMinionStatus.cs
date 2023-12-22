@@ -29,7 +29,7 @@ public class ShooterMinionStatus : MonoBehaviour
     
     void Die()
     {
-        int dropDynamite = Random.Range(0, 7);
+        int dropDynamite = 2; //Random.Range(0, 7);
         if (dropDynamite == 2)
         {
             Instantiate(dynamiteDrop, transform.position, Quaternion.identity);

@@ -1507,7 +1507,7 @@ MonoBehaviour:
   BulletCountBarSlider: {fileID: 480467565}
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 0, b: 0, a: 1}
+    key0: {r: 1, g: 0, b: 0.07730627, a: 1}
     key1: {r: 0.9870123, g: 1, b: 0.122641385, a: 1}
     key2: {r: 0.21638787, g: 1, b: 0, a: 0}
     key3: {r: 0.21638787, g: 1, b: 0, a: 0}
@@ -7332,6 +7332,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MrPewPew
       objectReference: {fileID: 0}
+    - target: {fileID: 3450755746360175197, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+      propertyPath: knockbackForce
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 5311687388513865833, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: m_SortingOrder
       value: 90
@@ -7374,6 +7378,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5638222001291670529, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544688752777591846, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9000899530083841748, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}

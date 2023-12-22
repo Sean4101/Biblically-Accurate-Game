@@ -18,7 +18,7 @@ public class BulletCountBarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BulletCountBarSlider.value = player.GetComponent<PlayerCombat>().maxAmmo;
+        BulletCountBarSlider.value = player.GetComponent<PlayerCombat>().currentAmmo;
         fill.color = gradient.Evaluate(BulletCountBarSlider.value/6);
     }
 }

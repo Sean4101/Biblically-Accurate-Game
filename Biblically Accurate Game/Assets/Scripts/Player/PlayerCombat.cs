@@ -25,7 +25,10 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Gun Stats")]
     public int maxAmmo = 6;
-    public float reloadTime = 2f;
+    public int currentAmmo = 6;
+    public float reloadTime = 0.5f;
+    public bool isReloading = false;
+    private bool interruptReload = false;
 
     [Header("Dynamite Stats")]
     public int maxDynamite = 3;
@@ -34,7 +37,7 @@ public class PlayerCombat : MonoBehaviour
     void Start()
     {
         currentDynamite = 1;
-        maxAmmo = 6;
+        currentAmmo = 6;
     }
 
     private void Update()
@@ -42,21 +45,24 @@ public class PlayerCombat : MonoBehaviour
         if (!canControl)
             return;
         RotateGun();
-        if (Input.GetMouseButtonDown(0) && maxAmmo != 0)
+        if (Input.GetMouseButtonDown(0) && currentAmmo != 0)
         {
+            interruptReload = true;
             Shoot();
-            maxAmmo--;
+            currentAmmo--;
         }
         if (Input.GetMouseButtonDown(1) && currentDynamite != 0)
         {
             Bomb();
             currentDynamite--;
         }
-
-        if (Input.GetKeyDown(KeyCode.R) && maxAmmo != 6)
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo != 6 && !isReloading)
         {
+            interruptReload = false;
+            isReloading = true;
             Reload();
         }
+       
     }
 
     void RotateGun()
@@ -82,8 +88,22 @@ public class PlayerCombat : MonoBehaviour
     }
     private IEnumerator ReloadCoroutine( float delay)
     {
-        yield return new WaitForSeconds(delay);
-        maxAmmo = 6;
+        while (currentAmmo < maxAmmo)
+        {   
+            yield return new WaitForSeconds(delay);
+
+            //if the player interrupts the reload by shooting, exit the coroutine
+            if (interruptReload)
+            {
+                isReloading = false;
+                interruptReload = false; // Reset the flag after interrupting reloading
+                yield break; // Exit the coroutine
+            }
+
+            currentAmmo ++;
+         
+        }
+        isReloading = false;
     }
 
     void Shoot()

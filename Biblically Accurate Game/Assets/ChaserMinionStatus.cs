@@ -26,8 +26,8 @@ public class ChaserMinionStatus : MonoBehaviour
     }
 
     void Die()
-    {   
-        int dropDynamite = Random.Range(0, 5);
+    {
+        int dropDynamite = 2;//Random.Range(0, 5);
         if(dropDynamite == 2)
         {
             Instantiate(dynamiteDrop, transform.position, Quaternion.identity);
