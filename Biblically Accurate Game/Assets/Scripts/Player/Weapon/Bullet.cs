@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
     Rigidbody2D rb;
     int damage;
 
+    public GameObject bulletImpactEffect;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,6 +35,7 @@ public class Bullet : MonoBehaviour
         if(collision.CompareTag("Enemy"))
         {
             collision.SendMessage("TakeDamage", damage);
+            Instantiate(bulletImpactEffect, transform.position, Quaternion.identity);
             DestroyBullet();
         }
     }

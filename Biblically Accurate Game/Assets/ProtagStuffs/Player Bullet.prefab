@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5335c9fa4f686e4cbf31ad628d7757f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletImpactEffect: {fileID: 983500920882464592, guid: 3d9393a5aab6f474898be239dfbd7db6, type: 3}
 --- !u!50 &222717629863491720
 Rigidbody2D:
   serializedVersion: 4

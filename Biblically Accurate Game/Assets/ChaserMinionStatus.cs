@@ -14,6 +14,7 @@ public class ChaserMinionStatus : MonoBehaviour
 
     [Header("Stats")]
     public int maxChaserMinionHealth = 20;
+   
     public int ChaserMinionCurrentHealth { get; private set; }
     void Start()
     {
@@ -61,4 +62,6 @@ public class ChaserMinionStatus : MonoBehaviour
         // Change back to the original color
         spriteRenderer.color = originalColor;
     }
+
+    
 }

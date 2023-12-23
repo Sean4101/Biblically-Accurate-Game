@@ -11,7 +11,7 @@ public class PlayerStatus : MonoBehaviour
     public bool Invincible = false;
     public bool RecentlyDamagedInvincible = false;
     public float InvincibilityDuration = 1f;
-    public float knockbackForce = 250f;
+    [SerializeField] private float knockbackForce = 250f;
 
     float recentlyDamagedTimer = 0f;
     float recentlyDamagedFlashDuration = 0.1f;
