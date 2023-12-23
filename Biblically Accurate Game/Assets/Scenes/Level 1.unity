@@ -5909,6 +5909,7 @@ MonoBehaviour:
   orbSpiralDuration: 5
   combo1Duration: 10
   orbSpiralDirectionAmount: 8
+  orbShooterAmount: 4
 --- !u!114 &1569942884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5969,7 +5970,7 @@ MonoBehaviour:
   minionChaser: {fileID: 8347360410500054801, guid: d51283fd9a1dbfe4c826b7251531b93b, type: 3}
   minionSpawnAmount: 4
   minionSpacing: 0.5
-  shooterOrbSpeed: 1
+  shooterOrbSpeed: 2
   shooterOrbAmount: 4
   shooterOrbDelay: 1.5
 --- !u!212 &1569942887
