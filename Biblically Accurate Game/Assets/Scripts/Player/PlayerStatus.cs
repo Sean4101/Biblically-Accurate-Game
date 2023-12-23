@@ -35,7 +35,7 @@ public class PlayerStatus : MonoBehaviour
         if (Invincible || RecentlyDamagedInvincible)
             return;
         CurrentHealth -= damage;
-        cameraEffects.shake(0.2f);
+        cameraEffects.Shake(0.2f);
 
         if (CurrentHealth <= 0)
         {

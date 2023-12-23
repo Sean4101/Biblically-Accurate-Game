@@ -10,7 +10,8 @@ public class PlayerCombat : MonoBehaviour
     public Transform weapon;
     public SpriteRenderer weaponSpriteRenderer;
     public Transform firePoint;
-
+    CameraEffects cameraEffects;
+    
     [Header("Prefabs")]
     public GameObject bulletPrefab;
     public GameObject dynamitePrefab;
@@ -39,6 +40,7 @@ public class PlayerCombat : MonoBehaviour
     {
         currentDynamite = 1;
         currentAmmo = 6;
+        cameraEffects = Camera.main.GetComponent<CameraEffects>();
     }
 
     private void Update()
@@ -112,6 +114,7 @@ public class PlayerCombat : MonoBehaviour
         GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletObj.GetComponent<Bullet>();
         bullet.Fire(bulletDamage, bulletSpeed);
+        cameraEffects.Shake(0.03f);
     }
 
     void Bomb()

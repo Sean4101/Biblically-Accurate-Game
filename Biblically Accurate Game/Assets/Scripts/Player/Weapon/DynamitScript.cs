@@ -27,7 +27,7 @@ public class DynamitScript : MonoBehaviour
 
     void DynamiteExplode()
     {   
-        cameraEffects.shake(0.6f);
+        cameraEffects.Shake(0.6f);
         GameObject explosionRadius = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

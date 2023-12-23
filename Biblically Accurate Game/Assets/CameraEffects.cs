@@ -16,7 +16,7 @@ public class CameraEffects : MonoBehaviour
         
     }
 
-    public void shake( float duration )
+    public void Shake( float duration )
     {
         StartCoroutine( shakeCoroutine( duration ) );
     }
