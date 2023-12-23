@@ -19,6 +19,7 @@ public class OphanimAI : MonoBehaviour
 
     [Header("Stats")]
     public int orbSpiralDirectionAmount = 8;
+    public int orbShooterAmount = 4;
     
 
     private void Awake()
@@ -45,6 +46,8 @@ public class OphanimAI : MonoBehaviour
         yield return new WaitForSeconds(1f);
         while (true)
         {   
+            combat.ShooterOrbAttack(orbShooterAmount);
+            yield return new WaitForSeconds(5f);
             BulletHellCombo1(combo1Duration);
             yield return new WaitForSeconds(5f);
             movement.Wander(wanderDuration);

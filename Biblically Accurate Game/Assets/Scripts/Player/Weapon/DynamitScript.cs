@@ -34,14 +34,8 @@ public class DynamitScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ( collision.tag == "HostileProjectile" && collision.tag != "FriendlyProjectile" )
-            {
-                DynamiteExplode();
-                //debug, shows the name of the object that the bullet collided with
-                Debug.Log("Dynamite hit " + collision.name);
-            }
-
-        else if (collision.tag == "Enemy")
+            
+        if (collision.tag == "Enemy")
             {   
                 //collision.SendMessage("TakeDamage", 0); dynmaite itself should not deal damage
                 Debug.Log("Enemy hit by dynamite");

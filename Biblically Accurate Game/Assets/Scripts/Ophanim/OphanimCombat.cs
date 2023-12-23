@@ -13,6 +13,7 @@ public class OphanimCombat : MonoBehaviour
     [Header("Orb Attack")]
     public GameObject orbPrefab;
     public GameObject foreshadowOrbPrefab;
+    public GameObject shooterOrbPrefab;
 
     [Header("Orb Stream Attack")]
     public float streamOrbSpeed = 3f;
@@ -29,6 +30,13 @@ public class OphanimCombat : MonoBehaviour
     public GameObject minionChaser;
     public int minionSpawnAmount = 4;
     public float minionSpacing = 1f;
+
+    [Header("Shooter Orb Attack")]
+    public float shooterOrbSpeed = 1f;
+    public int shooterOrbAmount = 4;
+    public float shooterOrbDelay = 1.5f;
+    
+
     private void Update()
     {
         orbSpiralOrientation.Rotate(0f, 0f, orbSpiralOrientationRotationSpeed * Time.deltaTime);
@@ -164,6 +172,28 @@ public class OphanimCombat : MonoBehaviour
         Instantiate(minionChaser, transform.position, Quaternion.identity);
     }
     
+    public void ShooterOrbAttack( int amount)
+    {
+        StartCoroutine(ShooterOrbAttackCoroutine(amount, shooterOrbDelay));
+    }
+
+
+    private IEnumerator ShooterOrbAttackCoroutine(int times, float delay)
+    {
+        // Attack
+        for (int i = 0; i < times; i ++)
+        {
+            Vector2 playerDirection = player.position - transform.position;
+            Vector2 spawnPoint = transform.position + (Vector3)playerDirection.normalized * 1.5f;
+            GameObject shooterOrnAtk = Instantiate(shooterOrbPrefab, spawnPoint, Quaternion.identity);
+            Rigidbody2D orbRB = shooterOrnAtk.GetComponent<Rigidbody2D>();
+            orbRB.velocity = playerDirection.normalized * shooterOrbSpeed;
+            yield return new WaitForSeconds(delay);
+        }
+    }
+
+
+
     //contact damage
     private void OnTriggerEnter2D(Collider2D collision)
     {

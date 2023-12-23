@@ -5199,6 +5199,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1255172774}
   m_CullTransparentMesh: 1
+--- !u!1 &1259103565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259103567}
+  - component: {fileID: 1259103566}
+  m_Layer: 0
+  m_Name: Bullet Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1259103566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259103565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb34f3d90d6d05246aa67592daa378c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledBullet: {fileID: 315573645237350166, guid: 826d4345ed934534db24cb0572a55be8, type: 3}
+--- !u!4 &1259103567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259103565}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8138807, y: -2.1915977, z: -16.04176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1374701989
 GameObject:
   m_ObjectHideFlags: 0
@@ -5913,6 +5958,7 @@ MonoBehaviour:
   ophanimContactDamage: 1
   orbPrefab: {fileID: 4912760518093295617, guid: 0f432e0a4cb6c3f419426bf81fef8b6b, type: 3}
   foreshadowOrbPrefab: {fileID: 4912760518093295617, guid: eef3d79cac837ca4185e842e48a254dd, type: 3}
+  shooterOrbPrefab: {fileID: 2488710152744730546, guid: 53633f7126594b84cb9f45288be114f6, type: 3}
   streamOrbSpeed: 2.5
   orbStreamAttackInterval: 0.4
   orbSpiralOrientation: {fileID: 209315914}
@@ -5923,6 +5969,9 @@ MonoBehaviour:
   minionChaser: {fileID: 8347360410500054801, guid: d51283fd9a1dbfe4c826b7251531b93b, type: 3}
   minionSpawnAmount: 4
   minionSpacing: 0.5
+  shooterOrbSpeed: 1
+  shooterOrbAmount: 4
+  shooterOrbDelay: 1.5
 --- !u!212 &1569942887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7483,3 +7532,4 @@ SceneRoots:
   - {fileID: 400833889}
   - {fileID: 1569942880}
   - {fileID: 1707096647174891304}
+  - {fileID: 1259103567}
