@@ -71,6 +71,13 @@ public class PlayerCombat : MonoBehaviour
             isReloading = true;
             Reload();
         }
+        if (Input.GetKeyDown(KeyCode.Q) && isSkillReady)
+        {   
+            Debug.Log("Skill used");
+            Skill();
+            isSkillReady = false;
+            currentSkillCharge = 0;
+        }
        
     }
 
@@ -149,5 +156,10 @@ public class PlayerCombat : MonoBehaviour
             currentSkillCharge = maxSkillCharge;
             isSkillReady = true;
         }
+    }
+
+    void Skill()
+    {
+       //not decided yet
     }
 }
