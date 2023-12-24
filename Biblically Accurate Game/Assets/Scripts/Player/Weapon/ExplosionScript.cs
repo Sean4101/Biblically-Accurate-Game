@@ -6,10 +6,15 @@ public class ExplosionScript : MonoBehaviour
 {
     public float stayTime = 1f;
     public float explosionDamage = 5f;
+    [SerializeField] private int skillChargeAmount = 5;
+    PlayerCombat playerCombat;
+
     // Start is called before the first frame update
     void Start()
     {
         Invoke("DestroyExplosion", stayTime);
+        playerCombat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombat>();
+
     }
 
     // Update is called once per frame
@@ -30,6 +35,7 @@ public class ExplosionScript : MonoBehaviour
         {   
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             collision.SendMessage("TakeDamage", explosionDamage);
+            playerCombat.ChargeSkill(skillChargeAmount);
             //collision.SendMessage("TakeDamage", 0);
         }
         else if (collision.tag == "HostileProjectile")

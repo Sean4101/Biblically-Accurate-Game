@@ -20,6 +20,7 @@ public class OphanimAI : MonoBehaviour
     [Header("Stats")]
     public int orbSpiralDirectionAmount = 8;
     public int orbShooterAmount = 4;
+    public int padAvailableCount = 15;
     
 
     private void Awake()
@@ -71,7 +72,7 @@ public class OphanimAI : MonoBehaviour
         yield return new WaitForSeconds(6f);
         while (true)
         {
-            discoArena.RandomActivation(30);
+            discoArena.RandomActivation(padAvailableCount);
             yield return new WaitForSeconds(5f);
         }
     }

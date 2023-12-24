@@ -36,11 +36,17 @@ public class PlayerCombat : MonoBehaviour
     public int maxDynamite = 3;
     public int currentDynamite = 0;
 
+    [Header("Special Skill")]
+    public int maxSkillCharge = 25;
+    public int currentSkillCharge = 0;
+    public bool isSkillReady = false;
+
     void Start()
     {
         currentDynamite = 1;
         currentAmmo = 6;
         cameraEffects = Camera.main.GetComponent<CameraEffects>();
+        currentSkillCharge = 0;
     }
 
     private void Update()
@@ -133,5 +139,15 @@ public class PlayerCombat : MonoBehaviour
             currentDynamite = maxDynamite;
         }
             
+    }
+
+    public void ChargeSkill( int amount )
+    {
+        currentSkillCharge += amount;
+        if (currentSkillCharge >= maxSkillCharge)
+        {
+            currentSkillCharge = maxSkillCharge;
+            isSkillReady = true;
+        }
     }
 }

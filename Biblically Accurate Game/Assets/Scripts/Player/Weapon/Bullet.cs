@@ -5,9 +5,11 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Rigidbody2D rb;
-    int damage;
+    public int damage;
+    [SerializeField] private int skillChargeAmount = 1;
 
     public GameObject bulletImpactEffect;
+    PlayerCombat playerCombat;
 
     private void Awake()
     {
@@ -17,6 +19,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         Invoke(nameof(DestroyBullet), 3f);
+        playerCombat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombat>();
     }
 
     public void Fire(int _damage, float force)
@@ -33,7 +36,8 @@ public class Bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {   
         if(collision.CompareTag("Enemy"))
-        {
+        {   
+            playerCombat.ChargeSkill(skillChargeAmount);
             collision.SendMessage("TakeDamage", damage);
             Instantiate(bulletImpactEffect, transform.position, Quaternion.identity);
             DestroyBullet();

@@ -5910,6 +5910,7 @@ MonoBehaviour:
   combo1Duration: 10
   orbSpiralDirectionAmount: 8
   orbShooterAmount: 4
+  padAvailableCount: 15
 --- !u!114 &1569942884
 MonoBehaviour:
   m_ObjectHideFlags: 0
