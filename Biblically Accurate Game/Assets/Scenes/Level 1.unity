@@ -5832,7 +5832,7 @@ GameObject:
   - component: {fileID: 1569942884}
   - component: {fileID: 1569942887}
   m_Layer: 0
-  m_Name: Disco Angel Ophanim
+  m_Name: Disco Angel Ophanimim
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5924,6 +5924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleManager: {fileID: 235890123}
   maxHealth: 100
+  healAmount: 2
   flashDuration: 0.1
   flashColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &1569942885
@@ -6013,7 +6014,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

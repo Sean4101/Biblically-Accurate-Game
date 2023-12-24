@@ -164,7 +164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dynamiteDrop: {fileID: 8853952347627319372, guid: b5c20441fef1a6142aa05f4f034ac327, type: 3}
+  healthDrop: {fileID: 6782573332278071733, guid: 32e37c1e7d7ef1447a565ce316a9f619, type: 3}
   maxShooterMinionHealth: 10
+  flashDuration: 0.1
+  flashColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &7347396986132579698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +182,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3429943483128203177, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
   bulletPrefab: {fileID: 4451194549701463396, guid: 7fa9cce7b59e7424fa6d268c3a0ffeb3, type: 3}
+  boss: {fileID: 0}
   contactDamage: 1
+  healAmount: 2
+  healBossDelay: 6
+  speed: 5
   shootAtPlayerInterval: 1
 --- !u!1 &3122294705899050419
 GameObject:

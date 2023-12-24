@@ -8,6 +8,7 @@ public class BossStatus : MonoBehaviour
     public OphanimLevelBattleManager battleManager;
 
     public int maxHealth = 100;
+    public int healAmount = 4;
     public float flashDuration = 0.1f;
     private SpriteRenderer spriteRenderer;
     public Color flashColor = new Color(1f, 0f, 0f, 1f);
@@ -34,6 +35,15 @@ public class BossStatus : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             Die();
+        }
+    }
+
+    public void Heal()
+    {
+        CurrentHealth += healAmount;
+        if (CurrentHealth > maxHealth)
+        {
+            CurrentHealth = maxHealth;
         }
     }
 

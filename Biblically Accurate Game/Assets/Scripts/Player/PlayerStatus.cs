@@ -11,6 +11,7 @@ public class PlayerStatus : MonoBehaviour
     public bool Invincible = false;
     public bool RecentlyDamagedInvincible = false;
     public float InvincibilityDuration = 1f;
+
     [SerializeField] private float knockbackForce = 250f;
 
     float recentlyDamagedTimer = 0f;
@@ -28,7 +29,17 @@ public class PlayerStatus : MonoBehaviour
         CurrentHealth = MaxHealth;
         cameraEffects = Camera.main.GetComponent<CameraEffects>();
     }
-
+    public void playerHeal( int healAmount)
+        {
+            if (CurrentHealth < MaxHealth)
+            {
+                CurrentHealth += healAmount;
+            }
+            else
+            {
+                CurrentHealth = MaxHealth;
+            }
+        }
     public void TakeDamage(int damage)
     {   
         
@@ -72,6 +83,7 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ( !Invincible  && collision.CompareTag("Enemy"))

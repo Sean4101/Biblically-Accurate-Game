@@ -7,6 +7,7 @@ public class ShooterMinionStatus : MonoBehaviour
     // Start is called before the first frame update
     [Header("References")]
     public GameObject dynamiteDrop;
+    public GameObject healthDrop;
 
     [Header("Stats")]
     public int maxShooterMinionHealth = 10;
@@ -34,11 +35,30 @@ public class ShooterMinionStatus : MonoBehaviour
             Die();
         }
     }
-    
+
     void Die()
     {
-        dropDynamite();
+        int rng = Random.Range(0, 4);
+
+        if (rng == 0)
+        {
+            dropDynamite();
+        }
+        else if (rng == 1)
+        {
+            dropHealth();
+        }
+
         Destroy(gameObject);
+    }
+
+    void dropHealth()
+    {
+        int dropHealth = 2;//Random.Range(0, 5);
+        if (dropHealth == 2)
+        {
+            Instantiate(healthDrop, transform.position, Quaternion.identity);
+        }
     }
 
     void dropDynamite()

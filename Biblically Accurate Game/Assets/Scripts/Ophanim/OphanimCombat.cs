@@ -177,7 +177,6 @@ public class OphanimCombat : MonoBehaviour
         StartCoroutine(ShooterOrbAttackCoroutine(amount, shooterOrbDelay));
     }
 
-
     private IEnumerator ShooterOrbAttackCoroutine(int times, float delay)
     {
         // Attack

@@ -6,6 +6,7 @@ public class ChaserMinionStatus : MonoBehaviour
 {
     [Header ("References")]
     public GameObject dynamiteDrop;
+    public GameObject healthDrop;
 
     [Header("Renderer stats")]
     public float flashDuration = 0.1f;
@@ -33,10 +34,19 @@ public class ChaserMinionStatus : MonoBehaviour
             Die();
         }
     }
-
     void Die()
     {
-        dropDynamite();
+        int rng = Random.Range(0, 4);
+        
+        if (rng == 0)
+        {
+            dropDynamite();
+        }
+        else if (rng == 1)
+        {
+            dropHealth();
+        }
+       
         Destroy(gameObject);
     }
 
@@ -49,6 +59,14 @@ public class ChaserMinionStatus : MonoBehaviour
         }
     }
 
+    void dropHealth()
+    {
+        int dropHealth = 2;//Random.Range(0, 5);
+        if (dropHealth == 2)
+        {
+            Instantiate(healthDrop, transform.position, Quaternion.identity);
+        }
+    }
     private IEnumerator FlashCoroutine()
     {
         Color originalColor = spriteRenderer.color;
