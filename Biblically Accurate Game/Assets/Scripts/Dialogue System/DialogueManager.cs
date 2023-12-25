@@ -60,7 +60,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(DialogLines lines)
+    public void StartLevelOneIntroDialogue(DialogLines lines)
     {
         introEnd = false;
         dialogueBox.enabled = true;

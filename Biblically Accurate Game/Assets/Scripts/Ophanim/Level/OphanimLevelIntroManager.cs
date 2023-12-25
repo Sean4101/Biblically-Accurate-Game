@@ -23,7 +23,7 @@ public class OphanimLevelIntroManager : MonoBehaviour
     {
         loreTextManager.StartLoreDialogue(prologueLines);
         yield return new WaitUntil(() => loreTextManager.prologueEnd);
-        dialogueTextManager.StartDialogue(introDialogueLines);
+        dialogueTextManager.StartLevelOneIntroDialogue(introDialogueLines);
         yield return new WaitUntil(() => dialogueTextManager.introEnd);
         introComplete = true;
     }

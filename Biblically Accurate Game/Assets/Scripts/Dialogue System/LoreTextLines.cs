@@ -7,4 +7,5 @@ using UnityEngine;
 public class LoreTextLines : ScriptableObject
 {
     public List<string> prologueLines;
+    public List<string> levelOnetoTwoLines;
 }

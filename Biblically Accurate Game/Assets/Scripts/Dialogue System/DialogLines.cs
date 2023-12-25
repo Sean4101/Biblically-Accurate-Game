@@ -15,5 +15,7 @@ public class DialogLine
 public class DialogLines : ScriptableObject
 {
     public List<DialogLine> levelOneIntroLines;
+    public List<DialogLine> levelOneVictoryLines;
+
    
 }
