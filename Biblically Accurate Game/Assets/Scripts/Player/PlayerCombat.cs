@@ -187,7 +187,9 @@ public class PlayerCombat : MonoBehaviour
         currentAmmo = 6;
         //let out a burst of bullets which spreads a little bit
         for (int i = 0; i < bulletBurstAmount; i++)
-        {
+        {        
+            isInSkill = true;
+
             GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             bulletObj.transform.Rotate(0, 0, Random.Range(-20f, 20f));
             cameraEffects.Shake(0.03f);

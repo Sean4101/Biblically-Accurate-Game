@@ -32,6 +32,17 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    void Update()
+    {
+        //change color to "5fcde4" when skill activated
+        if (skillActivated)
+        {
+            GetComponent<SpriteRenderer>().color = new Color32(95, 205, 228, 255);
+        }else
+        {
+            GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {   
