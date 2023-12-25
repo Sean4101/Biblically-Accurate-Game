@@ -48,7 +48,15 @@ public class Bullet : MonoBehaviour
     {   
         if(collision.CompareTag("Enemy"))
         {   
-            playerCombat.ChargeSkill(skillChargeAmount);
+            if(skillActivated)
+            {
+               playerCombat.BulletTimeCharge(skillChargeAmount);
+            }
+            else
+            {
+                playerCombat.ChargeNormalSkill(skillChargeAmount);
+            }
+            
             collision.SendMessage("TakeDamage", damage);
             Instantiate(bulletImpactEffect, transform.position, Quaternion.identity);
             DestroyBullet();

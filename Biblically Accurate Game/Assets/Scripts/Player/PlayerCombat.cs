@@ -11,7 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public SpriteRenderer weaponSpriteRenderer;
     public Transform firePoint;
     CameraEffects cameraEffects;
-    
+
     [Header("Prefabs")]
     public GameObject bulletPrefab;
     public GameObject dynamitePrefab;
@@ -43,6 +43,12 @@ public class PlayerCombat : MonoBehaviour
     private bool isInSkill = false;
     public int bulletBurstAmount = 15;
 
+    [Header("Bullet Time")]
+    public int maxBulletTimeCharge = 35;
+    public int currentBulletTimeCharge = 0;
+    public float bulletTimeDuration = 5f;
+    public bool isBulletTimeReady = false;
+
 
     void Awake()
     {
@@ -50,10 +56,13 @@ public class PlayerCombat : MonoBehaviour
         currentAmmo = 6;
         cameraEffects = Camera.main.GetComponent<CameraEffects>();
         currentSkillCharge = 0;
+        currentBulletTimeCharge = 0;
+        isSkillReady = false;
+        isBulletTimeReady = false;
     }
     void Start()
     {
-        
+
     }
 
     private void Update()
@@ -62,7 +71,7 @@ public class PlayerCombat : MonoBehaviour
             return;
         RotateGun();
         if (Input.GetMouseButtonDown(0) && currentAmmo != 0 && !isInSkill)
-        {   
+        {
             interruptReload = true;
             Shoot();
             currentAmmo--;
@@ -72,21 +81,24 @@ public class PlayerCombat : MonoBehaviour
             Bomb();
             currentDynamite--;
         }
-        if ( Input.GetKeyDown(KeyCode.R) && currentAmmo != 6 && !isReloading )
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo != 6 && !isReloading)
         {
             interruptReload = false;
             isReloading = true;
             Reload();
         }
         if (Input.GetKeyDown(KeyCode.Q) && isSkillReady)
-        {   
-            Debug.Log("Skill used");
+        {
             Skill();
             isSkillReady = false;
-           
-            
         }
-       
+        if (Input.GetKeyDown(KeyCode.LeftShift) && isBulletTimeReady)
+        {
+            Debug.Log("Bullet time used");
+            BulletTime(bulletTimeDuration);
+            isBulletTimeReady = false;
+        }
+
     }
 
     void RotateGun()
@@ -110,10 +122,10 @@ public class PlayerCombat : MonoBehaviour
     {
         StartCoroutine(ReloadCoroutine(reloadTime));
     }
-    private IEnumerator ReloadCoroutine( float delay)
+    private IEnumerator ReloadCoroutine(float delay)
     {
         while (currentAmmo < maxAmmo)
-        {   
+        {
             yield return new WaitForSeconds(delay);
 
             //if the player interrupts the reload by shooting, exit the coroutine
@@ -124,14 +136,14 @@ public class PlayerCombat : MonoBehaviour
                 yield break; // Exit the coroutine
             }
 
-            currentAmmo ++;
-         
+            currentAmmo++;
+
         }
         isReloading = false;
     }
 
     void Shoot()
-    {   
+    {
         GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletObj.GetComponent<Bullet>();
         bullet.Fire(bulletDamage, bulletSpeed);
@@ -153,27 +165,32 @@ public class PlayerCombat : MonoBehaviour
         {
             currentDynamite = maxDynamite;
         }
-            
+
     }
 
-    public void ChargeSkill( int amount )
+    public void ChargeNormalSkill(int amount)
     {
-        Debug.Log("Charging skill");
-        Debug.Log("Current skill charge: " + currentSkillCharge);
-
-        if( !isInSkill )
+        if (!isInSkill)
         {
             currentSkillCharge += amount;
         }
-       
-        
+
         if (currentSkillCharge >= maxSkillCharge)
         {
             currentSkillCharge = maxSkillCharge;
             isSkillReady = true;
         }
+
     }
 
+    public void BulletTimeCharge(int amount)
+    {
+        bulletBurstAmount += amount;
+        if (bulletBurstAmount > maxBulletTimeCharge)
+        {
+            bulletBurstAmount = maxBulletTimeCharge;
+        }
+    }
     void Skill()
     {
         StartCoroutine(SkillCoroutine());
@@ -181,6 +198,9 @@ public class PlayerCombat : MonoBehaviour
         currentSkillCharge = 0;
     }
 
+    void BulletTime( float duration )
+    {
+    }
     private IEnumerator SkillCoroutine()
     {   
        
