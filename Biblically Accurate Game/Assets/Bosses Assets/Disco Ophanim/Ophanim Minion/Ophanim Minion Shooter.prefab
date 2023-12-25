@@ -185,7 +185,7 @@ MonoBehaviour:
   boss: {fileID: 0}
   contactDamage: 1
   healAmount: 2
-  healBossDelay: 6
+  healBossDelay: 10
   speed: 5
   shootAtPlayerInterval: 1
 --- !u!1 &3122294705899050419

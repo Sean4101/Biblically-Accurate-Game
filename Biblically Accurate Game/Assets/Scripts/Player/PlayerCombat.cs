@@ -38,15 +38,22 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Special Skill")]
     public int maxSkillCharge = 25;
-    public int currentSkillCharge = 0;
+    [SerializeField] private int currentSkillCharge = 0;
     public bool isSkillReady = false;
+    private bool isInSkill = false;
+    public int bulletBurstAmount = 15;
 
-    void Start()
+
+    void Awake()
     {
         currentDynamite = 1;
         currentAmmo = 6;
         cameraEffects = Camera.main.GetComponent<CameraEffects>();
         currentSkillCharge = 0;
+    }
+    void Start()
+    {
+        
     }
 
     private void Update()
@@ -54,8 +61,8 @@ public class PlayerCombat : MonoBehaviour
         if (!canControl)
             return;
         RotateGun();
-        if (Input.GetMouseButtonDown(0) && currentAmmo != 0)
-        {
+        if (Input.GetMouseButtonDown(0) && currentAmmo != 0 && !isInSkill)
+        {   
             interruptReload = true;
             Shoot();
             currentAmmo--;
@@ -76,7 +83,8 @@ public class PlayerCombat : MonoBehaviour
             Debug.Log("Skill used");
             Skill();
             isSkillReady = false;
-            currentSkillCharge = 0;
+           
+            
         }
        
     }
@@ -150,7 +158,15 @@ public class PlayerCombat : MonoBehaviour
 
     public void ChargeSkill( int amount )
     {
-        currentSkillCharge += amount;
+        Debug.Log("Charging skill");
+        Debug.Log("Current skill charge: " + currentSkillCharge);
+
+        if( !isInSkill )
+        {
+            currentSkillCharge += amount;
+        }
+       
+        
         if (currentSkillCharge >= maxSkillCharge)
         {
             currentSkillCharge = maxSkillCharge;
@@ -160,6 +176,27 @@ public class PlayerCombat : MonoBehaviour
 
     void Skill()
     {
-       //not decided yet
+        StartCoroutine(SkillCoroutine());
+        isInSkill = false;
+        currentSkillCharge = 0;
+    }
+
+    private IEnumerator SkillCoroutine()
+    {   
+       
+        currentAmmo = 6;
+        //let out a burst of bullets which spreads a little bit
+        for (int i = 0; i < bulletBurstAmount; i++)
+        {
+            GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            bulletObj.transform.Rotate(0, 0, Random.Range(-20f, 20f));
+            cameraEffects.Shake(0.03f);
+            Bullet bullet = bulletObj.GetComponent<Bullet>();
+            bullet.skillActivated = true;
+            bullet.Fire(bulletDamage, bulletSpeed);
+
+            yield return new WaitForSeconds(0.1f);
+        }
+        isInSkill = false;
     }
 }

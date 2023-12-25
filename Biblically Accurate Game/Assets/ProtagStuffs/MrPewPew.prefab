@@ -235,6 +235,7 @@ MonoBehaviour:
   firePoint: {fileID: 8478331944099842772}
   bulletPrefab: {fileID: 834564641309557873, guid: ca96fdd87ae84404eb86ec3a455f6b20, type: 3}
   dynamitePrefab: {fileID: 4333551939594301160, guid: 6f62665ace2d6e745bd7180b1f26c65f, type: 3}
+  dimensionalRiftPrefab: {fileID: 0}
   bulletDamage: 2
   bulletSpeed: 10
   dynamiteForce: 5
@@ -246,6 +247,10 @@ MonoBehaviour:
   pushbackForce: 5
   maxDynamite: 3
   currentDynamite: 0
+  maxSkillCharge: 4
+  currentSkillCharge: 0
+  isSkillReady: 0
+  dimensionalRiftForce: 1.5
 --- !u!114 &3450755746360175197
 MonoBehaviour:
   m_ObjectHideFlags: 0

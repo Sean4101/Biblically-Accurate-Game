@@ -7514,6 +7514,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+      propertyPath: dimensionalRiftPrefab
+      value: 
+      objectReference: {fileID: 6213174591627945898, guid: 161e0f8e4c2d5824c8da5819777b24ab, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

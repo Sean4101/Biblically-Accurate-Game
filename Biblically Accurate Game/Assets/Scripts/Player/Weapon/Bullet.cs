@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     Rigidbody2D rb;
     public int damage;
+    public bool skillActivated;
     [SerializeField] private int skillChargeAmount = 1;
 
     public GameObject bulletImpactEffect;
@@ -21,7 +22,6 @@ public class Bullet : MonoBehaviour
         Invoke(nameof(DestroyBullet), 3f);
         playerCombat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombat>();
     }
-
     public void Fire(int _damage, float force)
     {
         rb.AddForce(transform.right * force, ForceMode2D.Impulse);
@@ -42,5 +42,13 @@ public class Bullet : MonoBehaviour
             Instantiate(bulletImpactEffect, transform.position, Quaternion.identity);
             DestroyBullet();
         }
+
+        else if (collision.CompareTag("HostileProjectile") && skillActivated)
+        {            
+            Instantiate(bulletImpactEffect, transform.position, Quaternion.identity);
+            //destroy the projectiles
+            Destroy(collision.gameObject);
+        }
+       
     }
 }
