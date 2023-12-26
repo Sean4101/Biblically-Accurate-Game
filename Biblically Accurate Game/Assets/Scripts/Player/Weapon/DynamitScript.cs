@@ -43,6 +43,12 @@ public class DynamitScript : MonoBehaviour
 
                 GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
+        if (collision.tag == "Obstacle")
+        {
+            DynamiteExplode();
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+
 
     }
 }

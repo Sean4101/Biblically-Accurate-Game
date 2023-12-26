@@ -44,5 +44,9 @@ public class BulletHellSystem_Orb : MonoBehaviour
         {
             collision.GetComponent<PlayerStatus>().TakeDamage(damage);
         }
+        if (collision.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

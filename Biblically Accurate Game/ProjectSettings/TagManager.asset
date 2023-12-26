@@ -9,6 +9,7 @@ TagManager:
   - FriendlyProjectile
   - DiscoRay
   - Dynamite Drop
+  - Obstacle
   layers:
   - Default
   - TransparentFX

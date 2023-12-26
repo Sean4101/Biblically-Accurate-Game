@@ -62,12 +62,16 @@ public class Bullet : MonoBehaviour
             DestroyBullet();
         }
 
-        else if (collision.CompareTag("HostileProjectile") && skillActivated)
+        else if ( collision.CompareTag("HostileProjectile") && skillActivated && !playerCombat.isInBulletTime)
         {            
             Instantiate(bulletImpactEffect, transform.position, Quaternion.identity);
             //destroy the projectiles
             Destroy(collision.gameObject);
         }
-       
+
+        if (collision.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

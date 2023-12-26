@@ -11,6 +11,8 @@ public class PlayerCombat : MonoBehaviour
     public SpriteRenderer weaponSpriteRenderer;
     public Transform firePoint;
     CameraEffects cameraEffects;
+    public BulletTimeManager bulletTimeManager;
+    PlayerMovement playerMovement;
 
     [Header("Prefabs")]
     public GameObject bulletPrefab;
@@ -46,8 +48,8 @@ public class PlayerCombat : MonoBehaviour
     [Header("Bullet Time")]
     public int maxBulletTimeCharge = 35;
     public int currentBulletTimeCharge = 0;
-    public float bulletTimeDuration = 5f;
     public bool isBulletTimeReady = false;
+    public bool isInBulletTime = false;
 
 
     void Awake()
@@ -55,10 +57,12 @@ public class PlayerCombat : MonoBehaviour
         currentDynamite = 1;
         currentAmmo = 6;
         cameraEffects = Camera.main.GetComponent<CameraEffects>();
+        playerMovement = GetComponent<PlayerMovement>();
         currentSkillCharge = 0;
         currentBulletTimeCharge = 0;
         isSkillReady = false;
         isBulletTimeReady = false;
+        isInBulletTime = false;
     }
     void Start()
     {
@@ -92,10 +96,10 @@ public class PlayerCombat : MonoBehaviour
             Skill();
             isSkillReady = false;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && isBulletTimeReady)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && isBulletTimeReady && !isInBulletTime)
         {
             Debug.Log("Bullet time used");
-            BulletTime(bulletTimeDuration);
+            BulletTime();
             isBulletTimeReady = false;
         }
 
@@ -188,8 +192,11 @@ public class PlayerCombat : MonoBehaviour
         bulletBurstAmount += amount;
         if (bulletBurstAmount > maxBulletTimeCharge)
         {
+            isBulletTimeReady = true;
+            Debug.Log("Bullet time charge is full");
             bulletBurstAmount = maxBulletTimeCharge;
         }
+
     }
     void Skill()
     {
@@ -198,8 +205,14 @@ public class PlayerCombat : MonoBehaviour
         currentSkillCharge = 0;
     }
 
-    void BulletTime( float duration )
-    {
+    void BulletTime(  )
+    {   
+        currentBulletTimeCharge = 0;
+        isInBulletTime = true;
+        playerMovement.movenentSpeed = playerMovement.movenentSpeed / bulletTimeManager.slowdownFactor;
+        bulletTimeManager.DoSlowMotion();
+        playerMovement.movenentSpeed = 5f;
+        isInBulletTime = false;
     }
     private IEnumerator SkillCoroutine()
     {   

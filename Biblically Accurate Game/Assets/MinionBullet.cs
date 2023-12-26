@@ -39,5 +39,9 @@ public class MinionBullet : MonoBehaviour
             collision.GetComponent<PlayerStatus>().TakeDamage(damage);
             //Destroy(gameObject);
         }
+        if (collision.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
