@@ -40,7 +40,7 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Special Skill")]
     public int maxSkillCharge = 25;
-    [SerializeField] private int currentSkillCharge = 0;
+    public int currentSkillCharge = 0;
     public bool isSkillReady = false;
     private bool isInSkill = false;
     public int bulletBurstAmount = 15;
