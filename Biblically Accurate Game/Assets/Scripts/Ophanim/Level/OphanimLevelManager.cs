@@ -9,6 +9,7 @@ public class OphanimLevelManager : MonoBehaviour
     OphanimLevelBattleManager levelBattle;
     OphanimLevelOutroManager levelOutro;
 
+    CameraEffects cameraEffects;
     public PlayerManager playerManager;
 
     private void Awake()
@@ -16,6 +17,7 @@ public class OphanimLevelManager : MonoBehaviour
         levelIntro = GetComponent<OphanimLevelIntroManager>();
         levelBattle = GetComponent<OphanimLevelBattleManager>();
         levelOutro = GetComponent<OphanimLevelOutroManager>();
+        cameraEffects = Camera.main.GetComponent<CameraEffects>();
     }
 
     public void Start()
@@ -41,7 +43,8 @@ public class OphanimLevelManager : MonoBehaviour
             levelOutro.StartVictoryOutro();
         }
         else
-        {
+        {   
+            cameraEffects.ZoomInOnProtag();
             levelOutro.StartDefeatOutro();
         }
     }

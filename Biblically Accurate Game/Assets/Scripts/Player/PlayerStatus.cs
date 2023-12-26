@@ -28,6 +28,7 @@ public class PlayerStatus : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         CurrentHealth = MaxHealth;
         cameraEffects = Camera.main.GetComponent<CameraEffects>();
+
     }
     public void playerHeal( int healAmount)
         {
@@ -46,14 +47,14 @@ public class PlayerStatus : MonoBehaviour
         if (Invincible || RecentlyDamagedInvincible)
             return;
         CurrentHealth -= damage;
-        cameraEffects.Shake(0.2f);
-
+       
         if (CurrentHealth <= 0)
         {
             Die();
         }
         else
-        {
+        {   
+            cameraEffects.Shake(0.1f);
             StartCoroutine(TakeDamageCoroutine());
         }
     }
@@ -80,7 +81,7 @@ public class PlayerStatus : MonoBehaviour
 
     void Die()
     {
-
+        
     }
 
     

@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraEffects : MonoBehaviour
-{
+{   
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
+        //StartCoroutine( ZoomInCoroutine() );
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void Shake( float duration )
@@ -21,6 +23,10 @@ public class CameraEffects : MonoBehaviour
         StartCoroutine( shakeCoroutine( duration ) );
     }
 
+    public void ZoomInOnProtag()
+    {
+        StartCoroutine( ZoomInCoroutine() );
+    }
     IEnumerator shakeCoroutine( float duration )
     {
         float elapsed = 0.0f;
@@ -40,4 +46,41 @@ public class CameraEffects : MonoBehaviour
 
         transform.position = originalCamPos;
     }
+
+    IEnumerator ZoomInCoroutine()
+    {
+        float duration = 0.2f; // Adjust this value for faster or slower zoom
+        float elapsed = 0.0f;
+
+        Camera cameraComponent = GetComponent<Camera>();
+
+        float originalOrthoSize = cameraComponent.orthographicSize;
+        float targetOrthoSize = 2f; // Adjust this value based on your desired zoom level
+
+        Vector3 originalCamPos = transform.position;
+        Vector3 targetCamPos = new Vector3(player.transform.position.x, player.transform.position.y, originalCamPos.z);
+
+        while (elapsed < duration)
+        {
+            float t = elapsed / duration;
+
+            // Smoothly adjust the orthographic size towards the target size
+            cameraComponent.orthographicSize = Mathf.Lerp(originalOrthoSize, targetOrthoSize, t);
+
+            // Smoothly move the camera towards the player's position
+            transform.position = Vector3.Lerp(originalCamPos, targetCamPos, t);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the camera reaches the exact target orthographic size and position
+        cameraComponent.orthographicSize = targetOrthoSize;
+        transform.position = targetCamPos;
+    }
+
+
+
+
+
 }

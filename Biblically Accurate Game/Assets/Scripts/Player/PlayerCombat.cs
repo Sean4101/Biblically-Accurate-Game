@@ -103,6 +103,10 @@ public class PlayerCombat : MonoBehaviour
             isBulletTimeReady = false;
         }
 
+        if(isInBulletTime)
+        {
+            playerMovement.movementSpeed = playerMovement.movementSpeed * Time.timeScale;
+        }
     }
 
     void RotateGun()
@@ -209,9 +213,7 @@ public class PlayerCombat : MonoBehaviour
     {   
         currentBulletTimeCharge = 0;
         isInBulletTime = true;
-        playerMovement.movenentSpeed = playerMovement.movenentSpeed / bulletTimeManager.slowdownFactor;
         bulletTimeManager.DoSlowMotion();
-        playerMovement.movenentSpeed = 5f;
         isInBulletTime = false;
     }
     private IEnumerator SkillCoroutine()

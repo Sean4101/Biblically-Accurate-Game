@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public bool canControl = true;
 
     [Header("Movement Stats")]
-    public float movenentSpeed = 5f;
+    public float movementSpeed = 5f;
     public float movementAcceleration = 60f;
     public float movementDeceleration = 60f;
 
@@ -65,10 +65,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movementDirection.magnitude > 0)
         {
-            if (rb.velocity.magnitude < movenentSpeed)
+            if (rb.velocity.magnitude < movementSpeed)
                 rb.AddForce(movementAcceleration * movementDirection);
             else
-                rb.velocity = movementDirection * movenentSpeed;
+                rb.velocity = movementDirection * movementSpeed;
             animator.SetBool("Walk", true);
         }
         else if (rb.velocity.magnitude > 0.1f)
