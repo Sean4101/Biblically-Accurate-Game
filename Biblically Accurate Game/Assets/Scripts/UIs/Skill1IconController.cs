@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill1Controller : MonoBehaviour
+public class Skill1IconController : MonoBehaviour
 {
     public GameObject player;
     PlayerCombat player_statue;
