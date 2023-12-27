@@ -14,8 +14,5 @@ public class DialogLine
 [CreateAssetMenu(fileName = "New Dialog", menuName = "Scriptable Object/Dialog")]
 public class DialogLines : ScriptableObject
 {
-    public List<DialogLine> levelOneIntroLines;
-    public List<DialogLine> levelOneVictoryLines;
-
-   
+    public List<DialogLine> dialogueLines;   
 }

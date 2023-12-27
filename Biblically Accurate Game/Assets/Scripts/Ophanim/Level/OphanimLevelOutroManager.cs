@@ -9,6 +9,20 @@ public class OphanimLevelOutroManager : MonoBehaviour
     public GameObject victoryNextLevelPanel;
     public GameObject defeatRetryPanel;
 
+    [Header("References")]
+    public GameObject dialogueBox;
+    public GameObject loreBox;
+    public DialogueManager dialogueManager;
+    public LoreTextManager loreTextManager;
+    public DialogLines victoryDialogueLines;
+    public OphanimLevelIntroManager levelTwoIntro;
+
+    //called by OphanimLevelManager
+
+    private void Start()
+    {
+       
+    }
     public void StartVictoryOutro()
     {   
         destoyMinions();
@@ -16,6 +30,9 @@ public class OphanimLevelOutroManager : MonoBehaviour
         stopAllCoroutineInBoss();
         StopBossAI();     
 
+        dialogueBox.SetActive(true);
+        dialogueManager.StartDialogue(victoryDialogueLines);
+        
         StartCoroutine(PlayVictoryOutro());
     }
 
@@ -25,15 +42,18 @@ public class OphanimLevelOutroManager : MonoBehaviour
         ClearProjectiles();
         stopAllCoroutineInBoss();
         StopBossAI();
-
+        
         StartCoroutine(PlayDefeatOutro());
     }
 
     private IEnumerator PlayVictoryOutro()
-    {   
-        victoryPlaceholderPanel.SetActive(true);
-        yield return new WaitForSeconds(3f);
-        victoryPlaceholderPanel.SetActive(false);
+    {
+        yield return new WaitUntil(() => dialogueManager.introEnd);
+        yield return new WaitForSeconds(1f);
+        //Ik it's stupid to right shit here but idk whether we will have a level 2 or not
+        loreBox.SetActive(true);
+        levelTwoIntro.StartLevelTwoIntro();
+
         victoryNextLevelPanel.SetActive(true);
     }
 
@@ -46,7 +66,7 @@ public class OphanimLevelOutroManager : MonoBehaviour
     }
 
     public void NextLevel()
-    {
+    {   
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
     }
 

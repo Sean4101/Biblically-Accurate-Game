@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bb09dfe7f24f284895d83cad2af938e, type: 3}
   m_Name: prologueText
   m_EditorClassIdentifier: 
-  prologueLines:
-  - ' All of us have become like one who is unclean,  And all our righteous acts
-    are like filthy rags!  We all shrivel up like a leaf, and like the wind, our
-    sins sweep us away! - Isaiah 64:6'
-  - For the wages of sin is death!  But the free gift of God is eternal life in Jesus
-    Christ, our lord! - Romans 6:23
-  - Therefore I tell you, every sin and blasphemy will be forgiven people, but the
-    blasphemy against the Spirit, will not be forgiven. - Matthew 12:31
-  - ...
-  - ...
-  - ...
+  loreLines:
+  - ' All of us have become like one who is unclean, And all our righteous acts are
+    like filthy rags! We all shrivel up like a leaf, and like the wind, our sins
+    sweep us away! - Isaiah 64:6 '
+  - '- For the wages of sin is death! But the free gift of God is eternal life in
+    Jesus Christ, our lord! - Romans 6:23 '
+  - '- Therefore I tell you, every sin and blasphemy will be forgiven people, but
+    the blasphemy against the Spirit, will not be forgiven. - Matthew 12:31 '
+  - ....
+  - ....
+  - ....

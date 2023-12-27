@@ -15,7 +15,6 @@ public class BulletTimeManager : MonoBehaviour
 
     void Update()
     {   
-        Debug.Log(timeLeft);
         timeLeft -= Time.deltaTime;
         Time.timeScale += (1f / slowdownLength) * Time.unscaledDeltaTime;
         Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f);

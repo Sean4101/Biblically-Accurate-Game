@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7de24d598b7d94a893395287837a30, type: 3}
+  m_Name: VictoryDialogue
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - name: Angel
+    line: '*Cough* *Cough* *Cough*'
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: How could it be?
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "Bested by a mortal being\u2026."
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Gamer Taboritsky
+    line: I am anything but a mortal, I have sacrificed my soul to the heaven,
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Angel
+    line: "Do you have any idea what you\u2019ve done?"
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "To commit such, blasphemous \u2026\u2026.. deeds \u2026\u2026. *cough* "
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Gamer Taboritsky
+    line: Like I care anymore, eh?
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Gamer Taboritsky
+    line: "To be abused by your kinds for decades\u2026"
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Gamer Taboritsky
+    line: "I always thought holy spirits are the highest of all\u2026"
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Gamer Taboritsky
+    line: "Unbreakable\u2026"
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Gamer Taboritsky
+    line: "Unkillable\u2026"
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Gamer Taboritsky
+    line: "Now look at you, your nothing, your jus\u2026"
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Angel
+    line: "HERESY! YOUR WORDS ARE SHEER HERESY! YOUR JUST AN UNGRATEFUL SINNER, A
+      DEFOMITY WHO DARES  CHALLENGE THE DIVINE POW\u2026*cough* *cough*"
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Gamer Taboritsky
+    line: "Your just nothing but a mortal like us, no, even uglier, to sit in the
+      \u201Cparadise\u201D you have created\u2026. indifferently."
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Gamer Taboritsky
+    line: "The contract\u2026. I\u2019ve fulfilled it already, and where are you?
+      Where is the so-called redemption that you guys have promised? Wher\u2026"
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Angel
+    line: "Promised? PROMISED? That\u2019s the word you came to confront an Angel?
+      We owe you mortals nothing,  promised you nothing! You should be grateful enough
+      to not suffer in hell already."
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Gamer Taboritsky
+    line: "Look who\u2019s bleeding, eh?"
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Angel
+    line: Don't you realize?
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "The contract is just a hoax, a hoax! There are no redemption for sinners,
+      their never is,  it\u2019s only use is to lure sinners who\u2019s will is too
+      strong to belong in hell. "
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "Last mistake was King Minos\u2026 "
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "\u2026. and he perished well\u2026"
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "Soon enough\u2026 you\u2019ll be like him\u2026"
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "Prepare the smite\u2026"
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "\u2026"
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "From heaven \u2026. (fukin dies or something)"
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Gamer Taboristky
+    line: "\u2026."
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}

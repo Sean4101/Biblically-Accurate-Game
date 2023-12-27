@@ -12,22 +12,35 @@ public class OphanimLevelIntroManager : MonoBehaviour
     public LoreTextManager loreTextManager;
     public DialogueManager dialogueTextManager;
     public LoreTextLines prologueLines;
+    public LoreTextLines act2LoreLines;
     public DialogLines introDialogueLines;
 
+   
     public void StartIntro()
     {
-        StartCoroutine(PlayIntro());
+        StartCoroutine(PlayLevelOneIntro());
     }
-   
-    private IEnumerator PlayIntro()
+    
+    public void StartLevelTwoIntro()
+    {
+        StartCoroutine(PlayLevelTwoIntro());
+    }
+    private IEnumerator PlayLevelOneIntro()
     {
         loreTextManager.StartLoreDialogue(prologueLines);
         yield return new WaitUntil(() => loreTextManager.prologueEnd);
-        dialogueTextManager.StartLevelOneIntroDialogue(introDialogueLines);
+        dialogueTextManager.StartDialogue(introDialogueLines);
         yield return new WaitUntil(() => dialogueTextManager.introEnd);
         introComplete = true;
     }
-  
-   
     
+    //because we prob won't have level two so Imma write stuff here first
+    private IEnumerator PlayLevelTwoIntro()
+    {
+        loreTextManager.StartLoreDialogue(act2LoreLines);
+        yield return new WaitUntil(() => loreTextManager.prologueEnd);
+    }
+
+
+
 }

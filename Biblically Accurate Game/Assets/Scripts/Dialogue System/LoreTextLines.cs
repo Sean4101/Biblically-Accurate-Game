@@ -6,6 +6,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Dialog", menuName = "Scriptable Object/Lore Text")]
 public class LoreTextLines : ScriptableObject
 {
-    public List<string> prologueLines;
-    public List<string> levelOnetoTwoLines;
+    public List<string> loreLines;
+
 }

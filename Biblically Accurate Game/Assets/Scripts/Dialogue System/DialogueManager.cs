@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     public float introTextSpeed;
     public bool introEnd = false;
 
-    private DialogLines introDialogueLines;
+    private DialogLines dialogueLines;
     private int introIndex;
 
     private void Awake()
@@ -60,11 +60,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartLevelOneIntroDialogue(DialogLines lines)
+    public void StartDialogue(DialogLines lines)
     {
         introEnd = false;
         dialogueBox.enabled = true;
-        introDialogueLines = lines;
+        dialogueLines = lines;
         introIndex = 0;
         avatarImage.enabled = true;
         StartCoroutine(TypeLine());
@@ -72,7 +72,7 @@ public class DialogueManager : MonoBehaviour
 
     public void NextLine()
     {
-        if (introIndex < introDialogueLines.levelOneIntroLines.Count - 1)
+        if (introIndex < dialogueLines.dialogueLines.Count - 1)
         {
             introIndex++;
             ClearDialogue();
@@ -86,17 +86,17 @@ public class DialogueManager : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-    IEnumerator TypeLine()
+    IEnumerator TypeLine( )
     {
-        avatarImage.sprite = introDialogueLines.levelOneIntroLines[introIndex].avatar;
+        avatarImage.sprite = dialogueLines.dialogueLines[introIndex].avatar;
 
-        foreach (char c in introDialogueLines.levelOneIntroLines[introIndex].name.ToCharArray())
+        foreach (char c in dialogueLines.dialogueLines[introIndex].name.ToCharArray())
         {
             characterName.text += c;
             yield return new WaitForSeconds(introTextSpeed);
         }
 
-        foreach (char c in introDialogueLines.levelOneIntroLines[introIndex].line.ToCharArray())
+        foreach (char c in dialogueLines.dialogueLines[introIndex].line.ToCharArray())
         {
             introDialogueMainText.text += c;
             yield return new WaitForSeconds(introTextSpeed);
@@ -114,7 +114,7 @@ public class DialogueManager : MonoBehaviour
 
     bool IsTypingFinished(int lineIndexInList)
     {
-        if (introDialogueMainText.text == introDialogueLines.levelOneIntroLines[lineIndexInList].line && characterName.text == introDialogueLines.levelOneIntroLines[lineIndexInList].name)
+        if (introDialogueMainText.text == dialogueLines.dialogueLines[lineIndexInList].line && characterName.text == dialogueLines.dialogueLines[lineIndexInList].name)
         {
             return true;
         }
@@ -126,8 +126,8 @@ public class DialogueManager : MonoBehaviour
 
     void PresentWholeText(int lineIndexndexInList)
     {
-        introDialogueMainText.text = introDialogueLines.levelOneIntroLines[lineIndexndexInList].line;
-        characterName.text = introDialogueLines.levelOneIntroLines[lineIndexndexInList].name;
+        introDialogueMainText.text = dialogueLines.dialogueLines[lineIndexndexInList].line;
+        characterName.text = dialogueLines.dialogueLines[lineIndexndexInList].name;
     }
 
 }

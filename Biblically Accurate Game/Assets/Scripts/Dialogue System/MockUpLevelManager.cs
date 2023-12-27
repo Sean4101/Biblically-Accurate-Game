@@ -35,7 +35,7 @@ public class MockUpLevelManager : MonoBehaviour
             Debug.Log("Intro started");
             if (!dialogueStarted)
             {   
-                dialogueTextManager.StartLevelOneIntroDialogue(introDialogueLines);
+                dialogueTextManager.StartDialogue(introDialogueLines);
                 dialogueStarted = true;
             }
         }
