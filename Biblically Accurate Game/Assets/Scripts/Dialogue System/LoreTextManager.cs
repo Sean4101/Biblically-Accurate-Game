@@ -12,6 +12,8 @@ public class LoreTextManager : MonoBehaviour
     [Header("References: ")]
     public TextMeshProUGUI textComponent;
     public Image loreBox;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     //public LoreTextLines prologueLines;
 
     [Header("Settings: ")]
@@ -41,6 +43,8 @@ public class LoreTextManager : MonoBehaviour
         ClearDialogue();
         
         Debug.Log("Fade in started");
+        audioSource.clip = audioClip;
+      
     }
 
     // Update is called once per frame
@@ -105,7 +109,8 @@ public class LoreTextManager : MonoBehaviour
         yield return new WaitUntil(() => !_imageFadeIn);
 
         foreach (char c in loreTextLines.loreLines[index].ToCharArray())
-        {
+        {   
+            PlaySound();
             textComponent.text += c;
             yield return new WaitForSeconds(prologueTextSpeed);
         }
@@ -154,6 +159,17 @@ public class LoreTextManager : MonoBehaviour
          
         }
     }
-    
 
+    void PlaySound()
+    {
+        audioSource.time = 0f;
+        audioSource.Play();
+        
+        if(audioSource.time == 0.032f)
+        {
+            audioSource.Stop();
+        }
+        
+       
+    }
 }

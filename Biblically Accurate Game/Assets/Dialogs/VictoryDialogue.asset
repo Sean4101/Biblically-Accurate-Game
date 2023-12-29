@@ -73,9 +73,12 @@ MonoBehaviour:
     line: Don't you realize?
     avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
   - name: Angel
-    line: "The contract is just a hoax, a hoax! There are no redemption for sinners,
-      their never is,  it\u2019s only use is to lure sinners who\u2019s will is too
-      strong to belong in hell. "
+    line: The contract is just a hoax.... there are no redemption for sinners, their
+      never is...
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: ",  it\u2019s purpose is to distract sinners who\u2019s will is too strong
+      to belong in hell, and suppress their power by exhausting them."
     avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
   - name: Angel
     line: "Last mistake was King Minos\u2026 "

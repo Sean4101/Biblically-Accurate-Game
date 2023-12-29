@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI characterName;
     public Image avatarImage;
     public Image dialogueBox;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
 
     [Header("Settings: ")]
     public float introTextSpeed;
@@ -34,6 +36,7 @@ public class DialogueManager : MonoBehaviour
         ClearDialogue();
         dialogueBox.enabled = false;
         avatarImage.enabled = false;
+        audioSource.clip = audioClip;
         //StartDialogue();
     }
 
@@ -98,6 +101,7 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char c in dialogueLines.dialogueLines[introIndex].line.ToCharArray())
         {
+            PlaySound();
             introDialogueMainText.text += c;
             yield return new WaitForSeconds(introTextSpeed);
         }
@@ -128,6 +132,19 @@ public class DialogueManager : MonoBehaviour
     {
         introDialogueMainText.text = dialogueLines.dialogueLines[lineIndexndexInList].line;
         characterName.text = dialogueLines.dialogueLines[lineIndexndexInList].name;
+    }
+
+    void PlaySound()
+    {
+        audioSource.time = 0f;
+        audioSource.Play();
+
+        if (audioSource.time == 0.03f)
+        {
+            audioSource.Stop();
+        }
+
+
     }
 
 }
