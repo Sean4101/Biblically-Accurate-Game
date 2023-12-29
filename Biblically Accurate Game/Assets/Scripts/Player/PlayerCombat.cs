@@ -12,11 +12,13 @@ public class PlayerCombat : MonoBehaviour
     public Transform firePoint;
     CameraEffects cameraEffects;
     public BulletTimeManager bulletTimeManager;
+    public BulletTimeEffectScript bulletTimeEffectScript;
     PlayerMovement playerMovement;
 
     [Header("Prefabs")]
     public GameObject bulletPrefab;
     public GameObject dynamitePrefab;
+    public GameObject bulletTimeEffectPrefab;
 
     [Header("Shooting Attack")]
     public int bulletDamage = 1;
@@ -70,7 +72,8 @@ public class PlayerCombat : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
+        //debug effectDone
         if (!canControl)
             return;
         RotateGun();
@@ -99,7 +102,7 @@ public class PlayerCombat : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && isBulletTimeReady && !isInBulletTime)
         {
             Debug.Log("Bullet time used");
-            BulletTime();
+            StartCoroutine(BulletTimeCoroutine());
             isBulletTimeReady = false;
         }
 
@@ -193,13 +196,17 @@ public class PlayerCombat : MonoBehaviour
 
     public void BulletTimeCharge(int amount)
     {
-        currentBulletTimeCharge += amount;
-        if (currentBulletTimeCharge > maxBulletTimeCharge)
+        if (!isInBulletTime)
         {
-            isBulletTimeReady = true;
-            Debug.Log("Bullet time charge is full");
-            currentBulletTimeCharge = maxBulletTimeCharge;
+            currentBulletTimeCharge += amount;
+            if (currentBulletTimeCharge > maxBulletTimeCharge)
+            {
+                isBulletTimeReady = true;
+                Debug.Log("Bullet time charge is full");
+                currentBulletTimeCharge = maxBulletTimeCharge;
+            }
         }
+        
 
     }
     void Skill()
@@ -209,13 +216,24 @@ public class PlayerCombat : MonoBehaviour
         currentSkillCharge = 0;
     }
 
-    void BulletTime(  )
-    {   
+
+    private IEnumerator BulletTimeCoroutine()
+    {
+        GameObject bulletEffectObj = Instantiate(bulletTimeEffectPrefab, transform.position, Quaternion.identity);
+        BulletTimeEffectScript bulletEffectScript = bulletEffectObj.GetComponent<BulletTimeEffectScript>();
+
         currentBulletTimeCharge = 0;
         isInBulletTime = true;
+
+        yield return new WaitUntil(() => bulletEffectScript.shrinkEffectDone == true);
+
         bulletTimeManager.DoSlowMotion();
+
+        
+        bulletEffectScript.bulletTimeOver = true;
         isInBulletTime = false;
     }
+ 
     private IEnumerator SkillCoroutine()
     {   
        
