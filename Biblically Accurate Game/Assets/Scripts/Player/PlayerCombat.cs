@@ -193,12 +193,12 @@ public class PlayerCombat : MonoBehaviour
 
     public void BulletTimeCharge(int amount)
     {
-        bulletBurstAmount += amount;
+        currentBulletTimeCharge += amount;
         if (bulletBurstAmount > maxBulletTimeCharge)
         {
             isBulletTimeReady = true;
             Debug.Log("Bullet time charge is full");
-            bulletBurstAmount = maxBulletTimeCharge;
+            currentBulletTimeCharge = maxBulletTimeCharge;
         }
 
     }
