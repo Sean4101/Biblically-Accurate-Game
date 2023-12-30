@@ -5,8 +5,8 @@ image_folder = ['before']
 output_folder = ['after']
 
 # Output dimensions
-width = int(1920/10)
-height = int(1080/10)
+width = int(1920/8)
+height = int(1080/8)
 
 # Number of frames to skip
 skip_frames = 2
