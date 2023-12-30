@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 230d61fdf6fd70a4f8da25ed99855a13
+guid: 924ee892a86a6414ba6448941b96783e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Protag_Roll_0
+      name: Protag_Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af6859a48b1f22b4eb5c8ac104de510b
-      internalID: -1037118900
+      spriteID: 364b3a291a7c6f84ea825c666eda5b31
+      internalID: 148667046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_1
+      name: Protag_Idle_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7c510c05ef45f147b900328a7e06f60
-      internalID: -822058688
+      spriteID: cda07ea65cfc6d74f9fd581f82bcca86
+      internalID: 750408810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_2
+      name: Protag_Idle_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec9cd6e1a3801284bb017c35dd24d4fc
-      internalID: -1630306714
+      spriteID: c566905b47f12154e821377ebe253374
+      internalID: -518995179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_3
+      name: Protag_Idle_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e8d86d432155574c986f23018951ec5
-      internalID: -584037826
+      spriteID: 3a813ea87419a7845b663739b047c85d
+      internalID: 191884090
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_4
+      name: Protag_Idle_4
       rect:
         serializedVersion: 2
         x: 256
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee4593a7dce79484f92f3a0acd1bbfb4
-      internalID: 335487452
+      spriteID: 306957130f0d16e428d4781f7ecb8a9d
+      internalID: 994780978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_5
+      name: Protag_Idle_5
       rect:
         serializedVersion: 2
         x: 320
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb2fc259b500f634c850b9d77b41b32d
-      internalID: -1013710257
+      spriteID: 1fe854810437ebc4e8fa8061ffd5297f
+      internalID: -844075628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_6
+      name: Protag_Idle_6
       rect:
         serializedVersion: 2
         x: 384
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f70c4a5eeb91c0428dbde6b0287a3fe
-      internalID: 242547616
+      spriteID: 1ce51532ffe9e74439123b67e6e02219
+      internalID: 1248462123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_7
+      name: Protag_Idle_7
       rect:
         serializedVersion: 2
         x: 448
@@ -271,113 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72aa203bc5a4d3047b754de65416e243
-      internalID: -2080242151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag_Roll_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0dd65e7da25af194eb5674c55dd0c8de
-      internalID: 959643273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag_Roll_9
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65130bafb286d4c43a14c71974162afa
-      internalID: 1806910189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag_Roll_10
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01bbb63c74871134cbdb5202bb413c78
-      internalID: -1891971440
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag_Roll_11
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5258533c3278114cbe5a4b9626e3286
-      internalID: -159049473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag_Roll_12
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22747247937a06a4abb49701990335d4
-      internalID: 938531808
+      spriteID: b0b74fe73fe02cb4297ace8cff24fbfd
+      internalID: -1647787463
       vertices: []
       indices: 
       edges: []
@@ -393,19 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Protag_Roll_0: -1037118900
-      Protag_Roll_1: -822058688
-      Protag_Roll_10: -1891971440
-      Protag_Roll_11: -159049473
-      Protag_Roll_12: 938531808
-      Protag_Roll_2: -1630306714
-      Protag_Roll_3: -584037826
-      Protag_Roll_4: 335487452
-      Protag_Roll_5: -1013710257
-      Protag_Roll_6: 242547616
-      Protag_Roll_7: -2080242151
-      Protag_Roll_8: 959643273
-      Protag_Roll_9: 1806910189
+      Protag_Idle_0: 148667046
+      Protag_Idle_1: 750408810
+      Protag_Idle_2: -518995179
+      Protag_Idle_3: 191884090
+      Protag_Idle_4: 994780978
+      Protag_Idle_5: -844075628
+      Protag_Idle_6: 1248462123
+      Protag_Idle_7: -1647787463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 924ee892a86a6414ba6448941b96783e
+guid: f2c4d60a30b139b4e8bbc2c6899219cc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Protag_Idle_0
+      name: Protag_Die_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 364b3a291a7c6f84ea825c666eda5b31
-      internalID: 148667046
+      spriteID: b45a774e85c67354fab28e2a7c56ebbc
+      internalID: 1663478003
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Idle_1
+      name: Protag_Die_1
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cda07ea65cfc6d74f9fd581f82bcca86
-      internalID: 750408810
+      spriteID: e2887bf27d3fc5b44bb5193598c9e853
+      internalID: -2127028884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Idle_2
+      name: Protag_Die_2
       rect:
         serializedVersion: 2
         x: 128
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c566905b47f12154e821377ebe253374
-      internalID: -518995179
+      spriteID: e44b86b247020124fbfb27ab95ae5c74
+      internalID: -1267076808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Idle_3
+      name: Protag_Die_3
       rect:
         serializedVersion: 2
         x: 192
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a813ea87419a7845b663739b047c85d
-      internalID: 191884090
+      spriteID: b09256bf94a4d1a4fb474ada2a797995
+      internalID: 824516703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Idle_4
+      name: Protag_Die_4
       rect:
         serializedVersion: 2
         x: 256
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 306957130f0d16e428d4781f7ecb8a9d
-      internalID: 994780978
+      spriteID: e44602c8d31580b4388b1e70f501c395
+      internalID: -1525951357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Idle_5
+      name: Protag_Die_5
       rect:
         serializedVersion: 2
         x: 320
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe854810437ebc4e8fa8061ffd5297f
-      internalID: -844075628
+      spriteID: 23043c8660fac0b4b930b1beabe84918
+      internalID: -2050183199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Idle_6
+      name: Protag_Die_6
       rect:
         serializedVersion: 2
         x: 384
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ce51532ffe9e74439123b67e6e02219
-      internalID: 1248462123
+      spriteID: 7ea1d6a58471e9b4e8d91376887f7b69
+      internalID: 597348109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Idle_7
+      name: Protag_Die_7
       rect:
         serializedVersion: 2
         x: 448
@@ -271,8 +271,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0b74fe73fe02cb4297ace8cff24fbfd
-      internalID: -1647787463
+      spriteID: 5fdb13058dd0a98418e95b75eff4183d
+      internalID: 157433594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Die_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae72cdb297e7f9a43a3a9b2b41f0bde0
+      internalID: 1435930072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Die_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941c4a9db1a9140468dbc77750d9d82a
+      internalID: -567202411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Die_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f10174cd2ef2eb4bad46a035879c976
+      internalID: -186171170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Die_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5ff2933c07f3447b8f69c884baa01f
+      internalID: -1562367198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Die_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd683d10dbcf27428f80d1bc4f13d81
+      internalID: 937182883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Die_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a41108472af97d4189096a99401503a
+      internalID: 416377482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protag_Die_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50fc735318b2094d913e5971e7bdc74
+      internalID: 1999413047
       vertices: []
       indices: 
       edges: []
@@ -288,14 +435,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Protag_Idle_0: 148667046
-      Protag_Idle_1: 750408810
-      Protag_Idle_2: -518995179
-      Protag_Idle_3: 191884090
-      Protag_Idle_4: 994780978
-      Protag_Idle_5: -844075628
-      Protag_Idle_6: 1248462123
-      Protag_Idle_7: -1647787463
+      Protag_Die_0: 1663478003
+      Protag_Die_1: -2127028884
+      Protag_Die_10: -186171170
+      Protag_Die_11: -1562367198
+      Protag_Die_12: 937182883
+      Protag_Die_13: 416377482
+      Protag_Die_14: 1999413047
+      Protag_Die_2: -1267076808
+      Protag_Die_3: 824516703
+      Protag_Die_4: -1525951357
+      Protag_Die_5: -2050183199
+      Protag_Die_6: 597348109
+      Protag_Die_7: 157433594
+      Protag_Die_8: 1435930072
+      Protag_Die_9: -567202411
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

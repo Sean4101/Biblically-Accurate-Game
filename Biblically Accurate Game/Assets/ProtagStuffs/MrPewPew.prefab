@@ -103,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 51
-  m_Sprite: {fileID: 954169230, guid: dafe2e78d28ca774982ad7ca80b7609b, type: 3}
+  m_Sprite: {fileID: 148667046, guid: 924ee892a86a6414ba6448941b96783e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canControl: 1
-  movenentSpeed: 4
+  movementSpeed: 5
   movementAcceleration: 40
   movementDeceleration: 20
   rollSpeed: 10
@@ -233,9 +233,11 @@ MonoBehaviour:
   weapon: {fileID: 1636503662945763200}
   weaponSpriteRenderer: {fileID: 5311687388513865833}
   firePoint: {fileID: 8478331944099842772}
+  bulletTimeManager: {fileID: 0}
+  bulletTimeEffectScript: {fileID: 0}
   bulletPrefab: {fileID: 834564641309557873, guid: ca96fdd87ae84404eb86ec3a455f6b20, type: 3}
   dynamitePrefab: {fileID: 4333551939594301160, guid: 6f62665ace2d6e745bd7180b1f26c65f, type: 3}
-  dimensionalRiftPrefab: {fileID: 0}
+  bulletTimeEffectPrefab: {fileID: 0}
   bulletDamage: 2
   bulletSpeed: 10
   dynamiteForce: 5
@@ -250,7 +252,11 @@ MonoBehaviour:
   maxSkillCharge: 4
   currentSkillCharge: 0
   isSkillReady: 0
-  dimensionalRiftForce: 1.5
+  bulletBurstAmount: 15
+  maxBulletTimeCharge: 35
+  currentBulletTimeCharge: 0
+  isBulletTimeReady: 0
+  isInBulletTime: 0
 --- !u!114 &3450755746360175197
 MonoBehaviour:
   m_ObjectHideFlags: 0
