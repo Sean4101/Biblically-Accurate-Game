@@ -18,7 +18,6 @@ public class PlayerStatus : MonoBehaviour
     float recentlyDamagedFlashDuration = 0.1f;
 
     [Header("References")]
-    public GameObject invincibleAura;
     CameraEffects cameraEffects;
 
     public int CurrentHealth { get; private set; }
@@ -62,7 +61,6 @@ public class PlayerStatus : MonoBehaviour
     public void SetInvincible(bool invincible)
     {
         Invincible = invincible;
-        invincibleAura.SetActive(invincible);
     }
 
     public IEnumerator TakeDamageCoroutine()
