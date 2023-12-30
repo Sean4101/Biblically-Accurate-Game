@@ -7,6 +7,10 @@ public class Bullet : MonoBehaviour
     Rigidbody2D rb;
     public int damage;
     public bool skillActivated;
+    public GameObject explosionPrefab;
+    CameraEffects cameraEffects;
+    public ExplosionScript explosionScript;
+
     [SerializeField] private int skillChargeAmount = 1;
 
     public GameObject bulletImpactEffect;
@@ -15,6 +19,8 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        cameraEffects = Camera.main.GetComponent<CameraEffects>();
+
     }
 
     void Start()
@@ -38,7 +44,8 @@ public class Bullet : MonoBehaviour
         if (skillActivated)
         {
             GetComponent<SpriteRenderer>().color = new Color32(95, 205, 228, 255);
-        }else
+        }
+        else
         {
             GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
         }
@@ -51,6 +58,12 @@ public class Bullet : MonoBehaviour
             if(skillActivated)
             {
                playerCombat.BulletTimeCharge(skillChargeAmount);
+               int rng = Random.Range(0, 4);
+                if (rng == 0 || rng == 1)
+                {
+                     BulletExplode();
+                }
+
             }
             else
             {
@@ -65,13 +78,24 @@ public class Bullet : MonoBehaviour
         else if ( collision.CompareTag("HostileProjectile") && skillActivated && !playerCombat.isInBulletTime)
         {            
             Instantiate(bulletImpactEffect, transform.position, Quaternion.identity);
-            //destroy the projectiles
-            Destroy(collision.gameObject);
+            int rng = Random.Range(0, 5);
+            if (rng == 0 || rng == 1)
+            {
+                BulletExplode();
+            }
         }
 
         if (collision.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
         }
+    }
+
+    void BulletExplode()
+    {
+        cameraEffects.Shake(0.2f);
+        GameObject explosionRadius = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        explosionScript.explosionDamage = 2;
+        Destroy(gameObject);
     }
 }

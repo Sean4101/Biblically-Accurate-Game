@@ -99,6 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5335c9fa4f686e4cbf31ad628d7757f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  skillActivated: 0
+  explosionPrefab: {fileID: 5682373005490414963, guid: 9ee27e347e8d704488c1ce005d52f7c0, type: 3}
+  explosionScript: {fileID: 5314384757479465005, guid: 9ee27e347e8d704488c1ce005d52f7c0, type: 3}
+  skillChargeAmount: 1
   bulletImpactEffect: {fileID: 983500920882464592, guid: 3d9393a5aab6f474898be239dfbd7db6, type: 3}
 --- !u!50 &222717629863491720
 Rigidbody2D:
