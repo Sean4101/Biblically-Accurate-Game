@@ -77,9 +77,8 @@ public class PlayerCombat : MonoBehaviour
         if (!canControl)
             return;
         RotateGun();
-        if (Input.GetMouseButtonDown(0) && currentAmmo != 0 && !isInSkill)
+        if (Input.GetMouseButtonDown(0) && !isReloading && !isInSkill)
         {
-            interruptReload = true;
             Shoot();
             currentAmmo--;
         }
@@ -88,7 +87,7 @@ public class PlayerCombat : MonoBehaviour
             Bomb();
             currentDynamite--;
         }
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo != 6 && !isReloading)
+        if ((Input.GetKeyDown(KeyCode.R) || Input.GetMouseButtonDown(0)) && currentAmmo == 0 && !isReloading)
         {
             interruptReload = false;
             isReloading = true;
@@ -140,13 +139,6 @@ public class PlayerCombat : MonoBehaviour
             yield return new WaitForSeconds(delay);
 
             //if the player interrupts the reload by shooting, exit the coroutine
-            if (interruptReload)
-            {
-                isReloading = false;
-                interruptReload = false; // Reset the flag after interrupting reloading
-                yield break; // Exit the coroutine
-            }
-
             currentAmmo++;
 
         }
