@@ -6876,6 +6876,8 @@ MonoBehaviour:
   orbStreamDuration: 5
   orbSpiralDuration: 5
   combo1Duration: 10
+  ultraComboDuration: 10
+  regularWaitDuration: 5
   orbSpiralDirectionAmount: 8
   orbShooterAmount: 4
   padAvailableCount: 15
@@ -7212,7 +7214,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -7979,6 +7981,7 @@ MonoBehaviour:
   loreBox: {fileID: 0}
   audioSource: {fileID: 1924195131}
   audioClip: {fileID: 8300000, guid: 59dc7b1868fed214ca1d541d07fcead7, type: 3}
+  loreName: 
   prologueTextSpeed: 0.03
   prologueEnd: 0
   prologueOnGoing: 0
@@ -8796,6 +8799,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1760410027262387380, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+      propertyPath: rollSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760410027262387380, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+      propertyPath: rollDuration
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1760410027262387380, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+      propertyPath: rollAdditionalInvincibilityDuration
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3429943483128203177, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: m_Name
       value: MrPewPew

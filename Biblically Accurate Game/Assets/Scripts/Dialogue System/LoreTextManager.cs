@@ -14,6 +14,7 @@ public class LoreTextManager : MonoBehaviour
     public Image loreBox;
     public AudioSource audioSource;
     public AudioClip audioClip;
+    public string loreName;
     //public LoreTextLines prologueLines;
 
     [Header("Settings: ")]
@@ -41,8 +42,6 @@ public class LoreTextManager : MonoBehaviour
     void Start()
     {
         ClearDialogue();
-        
-        Debug.Log("Fade in started");
         audioSource.clip = audioClip;
       
     }
@@ -68,22 +67,38 @@ public class LoreTextManager : MonoBehaviour
         {
             FadeOutBackground();
         }
-        else if (_imageFadeIn)
+        else if (_imageFadeIn )
         {
             FadeInBackground();
         }
+        
     }
 
     public void StartLoreDialogue(LoreTextLines lines)
-    {
-        _imageFadeIn = true;
-        canvasGroup.alpha = 0;
-        loreTextLines = lines;
-        index = 0;
-        prologueOnGoing = true;
-        prologueEnd = false;
-        loreBox.enabled = true;
-        StartCoroutine(TypeLine());
+    {   
+        if(lines.name != "prologueText")
+        {
+            _imageFadeIn = true;
+            canvasGroup.alpha = 0;
+            loreTextLines = lines;
+            index = 0;
+            prologueOnGoing = true;
+            prologueEnd = false;
+            loreBox.enabled = true;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            _imageFadeIn = false;
+            canvasGroup.alpha = 1;
+            loreTextLines = lines;
+            index = 0;
+            prologueOnGoing = true;
+            prologueEnd = false;
+            loreBox.enabled = true;
+            StartCoroutine(TypeLine());
+        }
+        
     }
 
     public void NextLine()
@@ -156,7 +171,6 @@ public class LoreTextManager : MonoBehaviour
         if (canvasGroup.alpha >= 1)
         {
             _imageFadeIn = false;
-         
         }
     }
 

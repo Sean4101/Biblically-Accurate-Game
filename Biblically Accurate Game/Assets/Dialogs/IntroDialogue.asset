@@ -13,19 +13,67 @@ MonoBehaviour:
   m_Name: IntroDialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - name: wefdqw
-    line: hello
+  - name: Tabby
+    line: "\u2026."
     avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
-  - name: sadas
-    line: Hello how are you dude
+  - name: Angel
+    line: You are ....
     avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: sadas
-    line: Hee Hee Hee Haw
+  - name: Tabby
+    line: "It doesn\u2019t matter, I\u2019m here top get my business with Azrael
+      done."
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Angel
+    line: "I\u2019m afraid I can\u2019t help with that,"
     avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: sadas
-    line: Hello how are you dude What a good day it is! I have been reaching for
-      your extended car awrranty.
+  - name: Tabby
+    line: "I\u2019m not asking for your permission, move."
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Angel
+    line: Turn back now, for this palace, is not for your kind, Mortal.
     avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: sadas
-    line: ASDASDASDSADWRHIKUQ13CH2YI
+  - name: Tabby
+    line: "Bold of your varmint to assume I\u2019m a mortal eh, you have no idea
+      who am I boy?"
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Angel
+    line: "Mind your tone mortal, for now you\u2019re confronting a divine spirit,
+      crossing the will of god."
     avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Tabby
+    line: "All I see here, is that you are that one sorry horse sh*t crossing people\u2019s
+      will, now get!"
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Angel
+    line: "I see\u2026"
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "It seems that your choice have been made\u2026"
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: Such persistence...
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: BEHOLD!
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: THE POWER, OF AN ANGEL! (Disco ON)
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Tabby
+    line: Christ sake you gotta be joking
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Angel
+    line: "I\u2019m gonna slaughter you with my groove, prepare thy self!"
+    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
+  - name: Tabby
+    line: Hell, here we go than
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Tabby
+    line: "Be not afraid\u2026."
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Tabby
+    line: ....
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+  - name: Tabby
+    line: ....mortal.
+    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
