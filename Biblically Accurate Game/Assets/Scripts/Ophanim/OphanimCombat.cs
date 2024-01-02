@@ -35,6 +35,13 @@ public class OphanimCombat : MonoBehaviour
     public float shooterOrbSpeed = 1f;
     public int shooterOrbAmount = 4;
     public float shooterOrbDelay = 1.5f;
+
+    [Header("Disco Aura Attack")]
+    public GameObject discoAuraObj;
+    public GameObject discoRayPrefab;
+    public float discoAuraAttackPreparationDuration = 1f;
+    public float discoAuraAttackDuration = 7.5f;
+    public int raysToSpawn = 5;
     
 
     private void Update()
@@ -191,7 +198,34 @@ public class OphanimCombat : MonoBehaviour
         }
     }
 
+    public void DiscoAuraAttack()
+    {
+        StartCoroutine(DiscoAuraAttackCoroutine());
+    }
 
+    List<GameObject> discoRays = new List<GameObject>();
+
+    private IEnumerator DiscoAuraAttackCoroutine()
+    {
+        discoAuraObj.SetActive(true);
+        for (int i = 0; i < raysToSpawn; i++)
+        {
+            GameObject discoRay = Instantiate(discoRayPrefab, discoAuraObj.transform);
+            discoRays.Add(discoRay);
+        }
+        yield return new WaitForSeconds(discoAuraAttackPreparationDuration);
+        foreach (GameObject discoRay in discoRays)
+        {
+            discoRay.GetComponent<Ray>().Activate();
+        }
+        yield return new WaitForSeconds(discoAuraAttackDuration);
+        discoAuraObj.SetActive(false);
+        foreach (GameObject discoRay in discoRays)
+        {
+            Destroy(discoRay);
+        }
+        discoRays.Clear();
+    }
 
     //contact damage
     private void OnTriggerEnter2D(Collider2D collision)

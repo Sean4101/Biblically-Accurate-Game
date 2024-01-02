@@ -47,6 +47,7 @@ public class OphanimAI : MonoBehaviour
         yield return new WaitForSeconds(1f);
         while (true)
         {
+            /*
             combat.MinionSpawnShooter();
             yield return new WaitForSeconds(5f);
             combat.ShooterOrbAttack(orbShooterAmount);
@@ -62,8 +63,9 @@ public class OphanimAI : MonoBehaviour
             combat.OrbStreamAttack(orbStreamDuration);
             yield return new WaitForSeconds(10f);
             combat.OrbSpiralAttack(orbSpiralDuration, orbSpiralDirectionAmount);
+            yield return new WaitForSeconds(10f);*/
+            combat.DiscoAuraAttack();
             yield return new WaitForSeconds(10f);
-            
         }
     }
 
