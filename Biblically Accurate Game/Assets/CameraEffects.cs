@@ -30,12 +30,11 @@ public class CameraEffects : MonoBehaviour
     IEnumerator shakeCoroutine( float duration )
     {
         float elapsed = 0.0f;
-        Vector3 originalCamPos = transform.position;
 
         while ( elapsed < duration )
         {
-            float x = Random.Range( -0.1f, 0.1f ) * 0.5f;
-            float y = Random.Range( -0.1f, 0.1f ) * 0.5f;
+            float x = Random.Range( -0.1f, 0.1f ) * 0.3f;
+            float y = Random.Range( -0.1f, 0.1f ) * 0.3f;
 
             transform.position = new Vector3( transform.position.x + x, transform.position.y + y, transform.position.z );
 
@@ -44,7 +43,10 @@ public class CameraEffects : MonoBehaviour
             yield return null;
         }
 
-        transform.position = originalCamPos;
+        //set camera position to (0,0,-10)
+        transform.position = new Vector3( 0, 0, -10 );
+
+
     }
 
     IEnumerator ZoomInCoroutine()

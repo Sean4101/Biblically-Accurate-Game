@@ -36,7 +36,6 @@ public class ExplosionScript : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             collision.SendMessage("TakeDamage", explosionDamage);
             playerCombat.ChargeNormalSkill(skillChargeAmount);
-            //collision.SendMessage("TakeDamage", 0);
         }
         else if (collision.tag == "HostileProjectile")
         {

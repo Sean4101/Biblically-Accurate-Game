@@ -150,7 +150,7 @@ public class PlayerCombat : MonoBehaviour
         GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletObj.GetComponent<Bullet>();
         bullet.Fire(bulletDamage, bulletSpeed);
-        cameraEffects.Shake(0.03f);
+        cameraEffects.Shake(0.02f);
     }
 
     void Bomb()
