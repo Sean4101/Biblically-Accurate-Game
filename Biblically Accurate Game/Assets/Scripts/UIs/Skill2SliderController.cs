@@ -32,4 +32,6 @@ public class Skill2SliderController : MonoBehaviour
         image.color = Color.white;
         slider.value = 1;
     }
+
+    
 }

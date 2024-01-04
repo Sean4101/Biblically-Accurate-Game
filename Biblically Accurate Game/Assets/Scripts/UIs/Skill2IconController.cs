@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Skill2IconController : MonoBehaviour
 {
@@ -12,10 +13,15 @@ public class Skill2IconController : MonoBehaviour
     bool SkillDuration = false;
     public Canvas SubSlider;
     Skill2SubSlider skill2subslider;
+    public Image LightUp;
+    public float DelayInvisible;
+    bool SkillCharge;
 
     // Start is called before the first frame update
     void Start()
     {
+        SkillCharge = false;
+        LightUp.enabled = false;
         skill2subslider = SubSlider.GetComponent<Skill2SubSlider>();
         player_statue = player.GetComponent<PlayerCombat>();
         SliderController.value = ((float)player_statue.maxBulletTimeCharge - (float)player_statue.currentBulletTimeCharge) /(float)player_statue.maxBulletTimeCharge;   //q
@@ -26,6 +32,12 @@ public class Skill2IconController : MonoBehaviour
     {
         SliderController.value = ((float)player_statue.maxBulletTimeCharge - (float)player_statue.currentBulletTimeCharge) / (float)player_statue.maxBulletTimeCharge;  //q
         //Debug.Log($"currentBulletTimeCharge:{player_statue.currentBulletTimeCharge}");
+        if (SliderController.value <= 0 && !SkillCharge)
+        {
+            SkillCharge = true;
+            skill_charge();
+        }
+        if(SliderController.value > 0)SkillCharge = false;
     }
 
     public void SkillRun()
@@ -44,5 +56,18 @@ public class Skill2IconController : MonoBehaviour
             SkillDuration = false;
             skill2subslider.SkillStop();
         }
+    }
+
+    public void skill_charge()
+    {
+        LightUp.enabled = true;
+        StartCoroutine(HideLightUpAfterDelat(DelayInvisible));
+    }
+
+    IEnumerator HideLightUpAfterDelat(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        LightUp.enabled = false;
     }
 }
