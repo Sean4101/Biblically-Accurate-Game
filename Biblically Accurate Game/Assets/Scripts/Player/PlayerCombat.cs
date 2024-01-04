@@ -260,8 +260,8 @@ public class PlayerCombat : MonoBehaviour
             Bullet bullet = bulletObj.GetComponent<Bullet>();
             bullet.skillActivated = true;
             bullet.Fire(bulletDamage, bulletSpeed);
-            Skill1.GetComponent<Skill2SliderController>().skill_duration_updatge(1-((float)i / 6));
             yield return new WaitForSeconds(0.1f);
+            Skill1.GetComponent<Skill2SliderController>().skill_duration_updatge(1 - ((float)i / 6));
         }
         isInSkill = false;
         Skill1.GetComponent<Skill2SliderController>().skill_stop();

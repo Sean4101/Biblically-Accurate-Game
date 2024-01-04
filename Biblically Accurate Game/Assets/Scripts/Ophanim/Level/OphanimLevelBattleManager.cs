@@ -37,24 +37,20 @@ public class OphanimLevelBattleManager : MonoBehaviour
     public void BattleVictory()
     {
         bossAI.DisableAI();
+        BGM.ChangeBack();
+        BossBGM.ChangeToBGM();
         battleComplete = true;
         battleVictorious = true;
-        SmallDelayPlay();
     }
 
     public void BattleDefeat()
     {
         bossAI.DisableAI();
-        battleComplete = true;
-        battleVictorious = false;
-        SmallDelayPlay();
-    }
-
-    IEnumerator SmallDelayPlay()
-    {
-        yield return new WaitForSeconds(0.5f);
         BGM.ChangeBack();
         BossBGM.ChangeToBGM();
-
+        battleComplete = true;
+        battleVictorious = false;
     }
+
+
 }

@@ -3536,7 +3536,7 @@ MonoBehaviour:
   player: {fileID: 364697986}
   SubSlider: {fileID: 1103950038}
   LightUp: {fileID: 437541971}
-  DelayInvisible: 0
+  DelayInvisible: 0.2
 --- !u!1 &768282645
 GameObject:
   m_ObjectHideFlags: 0
@@ -10089,6 +10089,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+      propertyPath: Skill1
+      value: 
+      objectReference: {fileID: 1114046482}
     - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: Skill2Slider
       value: 
