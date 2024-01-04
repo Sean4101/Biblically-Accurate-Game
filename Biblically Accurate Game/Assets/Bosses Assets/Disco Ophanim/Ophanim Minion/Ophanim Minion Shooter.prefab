@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6012679002576844986}
   - component: {fileID: 6895334449924772551}
   - component: {fileID: 7347396986132579698}
+  - component: {fileID: 3369223660186811953}
   m_Layer: 0
   m_Name: Ophanim Minion Shooter
   m_TagString: Enemy
@@ -121,9 +122,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0040082377, y: 0.003512365}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.48329875
 --- !u!50 &6012679002576844986
 Rigidbody2D:
   serializedVersion: 4
@@ -188,6 +189,41 @@ MonoBehaviour:
   healBossDelay: 10
   speed: 5
   shootAtPlayerInterval: 1
+--- !u!58 &3369223660186811953
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523457242551531566}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.003512257}
+  serializedVersion: 2
+  m_Radius: 0.46325663
 --- !u!1 &3122294705899050419
 GameObject:
   m_ObjectHideFlags: 0

@@ -89,11 +89,19 @@ public class PlayerStatus : MonoBehaviour
         {   
             //knockback
             Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
-            GetComponent<Rigidbody2D>().AddForce(knockbackDirection * knockbackForce);
+            if (collision.name.Contains("Disco Aura"))
+            {
+                GetComponent<Rigidbody2D>().AddForce(knockbackDirection * knockbackForce * 10);
+            }
+            else
+            {
+                GetComponent<Rigidbody2D>().AddForce(knockbackDirection * knockbackForce);
+            }
 
         }
+
         
-        if (collision.CompareTag("HostileProjectile") && (!Invincible))
+        if (collision.CompareTag("HostileProjectile") && !collision.name.Contains("ShooterOrb") && (!Invincible))
         {
            
                 Destroy(collision.gameObject);

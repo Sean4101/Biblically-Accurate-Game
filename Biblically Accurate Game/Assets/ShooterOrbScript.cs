@@ -28,7 +28,6 @@ public class ShooterOrbScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerStatus>().TakeDamage(damage);
-            //Destroy(gameObject);
         }
         if (collision.CompareTag("Obstacle"))
         {
