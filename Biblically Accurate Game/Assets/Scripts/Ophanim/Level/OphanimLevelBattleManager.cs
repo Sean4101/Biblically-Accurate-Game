@@ -13,13 +13,13 @@ public class OphanimLevelBattleManager : MonoBehaviour
     public bool battleVictorious = false;
 
     public BackGroundMusicController BGM;
-    public BossBGMPlayer BossBGM;
+    public GameObject BossBGMControll;
 
     public void StartBattle()
     {
         bossAI.EnableAI();
         BGM.ChangeToBossBGM();
-        BossBGM.ChangeBack();
+        BossBGMControll.GetComponent<BossBGMPlayer>().ChangeBack();
     }
 
     private void Update()
@@ -38,7 +38,7 @@ public class OphanimLevelBattleManager : MonoBehaviour
     {
         bossAI.DisableAI();
         BGM.ChangeBack();
-        BossBGM.ChangeToBGM();
+        BossBGMControll.GetComponent<BossBGMPlayer>().ChangeToBGM();
         battleComplete = true;
         battleVictorious = true;
     }
@@ -47,7 +47,7 @@ public class OphanimLevelBattleManager : MonoBehaviour
     {
         bossAI.DisableAI();
         BGM.ChangeBack();
-        BossBGM.ChangeToBGM();
+        BossBGMControll.GetComponent<BossBGMPlayer>().ChangeToBGM();
         battleComplete = true;
         battleVictorious = false;
     }

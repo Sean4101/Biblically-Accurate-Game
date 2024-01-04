@@ -4,20 +4,11 @@ using UnityEngine;
 
 public class BossBGMPlayer : MonoBehaviour
 {
-
-    static BossBGMPlayer BossBGM;
     private AudioSource music;
 
     private void Awake()
     {
-        if (BossBGM == null)
-        {
-            BossBGM = this;
-            music = BossBGM.GetComponent<AudioSource>();
-        }
-        else if (BossBGM != this) Destroy(gameObject);
-
-        DontDestroyOnLoad(gameObject);
+        music = gameObject.GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update

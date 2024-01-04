@@ -633,7 +633,7 @@ MonoBehaviour:
   battleComplete: 0
   battleVictorious: 0
   BGM: {fileID: 1567591035}
-  BossBGM: {fileID: 1705771066}
+  BossBGMControll: {fileID: 1705771065}
 --- !u!114 &235890124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7877,7 +7877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleManager: {fileID: 235890123}
-  maxHealth: 900
+  maxHealth: 400
   healAmount: 2
   flashDuration: 0.1
   flashColor: {r: 1, g: 0, b: 0, a: 1}
