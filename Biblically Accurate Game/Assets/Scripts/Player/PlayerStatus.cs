@@ -19,6 +19,10 @@ public class PlayerStatus : MonoBehaviour
 
     [Header("References")]
     CameraEffects cameraEffects;
+    public AudioSource hitAudioSource;
+    public AudioClip hitAudioClip;
+    public AudioClip healAudioClip;
+    public AudioSource healAudioSource;
 
     public int CurrentHealth { get; private set; }
 
@@ -30,7 +34,9 @@ public class PlayerStatus : MonoBehaviour
 
     }
     public void playerHeal( int healAmount)
-        {
+        {   
+            healAudioSource.clip = healAudioClip;
+            PlayHealSound();
             if (CurrentHealth < MaxHealth)
             {
                 CurrentHealth += healAmount;
@@ -42,11 +48,16 @@ public class PlayerStatus : MonoBehaviour
         }
     public void TakeDamage(int damage)
     {   
-        
+       
         if (Invincible || RecentlyDamagedInvincible)
             return;
-        CurrentHealth -= damage;
-       
+        else   
+        {
+         CurrentHealth -= damage;
+         hitAudioSource.clip = hitAudioClip;
+         PlayHitSound();
+        }
+        
         if (CurrentHealth <= 0)
         {
             Die();
@@ -86,7 +97,7 @@ public class PlayerStatus : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ( !Invincible  && collision.CompareTag("Enemy"))
-        {   
+        {
             //knockback
             Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
             if (collision.name.Contains("Disco Aura"))
@@ -102,10 +113,27 @@ public class PlayerStatus : MonoBehaviour
 
         
         if (collision.CompareTag("HostileProjectile") && !collision.name.Contains("ShooterOrb") && (!Invincible))
-        {
-           
+        {       
+
                 Destroy(collision.gameObject);
 
         }
+    }
+
+    void PlayHitSound()
+    {   
+        hitAudioSource.time = 0f;
+        hitAudioSource.volume = 0.6f;
+        hitAudioSource.pitch = 1.7f;
+        hitAudioSource.time = 0f;
+        hitAudioSource.Play();
+    }
+
+    void PlayHealSound()
+    {
+        healAudioSource.volume = 0.5f;
+        healAudioSource.pitch = 1f;
+        healAudioSource.time = 0f;
+        healAudioSource.Play();
     }
 }

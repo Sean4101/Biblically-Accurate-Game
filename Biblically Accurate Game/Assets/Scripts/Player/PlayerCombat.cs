@@ -14,10 +14,14 @@ public class PlayerCombat : MonoBehaviour
     public BulletTimeManager bulletTimeManager;
     public BulletTimeEffectScript bulletTimeEffectScript;
     PlayerMovement playerMovement;
+     public reloadAnimationScript reloadAnimationScript;
+    [Header("Audio")]
     public AudioSource gunFireAudioSource;
     public AudioClip gunFireAudioClip;
-    public reloadAnimationScript reloadAnimationScript;
-
+    public AudioClip reloadAudioClip;
+    public AudioSource reloadAudioSource;
+    public AudioClip addDynamiteClip;
+    public AudioSource addDynamiteAudioSource;
 
     [Header("Prefabs")]
     public GameObject bulletPrefab;
@@ -138,7 +142,9 @@ public class PlayerCombat : MonoBehaviour
     }
 
     void Reload()
-    {
+    {   
+        reloadAudioSource.clip = reloadAudioClip;
+        PlayReload();
         StartCoroutine(ReloadCoroutine(reloadTime));
     }
     private IEnumerator ReloadCoroutine(float delay)
@@ -174,7 +180,9 @@ public class PlayerCombat : MonoBehaviour
     }
 
     public void AddDynamite()
-    {
+    {   
+        addDynamiteAudioSource.clip = addDynamiteClip;
+        PlayAddDynamite();
         currentDynamite++;
         if (currentDynamite > maxDynamite)
         {
@@ -265,4 +273,19 @@ public class PlayerCombat : MonoBehaviour
         gunFireAudioSource.Play();
     }
 
+    void PlayReload()
+    {
+        reloadAudioSource.volume = 0.6f;
+        reloadAudioSource.pitch = 0.9f;
+        reloadAudioSource.time = 0f;
+        reloadAudioSource.Play();
+    }
+
+    void PlayAddDynamite()
+    {
+        addDynamiteAudioSource.volume = 0.6f;
+        addDynamiteAudioSource.pitch = 1f;
+        addDynamiteAudioSource.time = 0f;
+        addDynamiteAudioSource.Play();
+    }
 }

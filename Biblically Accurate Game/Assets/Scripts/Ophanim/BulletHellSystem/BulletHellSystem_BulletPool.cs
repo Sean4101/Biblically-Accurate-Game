@@ -40,6 +40,7 @@ public class BulletHellSystem_BulletPool : MonoBehaviour
         if (notEnoughBulletsInPool)
         {
             GameObject bul = Instantiate(pooledBullet);
+            
             bul.SetActive(false);
             bullets.Add(bul);
             return bul;
@@ -48,4 +49,5 @@ public class BulletHellSystem_BulletPool : MonoBehaviour
         return null;
     }   
    
+
 }
