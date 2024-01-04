@@ -24,7 +24,7 @@ MonoBehaviour:
     avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
   - name: Coltstone Jeremiah
     line: I am anything but a mortal, I have sacrificed my soul to the heaven,
-    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}
   - name: Uriel the Divine
     line: "Do you have any idea what you\u2019ve done?"
     avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
