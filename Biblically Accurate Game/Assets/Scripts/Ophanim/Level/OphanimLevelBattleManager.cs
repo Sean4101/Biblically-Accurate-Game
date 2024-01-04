@@ -12,9 +12,14 @@ public class OphanimLevelBattleManager : MonoBehaviour
     public bool battleComplete = false;
     public bool battleVictorious = false;
 
+    public BackGroundMusicController BGM;
+    public BossBGMPlayer BossBGM;
+
     public void StartBattle()
     {
         bossAI.EnableAI();
+        BGM.ChangeToBossBGM();
+        BossBGM.ChangeBack();
     }
 
     private void Update()
@@ -34,6 +39,7 @@ public class OphanimLevelBattleManager : MonoBehaviour
         bossAI.DisableAI();
         battleComplete = true;
         battleVictorious = true;
+        SmallDelayPlay();
     }
 
     public void BattleDefeat()
@@ -41,5 +47,14 @@ public class OphanimLevelBattleManager : MonoBehaviour
         bossAI.DisableAI();
         battleComplete = true;
         battleVictorious = false;
+        SmallDelayPlay();
+    }
+
+    IEnumerator SmallDelayPlay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        BGM.ChangeBack();
+        BossBGM.ChangeToBGM();
+
     }
 }
