@@ -42,7 +42,13 @@ public class OphanimCombat : MonoBehaviour
     public float discoAuraAttackPreparationDuration = 1f;
     public float discoAuraAttackDuration = 7.5f;
     public int raysToSpawn = 5;
-    
+
+
+    [Header("Sound Effects")]
+    public AudioSource orbAttackAudioSource;
+    public AudioClip orbAttackAudioClip;
+    public AudioSource spawnAudioSource;
+    public AudioClip spawnAudioClip;
 
     private void Update()
     {
@@ -136,6 +142,8 @@ public class OphanimCombat : MonoBehaviour
                 Vector2 direction = (Vector2)(Quaternion.Euler(0f, 0f, angleInterval * j) * orbSpiralOrientation.up);
                 Vector2 spawnPoint = (Vector2)transform.position + direction * 1.5f;
                 GameObject orb = Instantiate(orbPrefab, spawnPoint, Quaternion.identity);
+                orbAttackAudioSource.clip = orbAttackAudioClip;
+                PlayOrbSound();
                 Rigidbody2D orbRB = orb.GetComponent<Rigidbody2D>();
                 orbRB.velocity = direction.normalized * spiralOrbSpeed;
             }
@@ -156,6 +164,8 @@ public class OphanimCombat : MonoBehaviour
 
     public void MinionSpawnShooter()
     {
+        spawnAudioSource.clip = spawnAudioClip;
+        PlaySpawnSound();
         for (int i = 0; i < minionSpawnAmount; i++)
         {
             if (i % 2 == 0) 
@@ -175,7 +185,9 @@ public class OphanimCombat : MonoBehaviour
     }
 
     public void MinionSpawnChaser()
-    {
+    {   
+        spawnAudioSource.clip = spawnAudioClip;
+        PlaySpawnSound();
         Instantiate(minionChaser, transform.position, Quaternion.identity);
     }
     
@@ -192,6 +204,10 @@ public class OphanimCombat : MonoBehaviour
             Vector2 playerDirection = player.position - transform.position;
             Vector2 spawnPoint = transform.position + (Vector3)playerDirection.normalized * 1.5f;
             GameObject shooterOrnAtk = Instantiate(shooterOrbPrefab, spawnPoint, Quaternion.identity);
+            orbAttackAudioSource.clip = orbAttackAudioClip;
+            PlayOrbSound();
+            orbAttackAudioSource.clip = orbAttackAudioClip;
+            PlayOrbSound();
             Rigidbody2D orbRB = shooterOrnAtk.GetComponent<Rigidbody2D>();
             orbRB.velocity = playerDirection.normalized * shooterOrbSpeed;
             yield return new WaitForSeconds(delay);
@@ -234,5 +250,23 @@ public class OphanimCombat : MonoBehaviour
         {
             collision.SendMessage("TakeDamage", ophanimContactDamage);
         }
+    }
+
+   void PlayOrbSound()
+    {
+        orbAttackAudioSource.time = 0f;
+        orbAttackAudioSource.volume = 0.5f;
+        orbAttackAudioSource.pitch = 1f;
+
+        orbAttackAudioSource.Play();
+    }
+
+    void PlaySpawnSound()
+    {
+        spawnAudioSource.time = 0f;
+        spawnAudioSource.volume = 0.6f;
+        spawnAudioSource.pitch = 1f;
+
+        spawnAudioSource.Play();
     }
 }

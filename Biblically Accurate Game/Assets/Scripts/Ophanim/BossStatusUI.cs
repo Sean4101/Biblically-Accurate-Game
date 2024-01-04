@@ -13,6 +13,8 @@ public class BossStatus : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public Color flashColor = new Color(1f, 0f, 0f, 1f);
 
+   
+
 
 
     public int CurrentHealth { get; private set; }
@@ -39,7 +41,8 @@ public class BossStatus : MonoBehaviour
     }
 
     public void Heal()
-    {
+    {   
+        
         CurrentHealth += healAmount;
         if (CurrentHealth > maxHealth)
         {
@@ -66,4 +69,6 @@ public class BossStatus : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         battleManager.BattleVictory();
     }
+
+    
 }

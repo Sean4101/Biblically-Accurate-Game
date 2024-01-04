@@ -10,6 +10,8 @@ public class ShooterMinionCombat : MonoBehaviour
     public GameObject player;
     public GameObject bulletPrefab;
     public Transform boss;
+    public AudioSource audioSource;
+    public AudioClip shootSound;
 
 
     [Header("Stats")]
@@ -64,6 +66,8 @@ public class ShooterMinionCombat : MonoBehaviour
     {   
         //Instantiate bullet that points at player
         GameObject shootAtPlayerBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        audioSource.clip = shootSound;
+        PlayShootSound();
         shootAtPlayerBullet.GetComponent<MinionBullet>().SetMoveDirection((player.transform.position - transform.position).normalized);
         yield return new WaitForSeconds(shootAtPlayerInterval);
     }
@@ -88,5 +92,13 @@ public class ShooterMinionCombat : MonoBehaviour
         isHealing = true;
     }
 
+    void PlayShootSound()
+    {
+        audioSource.time = 0f;
+        audioSource.volume = 0.5f;
+        audioSource.pitch = 1f;
 
+
+        audioSource.Play();
+    }
 }
