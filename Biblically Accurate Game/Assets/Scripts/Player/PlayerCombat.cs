@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public bool canControl = true;
+    public Canvas Skill2Slider;
+    Skill2SliderController Skill2SliderControllerSet;
 
     [Header("References")]
     public Transform weapon;
@@ -65,6 +67,7 @@ public class PlayerCombat : MonoBehaviour
         isSkillReady = false;
         isBulletTimeReady = false;
         isInBulletTime = false;
+        Skill2SliderControllerSet = Skill2Slider.GetComponent<Skill2SliderController>();
     }
     void Start()
     {
@@ -234,16 +237,17 @@ public class PlayerCombat : MonoBehaviour
         for (int i = 0; i < bulletBurstAmount; i++)
         {        
             isInSkill = true;
-
+            
             GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             bulletObj.transform.Rotate(0, 0, Random.Range(-20f, 20f));
             cameraEffects.Shake(0.03f);
             Bullet bullet = bulletObj.GetComponent<Bullet>();
             bullet.skillActivated = true;
             bullet.Fire(bulletDamage, bulletSpeed);
-
+            Skill2SliderControllerSet.skill_duration_updatge((1 - (float)i / (float)bulletBurstAmount));
             yield return new WaitForSeconds(0.1f);
         }
+        Skill2SliderControllerSet.skill_stop();
         isInSkill = false;
     }
 }

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Skill2SubSlider : MonoBehaviour
+public class Skill2SliderController : MonoBehaviour
 {
     public Slider slider;
-    public Image Back;
+    public Image image;
     // Start is called before the first frame update
     void Start()
     {
-        Back.color = Color.white;
+        image.color = Color.white;
         slider.value = 1;
     }
 
@@ -20,15 +20,16 @@ public class Skill2SubSlider : MonoBehaviour
         
     }
 
-    public void SkillDuration(float value)
+
+    public void skill_duration_updatge(float number)
     {
-        Back.color = Color.red;
-        slider.value = value;
+        image.color = Color.red;
+        slider.value = number;
     }
 
-    public void SkillStop()
+    public void skill_stop()
     {
-        Back.color = Color.white;
+        image.color = Color.white;
         slider.value = 1;
     }
 }
