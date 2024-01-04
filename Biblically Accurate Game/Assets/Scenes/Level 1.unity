@@ -3450,7 +3450,7 @@ MonoBehaviour:
   player: {fileID: 364697986}
   SubSlider: {fileID: 1103950038}
   LightUp: {fileID: 437541971}
-  DelayInvisible: 0
+  DelayInvisible: 0.2
 --- !u!1 &768282645
 GameObject:
   m_ObjectHideFlags: 0
@@ -7291,7 +7291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleManager: {fileID: 235890123}
-  maxHealth: 100
+  maxHealth: 1000
   healAmount: 2
   flashDuration: 0.1
   flashColor: {r: 1, g: 0, b: 0, a: 1}

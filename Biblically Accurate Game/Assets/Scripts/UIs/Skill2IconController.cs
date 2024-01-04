@@ -32,12 +32,12 @@ public class Skill2IconController : MonoBehaviour
     {
         SliderController.value = ((float)player_statue.maxBulletTimeCharge - (float)player_statue.currentBulletTimeCharge) / (float)player_statue.maxBulletTimeCharge;  //q   
         //Debug.Log($"currentBulletTimeCharge:{player_statue.currentBulletTimeCharge}");
-        if (SliderController.value <= 0 && !SkillCharge)
+        if ((((float)player_statue.currentBulletTimeCharge) / (float)player_statue.maxBulletTimeCharge) >= 1 && !SkillCharge)
         {
             SkillCharge = true;
             skill_charge();
         }
-        if(SliderController.value > 0)SkillCharge = false;
+        if((((float)player_statue.currentBulletTimeCharge) / (float)player_statue.maxBulletTimeCharge) < 1) SkillCharge = false;
     }
 
     public void SkillRun()
