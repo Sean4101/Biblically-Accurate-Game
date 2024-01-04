@@ -3450,7 +3450,7 @@ MonoBehaviour:
   player: {fileID: 364697986}
   SubSlider: {fileID: 1103950038}
   LightUp: {fileID: 437541971}
-  DelayInvisible: 0.2
+  DelayInvisible: 0
 --- !u!1 &768282645
 GameObject:
   m_ObjectHideFlags: 0
