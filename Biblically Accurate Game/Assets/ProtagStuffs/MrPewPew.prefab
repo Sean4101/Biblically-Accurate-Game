@@ -104,7 +104,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 100
   m_Sprite: {fileID: 148667046, guid: 924ee892a86a6414ba6448941b96783e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9318628, b: 0.7156334, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -237,6 +237,7 @@ MonoBehaviour:
   bulletTimeEffectScript: {fileID: -6438312374788577189, guid: 3c6228f4d74578947a1cb8b6ecd4c307, type: 3}
   gunFireAudioSource: {fileID: -2676339165915422137}
   gunFireAudioClip: {fileID: 8300000, guid: 74cf4cbe9afc6444ba5ea8891569cad7, type: 3}
+  reloadAnimationScript: {fileID: 0}
   bulletPrefab: {fileID: 834564641309557873, guid: ca96fdd87ae84404eb86ec3a455f6b20, type: 3}
   dynamitePrefab: {fileID: 4333551939594301160, guid: 6f62665ace2d6e745bd7180b1f26c65f, type: 3}
   bulletTimeEffectPrefab: {fileID: 4131916896663294022, guid: 3c6228f4d74578947a1cb8b6ecd4c307, type: 3}

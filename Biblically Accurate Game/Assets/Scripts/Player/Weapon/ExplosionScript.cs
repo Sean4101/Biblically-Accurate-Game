@@ -9,9 +9,14 @@ public class ExplosionScript : MonoBehaviour
     [SerializeField] private int skillChargeAmount = 5;
     PlayerCombat playerCombat;
 
+    [Header("Reference")]
+    public AudioSource explosionAudioSource;
+    public AudioClip explosionAudioClip;
+
     // Start is called before the first frame update
     void Start()
     {
+        PlayExplosion();
         Invoke("DestroyExplosion", stayTime);
         playerCombat = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCombat>();
 
@@ -47,8 +52,16 @@ public class ExplosionScript : MonoBehaviour
 
     void DestroyExplosion()
     {
+        explosionAudioSource.transform.parent = null;
+
         Destroy(gameObject);
     }
 
-   
+    public void PlayExplosion()
+    {
+        explosionAudioSource.volume = 0.5f;
+        explosionAudioSource.pitch = 1.49f;
+        explosionAudioSource.time = 0f;
+        explosionAudioSource.Play();
+    }
 }
