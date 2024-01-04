@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public bool canControl = true;
-    public Canvas Skill2Slider;
-    Skill2SliderController Skill2SliderControllerSet;
 
     [Header("References")]
     public Transform weapon;
@@ -16,6 +14,9 @@ public class PlayerCombat : MonoBehaviour
     public BulletTimeManager bulletTimeManager;
     public BulletTimeEffectScript bulletTimeEffectScript;
     PlayerMovement playerMovement;
+    public AudioSource gunFireAudioSource;
+    public AudioClip gunFireAudioClip;
+
 
     [Header("Prefabs")]
     public GameObject bulletPrefab;
@@ -67,11 +68,10 @@ public class PlayerCombat : MonoBehaviour
         isSkillReady = false;
         isBulletTimeReady = false;
         isInBulletTime = false;
-        Skill2SliderControllerSet = Skill2Slider.GetComponent<Skill2SliderController>();
     }
     void Start()
     {
-
+        
     }
 
     private void Update()
@@ -112,6 +112,13 @@ public class PlayerCombat : MonoBehaviour
         {
             playerMovement.movementSpeed = playerMovement.movementSpeed * Time.timeScale;
         }
+
+
+        if (gunFireAudioSource.time == 0.32f)
+        {
+            gunFireAudioSource.Stop();
+        }
+
     }
 
     void RotateGun()
@@ -150,6 +157,8 @@ public class PlayerCombat : MonoBehaviour
 
     void Shoot()
     {
+        gunFireAudioSource.clip = gunFireAudioClip;
+        gunFireAudioSource.Play();
         GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletObj.GetComponent<Bullet>();
         bullet.Fire(bulletDamage, bulletSpeed);
@@ -237,17 +246,24 @@ public class PlayerCombat : MonoBehaviour
         for (int i = 0; i < bulletBurstAmount; i++)
         {        
             isInSkill = true;
-            
+            gunFireAudioSource.clip = gunFireAudioClip;
+            PlayGunFire();
             GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             bulletObj.transform.Rotate(0, 0, Random.Range(-20f, 20f));
             cameraEffects.Shake(0.03f);
             Bullet bullet = bulletObj.GetComponent<Bullet>();
             bullet.skillActivated = true;
             bullet.Fire(bulletDamage, bulletSpeed);
-            Skill2SliderControllerSet.skill_duration_updatge((1 - (float)i / (float)bulletBurstAmount));
+
             yield return new WaitForSeconds(0.1f);
         }
-        Skill2SliderControllerSet.skill_stop();
         isInSkill = false;
     }
+
+    public void PlayGunFire()
+    {
+        gunFireAudioSource.time = 0f;
+        gunFireAudioSource.Play();
+    }
+
 }

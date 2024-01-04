@@ -30,7 +30,7 @@ public class Skill2IconController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SliderController.value = ((float)player_statue.maxBulletTimeCharge - (float)player_statue.currentBulletTimeCharge) / (float)player_statue.maxBulletTimeCharge;  //q
+        SliderController.value = ((float)player_statue.maxBulletTimeCharge - (float)player_statue.currentBulletTimeCharge) / (float)player_statue.maxBulletTimeCharge;  //q   
         //Debug.Log($"currentBulletTimeCharge:{player_statue.currentBulletTimeCharge}");
         if (SliderController.value <= 0 && !SkillCharge)
         {

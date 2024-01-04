@@ -50,24 +50,18 @@ public class OphanimAI : MonoBehaviour
         yield return new WaitForSeconds(1f);
         while (true)
         {   
-            movement.ChasePlayer(chaseDuration);
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            movement.Wander(wanderDuration);
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            movement.Wander(wanderDuration);
-            yield return new WaitForSeconds(regularWaitDuration);
+           
+
+            for (int i = 0; i < 15; i++)
+            {   
+                movement.Wander(wanderDuration);
+                yield return new WaitForSeconds(regularWaitDuration); 
+                movement.ChasePlayer(chaseDuration);
+                yield return new WaitForSeconds(regularWaitDuration);
+                randomAttack();
+                yield return new WaitForSeconds(regularWaitDuration);  
+            }
+            
             combat.OrbStreamAttack(orbStreamDuration);
             yield return new WaitForSeconds(regularWaitDuration);
             combat.OrbSpiralAttack(orbSpiralDuration, orbSpiralDirectionAmount);
@@ -76,73 +70,34 @@ public class OphanimAI : MonoBehaviour
             yield return new WaitForSeconds(regularWaitDuration);
             combat.MinionSpawnShooter();
             yield return new WaitForSeconds(regularWaitDuration);
+            combat.MinionSpawnChaser();
+            yield return new WaitForSeconds(regularWaitDuration);
             movement.Wander(wanderDuration);
             yield return new WaitForSeconds(regularWaitDuration);
             orbShooterAmount = 4;
-            combat.ShooterOrbAttack(orbShooterAmount);
-            yield return new WaitForSeconds(regularWaitDuration);
-            movementAttack();
-            yield return new WaitForSeconds(regularWaitDuration);
-            combat.MinionSpawnChaser();
-            yield return new WaitForSeconds(regularWaitDuration);
-            BulletHellCombo1(combo1Duration);
-            yield return new WaitForSeconds(regularWaitDuration);
+
             movement.Wander(wanderDuration);
-            yield return new WaitForSeconds(regularWaitDuration);
-            combat.MinionSpawnShooter();
-            yield return new WaitForSeconds(regularWaitDuration);
             movement.ChasePlayer(chaseDuration);
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
+            BulletHellCombo1(combo1Duration);
             yield return new WaitForSeconds(regularWaitDuration);
             combat.DiscoAuraAttack();
             yield return new WaitForSeconds(regularWaitDuration + 2 );
             movementAttack();
             yield return new WaitForSeconds(regularWaitDuration);
             UltraBulletHellCombo(ultraComboDuration);
-            yield return new WaitForSeconds(1f);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            combat.MinionSpawnChaser();
-            yield return new WaitForSeconds(1f);
-            combat.MinionSpawnChaser();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(5f);
+
             movement.Wander(wanderDuration);
-            yield return new WaitForSeconds(regularWaitDuration);
-            combat.MinionSpawnShooter();
-            yield return new WaitForSeconds(regularWaitDuration);
-            combat.MinionSpawnChaser();
-            yield return new WaitForSeconds(1f);
+            movement.ChasePlayer(chaseDuration);
             combat.OrbStreamAttack(orbStreamDuration);
             yield return new WaitForSeconds(regularWaitDuration);
-            movementAttack();
-            yield return new WaitForSeconds(regularWaitDuration);
             combat.OrbSpiralAttack(orbSpiralDuration, orbSpiralDirectionAmount);
             yield return new WaitForSeconds(regularWaitDuration);
-            movement.Wander(wanderDuration);
-            yield return new WaitForSeconds(regularWaitDuration);
-            discoAuraCombo();
-            yield return new WaitForSeconds(regularWaitDuration);
-            combat.OrbStreamAttack(orbStreamDuration);
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            randomShit();
-            yield return new WaitForSeconds(regularWaitDuration);
-            combat.OrbSpiralAttack(orbSpiralDuration, orbSpiralDirectionAmount);
-            yield return new WaitForSeconds(regularWaitDuration);
-            movement.ChasePlayer(wanderDuration);
-            yield return new WaitForSeconds(regularWaitDuration);
-            combat.OrbSpiralAttack(orbSpiralDuration, orbSpiralDirectionAmount);
-            yield return new WaitForSeconds(regularWaitDuration);
-            combat.DiscoAuraAttack();
-            movement.ChasePlayer(chaseDuration - 2);
-
-
+            for (int i = 0; i < 4; i++)
+            {
+                combat.MinionSpawnChaser();
+                yield return new WaitForSeconds(2f);
+            }
         }
     }
 
@@ -251,16 +206,16 @@ public class OphanimAI : MonoBehaviour
         
     }
 
-    public void randomShit()
+    public void randomAttack()
     {
          int i = UnityEngine.Random.Range(0, 10);
         switch (i)
         {
             case 0:
-                movement.Wander(wanderDuration);
+                UltraBulletHellCombo(5);
                 break;
             case 1:
-                movement.ChasePlayer(chaseDuration);
+                discoAuraCombo();
                 break;
             case 2:
                 combat.OrbSpiralAttack(orbSpiralDuration, orbSpiralDirectionAmount);
@@ -282,11 +237,12 @@ public class OphanimAI : MonoBehaviour
                 BulletHellCombo1(5);
                 break;
             case 8:
-                UltraBulletHellCombo(5);
+                movementAttack();
                 break;
             case 9:
                 discoAuraCombo();
                 break;
+
         }
     }
 
