@@ -97,7 +97,7 @@ public class OphanimLevelOutroManager : MonoBehaviour
     public void StopBossAI()
     {
         GameObject boss = GameObject.Find("Disco Angel Ophanimim");
-        
+        //set velocity of boss to 0
         boss.GetComponent<OphanimAI>().enabled = false;
        
     }

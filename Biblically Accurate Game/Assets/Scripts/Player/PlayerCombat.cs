@@ -16,6 +16,7 @@ public class PlayerCombat : MonoBehaviour
     PlayerMovement playerMovement;
     public AudioSource gunFireAudioSource;
     public AudioClip gunFireAudioClip;
+    public reloadAnimationScript reloadAnimationScript;
 
 
     [Header("Prefabs")]
@@ -113,12 +114,12 @@ public class PlayerCombat : MonoBehaviour
         }
 
 
-        if (gunFireAudioSource.time == 0.32f)
+        if (gunFireAudioSource.isPlaying && gunFireAudioSource.time >= 0.55f)
         {
             gunFireAudioSource.Stop();
         }
 
-   
+
 
 
     }
@@ -162,6 +163,7 @@ public class PlayerCombat : MonoBehaviour
         gunFireAudioSource.clip = gunFireAudioClip;
         gunFireAudioSource.Play();
         GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        reloadAnimationScript.fireAnimation();
         Bullet bullet = bulletObj.GetComponent<Bullet>();
         bullet.Fire(bulletDamage, bulletSpeed);
         cameraEffects.Shake(0.02f);
@@ -247,6 +249,7 @@ public class PlayerCombat : MonoBehaviour
             gunFireAudioSource.clip = gunFireAudioClip;
             PlayGunFire();
             GameObject bulletObj = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            reloadAnimationScript.fireAnimation();
             bulletObj.transform.Rotate(0, 0, Random.Range(-20f, 20f));
             cameraEffects.Shake(0.03f);
             Bullet bullet = bulletObj.GetComponent<Bullet>();
@@ -260,7 +263,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void PlayGunFire()
     {   
-        gunFireAudioSource.volume = 0.852f;
+        gunFireAudioSource.volume = 0.6f;
         gunFireAudioSource.pitch = 1.49f;
         gunFireAudioSource.time = 0f;
         gunFireAudioSource.Play();

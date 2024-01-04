@@ -13,66 +13,66 @@ MonoBehaviour:
   m_Name: IntroDialogue
   m_EditorClassIdentifier: 
   dialogueLines:
-  - name: Tabby
+  - name: Coltstone Jeremiah
     line: "\u2026."
-    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
-  - name: Angel
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}
+  - name: Uriel the Divine
     line: You are ....
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Tabby
-    line: "It doesn\u2019t matter, I'm here top get my business with Azrael done."
-    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
-  - name: Angel
-    line: "I\u2019m afraid I can't help with that,"
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Tabby
+    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+  - name: Coltstone Jeremiah
+    line: It doesn't matter, I'm here top get my business with Azrael done.
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}
+  - name: Uriel the Divine
+    line: I'm afraid I can't help with that,
+    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+  - name: Coltstone Jeremiah
     line: I'm not asking for your permission, move.
-    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
-  - name: Angel
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}
+  - name: Uriel the Divine
     line: Turn back now, for this palace, is not for your kind, Mortal.
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Tabby
+    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+  - name: Coltstone Jeremiah
     line: Bold of your varmint to assume I'm a mortal eh, you have no idea who am
       I boy?
-    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
-  - name: Angel
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}
+  - name: Uriel the Divine
     line: Mind your tone mortal, for now you're confronting a divine spirit, crossing
       the will of god.
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Tabby
+    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+  - name: Coltstone Jeremiah
     line: All I see here, is that you are that one sorry horse sh*t crossing people's
       will, now get!
-    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
-  - name: Angel
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}
+  - name: Uriel the Divine
     line: "I see\u2026"
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Angel
+    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+  - name: Uriel the Divine
     line: "It seems that your choice have been made\u2026"
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Angel
+    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+  - name: Uriel the Divine
     line: Such persistence...
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Angel
+    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+  - name: Uriel the Divine
     line: BEHOLD!
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Angel
+    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+  - name: Uriel the Divine
     line: THE POWER, OF AN ANGEL! (Disco ON)
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Tabby
+    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+  - name: Coltstone Jeremiah
     line: Christ sake you gotta be joking
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Angel
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}
+  - name: Uriel the Divine
     line: I'm gonna slaughter you with my groove, prepare thy self!
-    avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
-  - name: Tabby
+    avatar: {fileID: 21300000, guid: aab4f8468f69ffd4b982c758a7404191, type: 3}
+  - name: Coltstone Jeremiah
     line: Hell, here we go than
-    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
-  - name: Tabby
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}
+  - name: Coltstone Jeremiah
     line: "Be not afraid\u2026."
-    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
-  - name: Tabby
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}
+  - name: Coltstone Jeremiah
     line: ....
-    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
-  - name: Tabby
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}
+  - name: Coltstone Jeremiah
     line: ....mortal.
-    avatar: {fileID: 21300000, guid: 04e39a25d2576b141baf2bd1adfdbb5f, type: 3}
+    avatar: {fileID: 21300000, guid: 831f18fd5ee93cd46b5a79f99bbb787e, type: 3}

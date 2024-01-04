@@ -61,7 +61,9 @@ public class BossStatus : MonoBehaviour
         spriteRenderer.color = originalColor;
     }
     void Die()
-    {
+    {   
+        //set velocity to 0
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         battleManager.BattleVictory();
     }
 }
