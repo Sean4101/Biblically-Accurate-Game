@@ -51,17 +51,16 @@ public class OphanimAI : MonoBehaviour
         while (true)
         {   
            
-
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 5; i++)
             {   
                 movement.Wander(wanderDuration);
                 yield return new WaitForSeconds(regularWaitDuration); 
                 movement.ChasePlayer(chaseDuration);
-                yield return new WaitForSeconds(regularWaitDuration);
                 randomAttack();
                 yield return new WaitForSeconds(regularWaitDuration);  
             }
-            
+
+            //Reguklar Attack Pattern
             combat.OrbStreamAttack(orbStreamDuration);
             yield return new WaitForSeconds(regularWaitDuration);
             combat.OrbSpiralAttack(orbSpiralDuration, orbSpiralDirectionAmount);
@@ -76,12 +75,13 @@ public class OphanimAI : MonoBehaviour
             yield return new WaitForSeconds(regularWaitDuration);
             orbShooterAmount = 4;
 
+            //Difficult Attack Pattern
             movement.Wander(wanderDuration);
             movement.ChasePlayer(chaseDuration);
             BulletHellCombo1(combo1Duration);
             yield return new WaitForSeconds(regularWaitDuration);
             combat.DiscoAuraAttack();
-            yield return new WaitForSeconds(regularWaitDuration + 2 );
+            yield return new WaitForSeconds(regularWaitDuration + 2);
             movementAttack();
             yield return new WaitForSeconds(regularWaitDuration);
             UltraBulletHellCombo(ultraComboDuration);
@@ -93,11 +93,13 @@ public class OphanimAI : MonoBehaviour
             yield return new WaitForSeconds(regularWaitDuration);
             combat.OrbSpiralAttack(orbSpiralDuration, orbSpiralDirectionAmount);
             yield return new WaitForSeconds(regularWaitDuration);
+
             for (int i = 0; i < 4; i++)
             {
                 combat.MinionSpawnChaser();
                 yield return new WaitForSeconds(2f);
             }
+
         }
     }
 
@@ -110,6 +112,8 @@ public class OphanimAI : MonoBehaviour
             yield return new WaitForSeconds(5f);
         }
     }
+
+
 
     public void BulletHellCombo1( float duration )
     {

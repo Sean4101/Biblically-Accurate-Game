@@ -103,7 +103,6 @@ public class PlayerCombat : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && isBulletTimeReady && !isInBulletTime)
         {
-            Debug.Log("Bullet time used");
             StartCoroutine(BulletTimeCoroutine());
             isBulletTimeReady = false;
         }
@@ -118,6 +117,9 @@ public class PlayerCombat : MonoBehaviour
         {
             gunFireAudioSource.Stop();
         }
+
+   
+
 
     }
 
@@ -206,7 +208,6 @@ public class PlayerCombat : MonoBehaviour
             if (currentBulletTimeCharge > maxBulletTimeCharge)
             {
                 isBulletTimeReady = true;
-                Debug.Log("Bullet time charge is full");
                 currentBulletTimeCharge = maxBulletTimeCharge;
             }
         }
@@ -225,15 +226,12 @@ public class PlayerCombat : MonoBehaviour
     {
         GameObject bulletEffectObj = Instantiate(bulletTimeEffectPrefab, transform.position, Quaternion.identity);
         BulletTimeEffectScript bulletEffectScript = bulletEffectObj.GetComponent<BulletTimeEffectScript>();
-
-        currentBulletTimeCharge = 0;
+        
         isInBulletTime = true;
-
+        currentBulletTimeCharge = 0;
         yield return new WaitUntil(() => bulletEffectScript.shrinkEffectDone == true);
 
         bulletTimeManager.DoSlowMotion();
-
-        
         bulletEffectScript.bulletTimeOver = true;
         isInBulletTime = false;
     }
@@ -261,7 +259,9 @@ public class PlayerCombat : MonoBehaviour
     }
 
     public void PlayGunFire()
-    {
+    {   
+        gunFireAudioSource.volume = 0.852f;
+        gunFireAudioSource.pitch = 1.49f;
         gunFireAudioSource.time = 0f;
         gunFireAudioSource.Play();
     }

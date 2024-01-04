@@ -30,7 +30,6 @@ public class BulletTimeEffectScript : MonoBehaviour
         else
         {   
             expandeEffectDone = true;  
-            Debug.Log("bullet time effect done");
             shrinkEffect();
         }
 
