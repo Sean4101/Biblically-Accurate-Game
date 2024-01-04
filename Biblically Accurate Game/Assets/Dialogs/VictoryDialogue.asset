@@ -77,7 +77,7 @@ MonoBehaviour:
       never is...
     avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
   - name: Angel
-    line: ",  it\u2019s purpose is to distract sinners who\u2019s will is too strong
+    line: "it\u2019s purpose is to distract sinners who\u2019s will is too strong
       to belong in hell, and suppress their power by exhausting them."
     avatar: {fileID: 21300000, guid: 05dad6371503c8f4dba5e2316239bb62, type: 3}
   - name: Angel

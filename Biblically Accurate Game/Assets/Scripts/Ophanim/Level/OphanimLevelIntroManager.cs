@@ -8,6 +8,7 @@ public class OphanimLevelIntroManager : MonoBehaviour
     public bool introComplete = false;
     private bool dialogueStarted = false;
     private bool loreStarted = false;
+    private bool loreFinished = false;
     [Header("References")]
     public LoreTextManager loreTextManager;
     public DialogueManager dialogueTextManager;
@@ -28,7 +29,7 @@ public class OphanimLevelIntroManager : MonoBehaviour
     private IEnumerator PlayLevelOneIntro()
     {
         loreTextManager.StartLoreDialogue(prologueLines);
-        yield return new WaitUntil(() => loreTextManager.prologueEnd);
+        yield return new WaitUntil(() => loreTextManager.loreEnd);
         dialogueTextManager.StartDialogue(introDialogueLines);
         yield return new WaitUntil(() => dialogueTextManager.introEnd);
         introComplete = true;
@@ -36,9 +37,11 @@ public class OphanimLevelIntroManager : MonoBehaviour
     
     //because we prob won't have level two so Imma write stuff here first
     private IEnumerator PlayLevelTwoIntro()
-    {
+    {   
+        introComplete = false;
         loreTextManager.StartLoreDialogue(act2LoreLines);
-        yield return new WaitUntil(() => loreTextManager.prologueEnd);
+        yield return new WaitUntil(() => loreTextManager.loreEnd);
+        introComplete = true;
     }
 
 

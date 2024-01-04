@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class OphanimLevelOutroManager : MonoBehaviour
 {
-    public GameObject victoryPlaceholderPanel;
-    public GameObject defeatPlaceholderPanel;
     public GameObject victoryNextLevelPanel;
     public GameObject defeatRetryPanel;
 
@@ -53,15 +51,13 @@ public class OphanimLevelOutroManager : MonoBehaviour
         //Ik it's stupid to right shit here but idk whether we will have a level 2 or not
         loreBox.SetActive(true);
         levelTwoIntro.StartLevelTwoIntro();
-
-        victoryNextLevelPanel.SetActive(true);
+         yield return new WaitUntil(() => levelTwoIntro.introComplete );
+        NextLevel();
     }
 
     private IEnumerator PlayDefeatOutro()
     {
-        defeatPlaceholderPanel.SetActive(true);
         yield return new WaitForSeconds(3f);
-        defeatPlaceholderPanel.SetActive(false);
         defeatRetryPanel.SetActive(true);
     }
 

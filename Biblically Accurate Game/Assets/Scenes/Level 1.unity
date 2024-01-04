@@ -560,8 +560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb368af512c7a0647bc490e78f3a752b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  victoryPlaceholderPanel: {fileID: 0}
-  defeatPlaceholderPanel: {fileID: 2101771844}
   victoryNextLevelPanel: {fileID: 1407536084}
   defeatRetryPanel: {fileID: 1023153984}
   dialogueBox: {fileID: 857352867}
@@ -3742,6 +3740,81 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &914472549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 914472550}
+  - component: {fileID: 914472552}
+  - component: {fileID: 914472551}
+  m_Layer: 5
+  m_Name: Back Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &914472550
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914472549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1023153985}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -16.8042, y: 18.2652}
+  m_SizeDelta: {x: 1983.5187, y: 1150.6206}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &914472551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914472549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &914472552
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914472549}
+  m_CullTransparentMesh: 1
 --- !u!1 &930112817
 GameObject:
   m_ObjectHideFlags: 0
@@ -4145,6 +4218,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 914472550}
   - {fileID: 1255021538}
   - {fileID: 728904061}
   - {fileID: 973703610}
@@ -6001,7 +6075,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DEFEAT
+  m_text: PERISHED
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e03a2db01cc3cc24cb521a157fc0b0ff, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6967,6 +7041,7 @@ GameObject:
   - component: {fileID: 1569942885}
   - component: {fileID: 1569942884}
   - component: {fileID: 1569942887}
+  - component: {fileID: 1569942888}
   m_Layer: 0
   m_Name: Disco Angel Ophanimim
   m_TagString: Enemy
@@ -7024,9 +7099,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.047246218, y: -0.08188543}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.9345106
 --- !u!114 &1569942883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7062,7 +7137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battleManager: {fileID: 235890123}
-  maxHealth: 900
+  maxHealth: 10
   healAmount: 2
   flashDuration: 0.1
   flashColor: {r: 1, g: 0, b: 0, a: 1}
@@ -7170,6 +7245,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1569942888
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569942877}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04951608, y: -0.082146525}
+  serializedVersion: 2
+  m_Radius: 0.9678849
 --- !u!1 &1625609947
 GameObject:
   m_ObjectHideFlags: 0
@@ -7332,7 +7442,7 @@ GameObject:
   - component: {fileID: 1803601000}
   m_Layer: 0
   m_Name: Disco Aura
-  m_TagString: Obstacle
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

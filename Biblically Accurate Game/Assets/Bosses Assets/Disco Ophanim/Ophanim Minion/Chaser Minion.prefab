@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7366799274962983306}
   - component: {fileID: -3542032229666241936}
   - component: {fileID: -6750289475499866806}
+  - component: {fileID: 7526204804319050777}
   m_Layer: 0
   m_Name: Chaser Minion
   m_TagString: Enemy
@@ -195,3 +196,38 @@ MonoBehaviour:
   flashDuration: 0.1
   flashColor: {r: 1, g: 0, b: 0, a: 1}
   maxChaserMinionHealth: 25
+--- !u!58 &7526204804319050777
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8347360410500054801}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000004523408, y: -0.0045599802}
+  serializedVersion: 2
+  m_Radius: 0.47850257

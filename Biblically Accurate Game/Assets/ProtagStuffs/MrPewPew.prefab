@@ -246,7 +246,7 @@ MonoBehaviour:
   reloadTime: 0.1
   isReloading: 0
   pushbackForce: 5
-  maxDynamite: 3
+  maxDynamite: 5
   currentDynamite: 0
   maxSkillCharge: 4
   currentSkillCharge: 0

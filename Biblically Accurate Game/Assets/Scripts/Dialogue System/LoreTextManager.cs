@@ -19,7 +19,7 @@ public class LoreTextManager : MonoBehaviour
 
     [Header("Settings: ")]
     public float prologueTextSpeed;
-    public bool prologueEnd = false;
+    public bool loreEnd = false;
     public bool prologueOnGoing = false;
     public float alpha = 0;
 
@@ -32,7 +32,8 @@ public class LoreTextManager : MonoBehaviour
     private LoreTextLines loreTextLines;
 
     private void Awake()
-    {
+    {   
+        loreEnd = false;
         canvasGroup.alpha = 0;
         loreBox = GetComponent<Image>();
         loreBox.enabled = false;
@@ -43,13 +44,14 @@ public class LoreTextManager : MonoBehaviour
     {
         ClearDialogue();
         audioSource.clip = audioClip;
+        
       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !prologueEnd && !_imageFadeIn)
+        if (Input.GetKeyDown(KeyCode.Space) && !loreEnd && !_imageFadeIn)
         {
             if (isTypingFinished(index))
             {
@@ -66,6 +68,7 @@ public class LoreTextManager : MonoBehaviour
         if (_imageFadeOut)
         {
             FadeOutBackground();
+            
         }
         else if (_imageFadeIn )
         {
@@ -76,6 +79,7 @@ public class LoreTextManager : MonoBehaviour
 
     public void StartLoreDialogue(LoreTextLines lines)
     {   
+        loreEnd = false;
         if(lines.name != "prologueText")
         {
             _imageFadeIn = true;
@@ -83,7 +87,7 @@ public class LoreTextManager : MonoBehaviour
             loreTextLines = lines;
             index = 0;
             prologueOnGoing = true;
-            prologueEnd = false;
+            loreEnd = false;
             loreBox.enabled = true;
             StartCoroutine(TypeLine());
         }
@@ -94,7 +98,7 @@ public class LoreTextManager : MonoBehaviour
             loreTextLines = lines;
             index = 0;
             prologueOnGoing = true;
-            prologueEnd = false;
+            loreEnd = false;
             loreBox.enabled = true;
             StartCoroutine(TypeLine());
         }
@@ -114,7 +118,7 @@ public class LoreTextManager : MonoBehaviour
             //end of dialogue
             index = 0;
             ClearDialogue();
-            prologueEnd = true;
+            loreEnd = true;
             _imageFadeOut = true;
             
         }
