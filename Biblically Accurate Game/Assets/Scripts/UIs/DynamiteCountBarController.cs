@@ -8,6 +8,8 @@ public class DynamiteCountBarController : MonoBehaviour
     public Image BarFill1;
     public Image BarFill2;
     public Image BarFill3;
+    public Image BarFill4;
+    public Image BarFill5;
     public GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -25,5 +27,9 @@ public class DynamiteCountBarController : MonoBehaviour
         else BarFill2.gameObject.SetActive(false);
         if(DynamiteCount >= 3) BarFill3.gameObject.SetActive(true);
         else BarFill3 .gameObject.SetActive(false);
+        if(DynamiteCount >= 4) BarFill4.gameObject.SetActive(true);
+        else BarFill4.gameObject.SetActive(false);
+        if (DynamiteCount >= 5) BarFill5.gameObject.SetActive(true);
+        else BarFill5.gameObject.SetActive(false);
     }
 }
