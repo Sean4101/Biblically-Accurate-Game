@@ -118,10 +118,6 @@ public class PlayerCombat : MonoBehaviour
         {
             gunFireAudioSource.Stop();
         }
-
-
-
-
     }
 
     void RotateGun()
