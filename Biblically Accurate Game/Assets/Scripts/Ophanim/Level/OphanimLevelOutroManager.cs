@@ -106,6 +106,9 @@ public class OphanimLevelOutroManager : MonoBehaviour
     {
         GameObject boss = GameObject.Find("Disco Angel Ophanimim");
         boss.GetComponent<OphanimAI>().StopAllCoroutines();
+        boss.GetComponent<OphanimCombat>().StopAllCoroutines();
+        boss.GetComponent<OphanimMovement>().StopAllCoroutines();
+        boss.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     public void destoyMinions()

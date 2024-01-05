@@ -100,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //makes player roll in it's moving direction
         isRolling = true;
+        animator.SetTrigger("Roll");
         playerStatus.SetInvincible(true);
         rb.velocity = movementDirection.normalized * rollSpeed;
         yield return new WaitForSeconds(rollDuration);

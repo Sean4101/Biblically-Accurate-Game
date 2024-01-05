@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
+    Animator animator;
     SpriteRenderer spriteRenderer;
 
     [Header("Stats")]
@@ -28,6 +29,7 @@ public class PlayerStatus : MonoBehaviour
 
     void Awake()
     {
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         CurrentHealth = MaxHealth;
         cameraEffects = Camera.main.GetComponent<CameraEffects>();
@@ -90,7 +92,13 @@ public class PlayerStatus : MonoBehaviour
 
     void Die()
     {
-        
+        animator.SetTrigger("Die");
+        Invoke("SetAnimDead", 0.2f);
+    }
+
+    void SetAnimDead()
+    {
+        animator.SetBool("Dead", true);
     }
 
     
