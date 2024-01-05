@@ -73,6 +73,8 @@ public class BossStatus : MonoBehaviour
         transform.localScale = newScale;
 
         StartCoroutine(ShrinkOverTime());
+        //destroy game object
+        Destroy(gameObject);
     }
 
     IEnumerator ShrinkOverTime()

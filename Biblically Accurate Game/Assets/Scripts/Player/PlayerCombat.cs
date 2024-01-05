@@ -30,7 +30,7 @@ public class PlayerCombat : MonoBehaviour
     public GameObject bulletTimeEffectPrefab;
 
     [Header("Shooting Attack")]
-    public int bulletDamage = 1;
+    public int bulletDamage = 2;
     public float bulletSpeed = 10f;
 
     [Header("Dynamite Attack")]
@@ -46,18 +46,18 @@ public class PlayerCombat : MonoBehaviour
     public float pushbackForce = 5f;
 
     [Header("Dynamite Stats")]
-    public int maxDynamite = 3;
+    public int maxDynamite = 5;
     public int currentDynamite = 0;
 
     [Header("Special Skill")]
-    public int maxSkillCharge = 25;
+    public int maxSkillCharge = 30;
     public int currentSkillCharge = 0;
     public bool isSkillReady = false;
     private bool isInSkill = false;
     public int bulletBurstAmount = 15;
 
     [Header("Bullet Time")]
-    public int maxBulletTimeCharge = 35;
+    public int maxBulletTimeCharge = 40;
     public int currentBulletTimeCharge = 0;
     public bool isBulletTimeReady = false;
     public bool isInBulletTime = false;

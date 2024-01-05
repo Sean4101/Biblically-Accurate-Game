@@ -97,7 +97,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if(introIndex == 12)
                 {
-                   cameraEffects.Shake(3.5f);
+                   cameraEffects.Shake(2.5f);
                 }
             }
         }

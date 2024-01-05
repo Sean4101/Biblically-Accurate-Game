@@ -10434,24 +10434,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1114046482}
     - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+      propertyPath: maxDynamite
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: Skill2Slider
       value: 
       objectReference: {fileID: 1114046482}
     - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: maxSkillCharge
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: addDynamiteClip
       value: 
       objectReference: {fileID: 8300000, guid: 6105729833fe2ff478addf190bd7791d, type: 3}
     - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
+      propertyPath: bulletBurstAmount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: bulletTimeManager
       value: 
       objectReference: {fileID: 1538889100}
     - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: maxBulletTimeCharge
-      value: 5
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 9200232115746682306, guid: 0328012fecd0d9842820c9974ca9d38c, type: 3}
       propertyPath: reloadAnimationScript
