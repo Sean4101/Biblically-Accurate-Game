@@ -24,11 +24,13 @@ public class DialogueManager : MonoBehaviour
 
     private DialogLines dialogueLines;
     private int introIndex;
+    public CameraEffects cameraEffects;
 
     private void Awake()
     {
         dialogueBox = GetComponent<Image>();
         loreTextManager = FindObjectOfType<LoreTextManager>();
+        cameraEffects = FindObjectOfType<CameraEffects>();
     }
 
     // Start is called before the first frame update
@@ -89,6 +91,13 @@ public class DialogueManager : MonoBehaviour
                 {   
                     Debug.Log("Shrink");
                     bossStatus.Shrink();
+                }
+            }
+            else if(introName == "IntroDialogue")
+            {
+                if(introIndex == 12)
+                {
+                   cameraEffects.Shake(3.5f);
                 }
             }
         }

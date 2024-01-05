@@ -12,12 +12,7 @@ public class CameraEffects : MonoBehaviour
         //StartCoroutine( ZoomInCoroutine() );
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
+  
     public void Shake( float duration )
     {
         StartCoroutine( shakeCoroutine( duration ) );
