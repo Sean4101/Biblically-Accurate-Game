@@ -16,7 +16,8 @@ public class DialogueManager : MonoBehaviour
     public Image dialogueBox;
     public AudioSource audioSource;
     public AudioClip audioClip;
-
+    public BossStatus bossStatus;
+    string introName;
     [Header("Settings: ")]
     public float introTextSpeed;
     public bool introEnd = false;
@@ -37,6 +38,7 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.enabled = false;
         avatarImage.enabled = false;
         audioSource.clip = audioClip;
+        bossStatus = FindObjectOfType<BossStatus>();
         //StartDialogue();
     }
 
@@ -64,7 +66,8 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(DialogLines lines)
-    {
+    {   
+        introName = lines.name;
         introEnd = false;
         dialogueBox.enabled = true;
         dialogueLines = lines;
@@ -80,6 +83,14 @@ public class DialogueManager : MonoBehaviour
             introIndex++;
             ClearDialogue();
             StartCoroutine(TypeLine());
+            if(introName == "VictoryDialogue")
+            {
+                if(introIndex == 25)
+                {   
+                    Debug.Log("Shrink");
+                    bossStatus.Shrink();
+                }
+            }
         }
         else
         {
